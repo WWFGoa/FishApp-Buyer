@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Something Fishy</string>
+    <string name="title_home">Search</string>
+    <string name="title_listings">Live Offers</string>
+    <string name="title_orders">My Orders</string>
+</resources>
