@@ -3,4 +3,25 @@
     <string name="title_home">Search</string>
     <string name="title_listings">Live Offers</string>
     <string name="title_orders">My Orders</string>
+
+
+
+    <string name="order_existing">Current</string>
+    <string name="order_new">New</string>
+    <string name="order_past">Past</string>
+
+    <string name="order_existing_label">Live Inventory</string>
+    <string name="order_new_label">Create new Listing</string>
+    <string name="order_past_label">Past Inventory</string>
+
+    <string name="search_hint">Search by name</string>
+
+    <string name="creator_size_small">Small</string>
+    <string name="creator_size_medium">Medium</string>
+    <string name="creator_size_large">Large</string>
+    <string name="label_weight">Weight</string>
+    <string name="label_price">Price</string>
+    <string name="catch_location">Location Ex. Miramar/Juhu Beach</string>
+    <string name="label_catch_time">Catch Details</string>
+    <string name="label_sell_time">Sell Details</string>
 </resources>

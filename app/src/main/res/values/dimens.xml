@@ -2,4 +2,34 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="padding_standard">8dp</dimen>
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_double">16dp</dimen>
+    <dimen name="padding_double_half">20dp</dimen>
+    <dimen name="padding_triple">24dp</dimen>
+    <dimen name="padding_quadruple">32dp</dimen>
+    <dimen name="padding_large">64dp</dimen>
+    <dimen name="padding_half_and_quarter">6dp</dimen>
+    <dimen name="padding_half">4dp</dimen>
+    <dimen name="padding_quarter">2dp</dimen>
+    <dimen name="padding_5x">40dp</dimen>
+    <dimen name="padding_6x">48dp</dimen>
+    <dimen name="padding_7x">56dp</dimen>
+
+    <dimen name="button_text_size">18sp</dimen>
+    <dimen name="smaller_button_text_size">12sp</dimen>
+    <dimen name="default_text_size">14sp</dimen>
+    <dimen name="small_text_size">10sp</dimen>
+    <dimen name="medium_text_size">14sp</dimen>
+
+    <dimen name="people_search_field_text_size">15sp</dimen>
+    <dimen name="medium_small_text_size">12sp</dimen>
+    <dimen name="medium_large_text_size">16sp</dimen>
+    <dimen name="large_text_size">18sp</dimen>
+    <dimen name="xlarge_text_size">20sp</dimen>
+    <dimen name="xxlarge_text_size">26sp</dimen>
+
+    <dimen name="xxxlarge_text_size">32sp</dimen>
+    <dimen name="rounded_button_text_size_profile">17sp</dimen>
 </resources>
