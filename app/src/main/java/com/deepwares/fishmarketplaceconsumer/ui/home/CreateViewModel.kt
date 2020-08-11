@@ -16,10 +16,10 @@ class CreateViewModel : ViewModel() {
 
     val species = arrayListOf(
 
-        Species("Carp", R.drawable.ic_asset_3),
-        Species("Sea Bass", R.drawable.ic_asset_5),
-        Species("Trout", R.drawable.ic_asset_6),
-        Species("Mackerel", R.drawable.ic_asset_7),
+        Species("Carp", R.drawable.bombay),
+        Species("Sea Bass", R.drawable.anchovy),
+        Species("Trout", R.drawable.baramundi),
+        Species("Mackerel", R.drawable.bombay_duck),
         Species("Tuna", R.drawable.ic_asset_8),
         Species("Grouper", R.drawable.ic_asset_9),
         Species("Pomfret", R.drawable.ic_asset_10),

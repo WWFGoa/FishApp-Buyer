@@ -14,7 +14,7 @@ class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapt
         val vh = SpeciesVH(view)
         vh.itemView.setOnClickListener {
             val item = species[vh.adapterPosition]
-            speciesSelector?.selectSpecies(item,vh.adapterPosition)
+            speciesSelector?.selectSpecies(item, vh.adapterPosition)
         }
         return vh
 
@@ -28,5 +28,13 @@ class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapt
         val item = species[position]
         holder.image.setImageResource(item.image)
         holder.name.text = item.name
+        if (position < itemCount / 3) {
+            holder.card.setCardBackgroundColor(holder.image.resources.getColor(R.color.species_background_green))
+        } else if (position < (itemCount * 2 / 3)) {
+            holder.card.setCardBackgroundColor(holder.image.resources.getColor(R.color.species_background_yellow))
+        } else {
+            holder.card.setCardBackgroundColor(holder.image.resources.getColor(R.color.species_background_red))
+
+        }
     }
 }
