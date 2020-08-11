@@ -29,11 +29,15 @@ class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapt
         holder.image.setImageResource(item.image)
         holder.name.text = item.name
         if (position < itemCount / 3) {
-            holder.card.setCardBackgroundColor(holder.image.resources.getColor(R.color.species_background_green))
+            holder.conservation.setBackgroundDrawable(holder.image.resources.getDrawable(R.drawable.species_background_green_border))
         } else if (position < (itemCount * 2 / 3)) {
-            holder.card.setCardBackgroundColor(holder.image.resources.getColor(R.color.species_background_yellow))
+            holder.conservation.setBackgroundDrawable(holder.image.resources.getDrawable(R.drawable.species_background_yellow_border))
+
+            //  holder.card.setCardBackgroundColor(holder.image.resources.getColor(R.color.species_background_yellow))
         } else {
-            holder.card.setCardBackgroundColor(holder.image.resources.getColor(R.color.species_background_red))
+            holder.conservation.setBackgroundDrawable(holder.image.resources.getDrawable(R.drawable.species_background_red_border))
+
+            // holder.card.setCardBackgroundColor(holder.image.resources.getColor(R.color.species_background_red))
 
         }
     }
