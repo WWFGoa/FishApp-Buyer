@@ -1,0 +1,15 @@
+{
+    "fmp": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-fishmarketplace-fmp-164918-authRole",
+            "UnauthRoleArn": "arn:aws:iam::770138636768:role/amplify-fishmarketplace-fmp-164918-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::770138636768:role/amplify-fishmarketplace-fmp-164918-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-fishmarketplace-fmp-164918-deployment",
+            "UnauthRoleName": "amplify-fishmarketplace-fmp-164918-unauthRole",
+            "StackName": "amplify-fishmarketplace-fmp-164918",
+            "StackId": "arn:aws:cloudformation:us-east-1:770138636768:stack/amplify-fishmarketplace-fmp-164918/320fd140-cc0d-11ea-8eb8-12328959da6d",
+            "AmplifyAppId": "duk4fl4r2liud"
+        }
+    }
+}

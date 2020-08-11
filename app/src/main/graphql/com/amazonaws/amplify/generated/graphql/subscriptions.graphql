@@ -1,0 +1,133 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateSpecies {
+  onCreateSpecies {
+    id
+    name
+    minPrice
+    maxPrice
+    minWeight
+    maxWeight
+    active
+    image
+  }
+}
+subscription OnUpdateSpecies {
+  onUpdateSpecies {
+    id
+    name
+    minPrice
+    maxPrice
+    minWeight
+    maxWeight
+    active
+    image
+  }
+}
+subscription OnDeleteSpecies {
+  onDeleteSpecies {
+    id
+    name
+    minPrice
+    maxPrice
+    minWeight
+    maxWeight
+    active
+    image
+  }
+}
+subscription OnCreateInventory {
+  onCreateInventory {
+    id
+    species
+    quantity
+    availableQuantity
+    price
+    catchLocation
+    sellLocation
+    catchTime
+    sellTime
+    size
+  }
+}
+subscription OnUpdateInventory {
+  onUpdateInventory {
+    id
+    species
+    quantity
+    availableQuantity
+    price
+    catchLocation
+    sellLocation
+    catchTime
+    sellTime
+    size
+  }
+}
+subscription OnDeleteInventory {
+  onDeleteInventory {
+    id
+    species
+    quantity
+    availableQuantity
+    price
+    catchLocation
+    sellLocation
+    catchTime
+    sellTime
+    size
+  }
+}
+subscription OnCreateOrder {
+  onCreateOrder {
+    id
+    quantity
+    inventory {
+      id
+      species
+      quantity
+      availableQuantity
+      price
+      catchLocation
+      sellLocation
+      catchTime
+      sellTime
+      size
+    }
+  }
+}
+subscription OnUpdateOrder {
+  onUpdateOrder {
+    id
+    quantity
+    inventory {
+      id
+      species
+      quantity
+      availableQuantity
+      price
+      catchLocation
+      sellLocation
+      catchTime
+      sellTime
+      size
+    }
+  }
+}
+subscription OnDeleteOrder {
+  onDeleteOrder {
+    id
+    quantity
+    inventory {
+      id
+      species
+      quantity
+      availableQuantity
+      price
+      catchLocation
+      sellLocation
+      catchTime
+      sellTime
+      size
+    }
+  }
+}

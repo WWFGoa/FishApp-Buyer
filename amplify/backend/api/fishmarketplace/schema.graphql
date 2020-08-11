@@ -1,0 +1,36 @@
+enum CatchSize{
+Small,
+Medium,
+Large
+}
+type Species
+@model
+@key(fields: ["id","name"])
+{
+  id: ID!
+  name: String!
+  minPrice: Int!
+  maxPrice: Int!
+  minWeight: Int!
+  maxWeight: Int!
+  active: Boolean!
+  image:Int!
+}
+
+type Inventory @model {
+  id: ID!
+  species: Int!
+  quantity:Int!
+  availableQuantity:Int!
+  price:Int!
+  catchLocation:String!
+  sellLocation:String!
+  catchTime:String!
+  sellTime:String!
+  size:CatchSize!
+}
+type Order @model {
+  id: ID!
+  quantity:Int!
+  inventory:Inventory!
+}
