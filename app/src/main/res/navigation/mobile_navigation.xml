@@ -22,4 +22,5 @@
         android:name="com.deepwares.fishmarketplaceconsumer.ui.notifications.OrdersFragment"
         android:label="@string/title_orders"
         tools:layout="@layout/fragment_orders" />
+    
 </navigation>
