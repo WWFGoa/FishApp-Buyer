@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">Something Fishy</string>
+    <string name="app_name">Fish Hub</string>
     <string name="title_home">Search</string>
     <string name="title_listings">Live Offers</string>
     <string name="title_orders">My Orders</string>
-
 
 
     <string name="order_existing">Current</string>
@@ -24,4 +23,19 @@
     <string name="catch_location">Location Ex. Miramar/Juhu Beach</string>
     <string name="label_catch_time">Catch Details</string>
     <string name="label_sell_time">Sell Details</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="legend">\???</string>
+
+    <string name="tutorial_desc_1">Seafood is an important source of food, and plays an important role in providing nutrition to many coastal communities around the world.  The Food and Agriculture Organization (FAO) estimates that approximately 96.4 million tonnes of seafood is harvested from the sea each year (SOFIA- 2020).</string>
+    <string name="tutorial_desc_2">The demand for seafood and the advances in technology have led to fishing practices that are depleting fish stocks around the world. To continue relying on the ocean as an important food source we need to employ sustainable fishing practices.</string>
+    <string name="tutorial_desc_3">When fish is taken from the sea faster than populations can reproduce, it is known as overfishing. Indiscriminate fishing also results in the capture of unintended species such as whales, dolphins and turtles, fish species that are not of high commercial value and juveniles of fish species. </string>
+    <string name="tutorial_desc_4">Some fishing practices like bottom trawling and blast fishing can be destructive to marine ecosystems, in turn damaging fish stocks. These methods are used mainly because they are effective in the capture of large amounts of fish in a short period of time but are not sustainable in the long run.</string>
+    <string name="tutorial_desc_5">Overfishing and habitat destruction not only leads to a decreased amount of species biodiversity it also impacts the long-term food security for people who consume these species regularly. Livelihoods of fishing communities who depend on these fish species and fisheries are also be negatively affected. </string>
+    <string name="tutorial_desc_6">As consumers, buying sustainably sourced seafood and preferentially choosing to eat fish species from stocks that are healthy helps encourage sustainable fisheries. FishHub lets you know where your fish comes from and how it is caught so you can choose more sustainable options. </string>
+    <string name="tutorial_desc_7">How does FishHub do this?
+</string>
+    <string name="tutorial_desc_8">All seafood sold on FishHub is harvested at a rate that allows stock to reproduce with no damage to the habitat. This means catching sustainable quantities of fish through small-scale fisheries and avoiding fishing species during their breeding season. </string>
+    <string name="tutorial_desc_9">We ensure that the fishworkers we partner with do not catch non-commercial species, endangered species and juveniles along with the target catch, through selective and mindful fishing practices. </string>
+    <string name="tutorial_desc_10">FishHub ensures that the fishing practices we encourage offers food security, sustained livelihood opportunities for coastal communities, generates less waste and requires less energy. </string>
+    <string name="tutorial_title">Sustainability FAQ</string>
 </resources>

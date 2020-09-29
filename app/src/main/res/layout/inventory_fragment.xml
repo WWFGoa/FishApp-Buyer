@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.info.FishFragment">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:textSize="@dimen/xxlarge_text_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image" />
+
+    <TextView
+        android:id="@+id/cost_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="Price - "
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <TextView
+        android:id="@+id/cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="230 Rs/Kg"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/cost_label"
+        app:layout_constraintLeft_toRightOf="@id/cost_label"
+        app:layout_constraintTop_toTopOf="@id/cost_label" />
+
+
+    <TextView
+        android:id="@+id/qty_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="Max Quantity Available - "
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cost_label" />
+
+    <TextView
+        android:id="@+id/qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="20 Kg"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/qty_label"
+        app:layout_constraintLeft_toRightOf="@id/qty_label"
+        app:layout_constraintTop_toTopOf="@id/qty_label" />
+
+    <TextView
+        android:id="@+id/buy_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="Max Quantity Available - "
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/qty_label" />
+
+    <Spinner
+        android:id="@+id/buy_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        app:layout_constraintBottom_toBottomOf="@id/buy_label"
+        app:layout_constraintLeft_toRightOf="@id/buy_label"
+        app:layout_constraintTop_toTopOf="@id/buy_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

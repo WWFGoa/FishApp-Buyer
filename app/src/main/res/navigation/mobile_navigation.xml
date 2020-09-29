@@ -7,20 +7,93 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.deepwares.fishmarketplaceconsumer.ui.home.HomeFragment"
+        android:name="com.deepwares.fishmarketplaceconsumer.ui.catalog.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.deepwares.fishmarketplaceconsumer.ui.dashboard.ListingsFragment"
+        android:name="com.deepwares.fishmarketplaceconsumer.ui.listing.ListingsFragment"
         android:label="@string/title_listings"
-        tools:layout="@layout/fragment_listings" />
+        tools:layout="@layout/fragment_listings">
+
+        <action
+            android:id="@+id/offer_to_fish_info"
+            app:destination="@id/navigation_fish_info">
+
+            <argument
+                android:name="image"
+                app:argType="integer" />
+            <argument
+                android:name="name"
+                app:argType="string" />
+        </action>
+
+        <action
+            android:id="@+id/listing_to_inventory"
+            app:destination="@id/navigation_fish_inventory">
+
+            <argument
+                android:name="image"
+                app:argType="integer" />
+            <argument
+                android:name="name"
+                app:argType="string" />
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.deepwares.fishmarketplaceconsumer.ui.notifications.OrdersFragment"
+        android:name="com.deepwares.fishmarketplaceconsumer.ui.orders.OrdersFragment"
         android:label="@string/title_orders"
         tools:layout="@layout/fragment_orders" />
-    
+
+
+    <fragment
+        android:id="@+id/navigation_fish_info"
+        android:name="com.deepwares.fishmarketplaceconsumer.ui.info.FishFragment"
+        android:label="Fish Details"
+        tools:layout="@layout/fish_fragment">
+        <argument
+            android:name="image"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/info_to_recipe"
+            app:destination="@id/navigation_recipe">
+            <argument
+                android:name="url"
+                app:argType="string" />
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_fish_inventory"
+        android:name="com.deepwares.fishmarketplaceconsumer.ui.inventory.InventoryFragment"
+        android:label="Fish Details"
+        tools:layout="@layout/fish_fragment">
+        <argument
+            android:name="image"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_recipe"
+        android:name="com.deepwares.fishmarketplaceconsumer.ui.recipe.RecipeFragment"
+        android:label="Reciper"
+        tools:layout="@layout/fragment_recipe">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+
 </navigation>

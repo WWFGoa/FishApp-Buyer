@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.info.FishFragment">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:textSize="@dimen/xxlarge_text_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:textSize="@dimen/xlarge_text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <TextView
+        android:id="@+id/sellers_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="View Active Sellers"
+        android:textColor="@color/species_background_red"
+        android:textSize="@dimen/xlarge_text_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/desc" />
+
+    <TextView
+        android:id="@+id/conservation_status_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="Conservation Status - "
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sellers_label" />
+
+
+    <TextView
+        android:id="@+id/conservation_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="Abundant"
+        android:textColor="@color/species_background_green"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/conservation_status_label"
+        app:layout_constraintLeft_toRightOf="@id/conservation_status_label"
+        app:layout_constraintTop_toTopOf="@id/conservation_status_label" />
+
+    <TextView
+        android:id="@+id/recipes_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/conservation_status_label" />
+
+
+    <TextView
+        android:id="@+id/recipes_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="1. Baked Fish Risotto"
+        android:textSize="@dimen/medium_large_text_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipes_label" />
+
+    <TextView
+        android:id="@+id/recipes_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:text="2. Goan Fish Curry"
+        android:textSize="@dimen/medium_large_text_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipes_1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
