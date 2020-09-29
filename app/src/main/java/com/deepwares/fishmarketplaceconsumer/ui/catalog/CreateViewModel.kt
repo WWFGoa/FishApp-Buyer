@@ -12,10 +12,10 @@ class CreateViewModel : ViewModel() {
 
     val species = arrayListOf(
 
-        Species("Anchovy", R.drawable.anchovy),
+        Species("Anchovy", R.drawable.anchovy,"These are a small silvery fish that grow to a length of 12-15cm. They found in the Indo- Pacific region.They are a schooling species, occurring in coastal waters and are also known to enter estuaries. They feed mostly on zooplankton.  Nutritionally anchovies are an excellent source of calcium, iron and zinc."),
         Species("Barramundi", R.drawable.barramundi),
         Species("Base", R.drawable.basa),
-        Species("Bombay Duck", R.drawable.bombay_duck),
+        Species("Bombay Duck", R.drawable.bombay_duck,"Bombay duck despite its name, is not a duck but a lizardfish. Adult fish grow to a length of 25-40cm.  They inhabit the waters of the western Indo- Pacific region. They are mostly found in deep offshore waters but gather near rivers during the monsoons. These fish are marketed fresh, dried or salted. Bombay ducks are a good source of vitamin B6 and B3 (Niacin)."),
         Species("Ghole", R.drawable.ghole),
         Species("Grouper", R.drawable.grouper),
         Species("Kane", R.drawable.kane),

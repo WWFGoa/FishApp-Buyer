@@ -41,14 +41,21 @@ class FishFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(FishViewModel::class.java)
         image.setImageResource(species.image)
         name.setText(species.name)
-        desc.text =
-            "Grouper is a lean, moist fish with a distinctive yet mild flavor, large flakes and a firm texture. The Red Grouper has a slightly sweeter, milder flavor than the Black Grouper and is considered to be the better of the two. Grouper's flavor profile is like a cross between Bass and Halibut.\n"
+        if (species.desc != null) {
+            desc.text = species.desc
+        } else {
+            desc.text =
+                "Grouper is a lean, moist fish with a distinctive yet mild flavor, large flakes and a firm texture. The Red Grouper has a slightly sweeter, milder flavor than the Black Grouper and is considered to be the better of the two. Grouper's flavor profile is like a cross between Bass and Halibut.\n"
+
+        }
         recipes_1.setOnClickListener {
-            val args = RecipeFragmentArgs("https://www.carolinescooking.com/persian-style-marinated-fish/").toBundle()
+            val args =
+                RecipeFragmentArgs("https://www.carolinescooking.com/persian-style-marinated-fish/").toBundle()
             findNavController().navigate(R.id.info_to_recipe, args)
         }
         recipes_2.setOnClickListener {
-            val args = RecipeFragmentArgs("https://www.carolinescooking.com/goan-fish-curry/").toBundle()
+            val args =
+                RecipeFragmentArgs("https://www.carolinescooking.com/goan-fish-curry/").toBundle()
             findNavController().navigate(R.id.info_to_recipe, args)
         }
 
