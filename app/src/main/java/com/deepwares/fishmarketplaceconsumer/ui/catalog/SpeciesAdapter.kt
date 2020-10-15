@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.deepwares.fishmarketplace.interfaces.SpeciesSelector
 import com.deepwares.fishmarketplace.model.Species
+import com.deepwares.fishmarketplaceconsumer.App
 import com.deepwares.fishmarketplaceconsumer.R
 
 class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapter<SpeciesVH>() {
@@ -28,11 +29,11 @@ class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapt
         val item = species[position]
         holder.image.setImageResource(item.image)
         holder.name.setText(item.name)
-
-        if (position < itemCount / 3) {
+        val stat = App.INSTANCE.resources.getInteger(item.status)
+        if (stat == 0) {
             holder.card.background =
                 holder.image.resources.getDrawable(R.drawable.species_background_green_border)
-        } else if (position < (itemCount * 2 / 3)) {
+        } else if (stat == 1) {
             holder.card.background =
                 holder.image.resources.getDrawable(R.drawable.species_background_yellow_border)
             // holder.card.setCardBackgroundColor(holder.image.resources.getColor(R.color.species_background_yellow))

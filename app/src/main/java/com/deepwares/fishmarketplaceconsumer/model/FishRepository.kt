@@ -269,7 +269,7 @@ object FishRepository {
          ),*/
         Species(
             R.string.tiger_prawn,
-            R.drawable.shrimp,
+            R.drawable.tiger_prawn,
             R.integer.anchovy_status,
             R.integer.anchovy_min_price,
             R.integer.anchovy_max_price,
@@ -279,7 +279,7 @@ object FishRepository {
         ),
         Species(
             R.string.prawns,
-            R.drawable.shrimp,
+            R.drawable.prawns,
             R.integer.anchovy_status,
             R.integer.anchovy_min_price,
             R.integer.anchovy_max_price,

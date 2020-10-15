@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.info.FishFragment">
 
-
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/padding_double"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
@@ -24,38 +14,45 @@
         android:textSize="@dimen/xxlarge_text_size"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
 
     <TextView
         android:id="@+id/desc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding_double"
+        android:ellipsize="end"
+        android:maxLines="5"
         android:textSize="@dimen/xlarge_text_size"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image"
+        tools:text="WTF" />
 
-    <TextView
-        android:id="@+id/sellers_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/padding_double"
-        android:text="View Active Sellers"
-        android:textColor="@color/species_background_red"
-        android:textSize="@dimen/xlarge_text_size"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/desc" />
 
     <TextView
         android:id="@+id/conservation_status_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding_double"
-        android:text="Conservation Status - "
+        android:text="@string/conservation_status"
+        android:textColor="@color/black"
         android:textSize="@dimen/large_text_size"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sellers_label" />
+        app:layout_constraintTop_toBottomOf="@id/desc"
+        tools:text="WTF" />
 
 
     <TextView
@@ -63,44 +60,83 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding_double"
-        android:text="Abundant"
-        android:textColor="@color/species_background_green"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        android:textColor="@color/black_90_pct"
         android:textSize="@dimen/large_text_size"
         app:layout_constraintBottom_toBottomOf="@id/conservation_status_label"
-        app:layout_constraintLeft_toRightOf="@id/conservation_status_label"
-        app:layout_constraintTop_toTopOf="@id/conservation_status_label" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/conservation_status_label"
+        tools:text="WTF" />
 
     <TextView
-        android:id="@+id/recipes_label"
+        android:id="@+id/common_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding_double"
+        android:text="@string/common_label"
+        android:textColor="@color/black"
         android:textSize="@dimen/large_text_size"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/conservation_status_label" />
 
 
     <TextView
-        android:id="@+id/recipes_1"
+        android:id="@+id/common"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding_double"
-        android:text="1. Baked Fish Risotto"
-        android:textSize="@dimen/medium_large_text_size"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recipes_label" />
+        android:gravity="right"
+        android:textAlignment="gravity"
+        android:textColor="@color/black_90_pct"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/common_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/common_label" />
 
     <TextView
-        android:id="@+id/recipes_2"
+        android:id="@+id/scientific_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding_double"
-        android:text="2. Goan Fish Curry"
-        android:textSize="@dimen/medium_large_text_size"
+        android:text="@string/scientific_label"
+        android:textColor="@color/black"
+        android:textSize="@dimen/large_text_size"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recipes_1" />
+        app:layout_constraintTop_toBottomOf="@id/common_label" />
+
+
+    <TextView
+        android:id="@+id/scientific"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_double"
+        android:gravity="right"
+        android:textAlignment="gravity"
+        android:textColor="@color/black_90_pct"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/scientific_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/scientific_label" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding_triple"
+        android:paddingTop="@dimen/padding_double"
+        android:paddingRight="@dimen/padding_triple"
+        android:paddingBottom="@dimen/padding_double"
+        android:text="@string/availability"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_goneMarginBottom="@dimen/padding_triple" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

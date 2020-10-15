@@ -3,34 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/padding_double"
     android:layout_marginTop="@dimen/padding_double"
     android:layout_marginRight="@dimen/padding_double"
     app:cardElevation="@dimen/padding_standard">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_double"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/large_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="@id/image"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="sss" />
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
             android:layout_margin="@dimen/padding_double"
+
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="W,1:1"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/name" />
 
         <TextView
-            android:id="@+id/label_name"
+            android:id="@+id/label_seller"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_double"
-            android:text="Name : "
+            android:text="Seller : "
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
             android:textStyle="bold"
@@ -38,39 +53,43 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/seller"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_double"
+            android:gravity="right"
+            android:text="Deepak The Sailor man"
+            android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
-            app:layout_constraintBottom_toBottomOf="@id/label_name"
-            app:layout_constraintLeft_toRightOf="@id/label_name"
-            app:layout_constraintTop_toTopOf="@id/label_name"
+            app:layout_constraintBottom_toBottomOf="@id/label_seller"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/label_seller"
             tools:text="sss" />
-
 
         <TextView
             android:id="@+id/label_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_double"
-            android:text="Quantity : "
+            android:text="Quantity in Kg: "
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/image"
-            app:layout_constraintTop_toBottomOf="@id/label_name" />
+            app:layout_constraintTop_toBottomOf="@id/label_seller" />
 
         <TextView
             android:id="@+id/quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_double"
+            android:gravity="right"
+            android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
             app:layout_constraintBottom_toBottomOf="@id/label_quantity"
-            app:layout_constraintLeft_toRightOf="@id/label_quantity"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/label_quantity"
             tools:text="sss" />
 
@@ -79,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_double"
-            android:text="Cost : "
+            android:text="Cost per Kg: "
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
             android:textStyle="bold"
@@ -91,11 +110,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_double"
+            android:gravity="right"
+            android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
             app:layout_constraintBottom_toBottomOf="@id/label_cost"
-            app:layout_constraintLeft_toRightOf="@id/label_cost"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/label_cost"
             tools:text="sss" />
+
+        <Button
+            android:id="@+id/order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_double"
+            android:text="@string/buy"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_cost" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

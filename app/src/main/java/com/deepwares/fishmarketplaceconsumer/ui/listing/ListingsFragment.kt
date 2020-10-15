@@ -24,12 +24,8 @@ class ListingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         listingsViewModel =
-            ViewModelProvider(this).get(ListingsViewModel::class.java)
+            ViewModelProvider(requireActivity()).get(ListingsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_listings, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        listingsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
 
         root.postDelayed({ list?.visibility = View.VISIBLE }, 3000)
         listingsViewModel.items.observe(viewLifecycleOwner, Observer {

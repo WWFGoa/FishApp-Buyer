@@ -8,7 +8,7 @@ import com.amplifyframework.datastore.generated.model.Inventory
 import com.deepwares.fishmarketplace.model.Species
 import com.deepwares.fishmarketplaceconsumer.R
 import com.deepwares.fishmarketplaceconsumer.model.FishRepository
-import com.deepwares.fishmarketplaceconsumer.ui.info.FishFragmentArgs
+import com.deepwares.fishmarketplaceconsumer.ui.purchase.PurchaseFragmentArgs
 
 class OrderAdapter : RecyclerView.Adapter<OrderVH>() {
     val species = ArrayList<Species>().apply { addAll(FishRepository.species) }
@@ -16,12 +16,18 @@ class OrderAdapter : RecyclerView.Adapter<OrderVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderVH {
         val vh =
             OrderVH(LayoutInflater.from(parent.context).inflate(R.layout.order_item, parent, false))
+        vh.order.setOnClickListener {
+            val item = items[vh.adapterPosition]
 
+            val bundle = PurchaseFragmentArgs(vh.adapterPosition).toBundle()
+            vh.itemView.findNavController().navigate(R.id.navigation_purchase, bundle)
+
+        }
         vh.itemView.setOnClickListener {
             val item = items[vh.adapterPosition]
 
-            //val bundle = FishFragmentArgs(vh.adapterPosition, item.species.).toBundle()
-            //vh.itemView.findNavController().navigate()
+            val bundle = PurchaseFragmentArgs(vh.adapterPosition).toBundle()
+            vh.itemView.findNavController().navigate(R.id.navigation_purchase, bundle)
         }
         return vh
 
@@ -36,7 +42,7 @@ class OrderAdapter : RecyclerView.Adapter<OrderVH>() {
         val species = species[item.species]
         holder.image.setImageResource(species.image)
         holder.cost.setText(item.price.toString())
-        holder.quantity.setText(item.quantity.toString())
+        holder.quantity.setText(item.availableQuantity.toString())
         holder.name.setText(species.name)
 
     }

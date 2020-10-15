@@ -1,5 +1,6 @@
 package com.deepwares.fishmarketplaceconsumer.ui.info
 
+import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -37,18 +38,35 @@ class FishFragment : Fragment() {
         return inflater.inflate(R.layout.fish_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(FishViewModel::class.java)
         image.setImageResource(species.image)
         name.setText(species.name)
-        if (species.desc != null) {
-            desc.setText(species.desc)
-        } else {
-            desc.text =
-                "Grouper is a lean, moist fish with a distinctive yet mild flavor, large flakes and a firm texture. The Red Grouper has a slightly sweeter, milder flavor than the Black Grouper and is considered to be the better of the two. Grouper's flavor profile is like a cross between Bass and Halibut.\n"
-
+        desc.setText(species.desc)
+        common.setText(species.commonName)
+        scientific.setText(species.scientificName)
+        val status = resources.getInteger(species.status)
+        when (status) {
+            0 -> {
+                conservation_status.setText(R.string.status_least_concern)
+                conservation_status.setTextColor(Color.GREEN)
+            }
+            1 -> {
+                conservation_status.setText(R.string.status_vulnerable)
+                conservation_status.setTextColor(Color.YELLOW)
+            }
+            2 -> {
+                conservation_status.setText(R.string.status_critical)
+                conservation_status.setTextColor(Color.RED)
+            }
         }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        /*
         recipes_1.setOnClickListener {
             val args =
                 RecipeFragmentArgs("https://www.carolinescooking.com/persian-style-marinated-fish/").toBundle()
@@ -59,6 +77,8 @@ class FishFragment : Fragment() {
                 RecipeFragmentArgs("https://www.carolinescooking.com/goan-fish-curry/").toBundle()
             findNavController().navigate(R.id.info_to_recipe, args)
         }
+
+         */
 
     }
 

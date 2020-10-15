@@ -17,11 +17,10 @@ import com.deepwares.fishmarketplace.ui.creator.SpeciesAdapter
 import com.deepwares.fishmarketplaceconsumer.R
 import com.deepwares.fishmarketplaceconsumer.ui.info.FishFragmentArgs
 import com.deepwares.fishmarketplaceconsumer.ui.tutorial.TutorialFragment
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_search.*
 
-class HomeFragment : Fragment(), SpeciesSelector {
+class SearchFragment : Fragment(), SpeciesSelector {
 
-    private lateinit var homeViewModel: HomeViewModel
 
     private lateinit var createViewModel: CreateViewModel
     private var speciesSelector: SpeciesSelector? = null
@@ -40,7 +39,7 @@ class HomeFragment : Fragment(), SpeciesSelector {
     ): View? {
         createViewModel =
             ViewModelProvider(requireActivity()).get(CreateViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        val root = inflater.inflate(R.layout.fragment_search, container, false)
         return root
     }
 

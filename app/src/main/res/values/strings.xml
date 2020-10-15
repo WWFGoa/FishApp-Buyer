@@ -39,6 +39,32 @@
     <string name="tutorial_desc_10">FishHub ensures that the fishing practices we encourage offers food security, sustained livelihood opportunities for coastal communities, generates less waste and requires less energy. </string>
     <string name="tutorial_title">Sustainability FAQ</string>
 
+
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_confirm_password">Password</string>
+    <string name="prompt_name">Name</string>
+    <string name="prompt_phone">Phone number</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="user_not_exists">User doesn\'t exist. Please create a new account</string>
+    <string name="wrong_password">The password doesn\'t match the username</string>
+    <string name="invalid_password">Password must be at least 8 characters</string>
+    <string name="confirm_mismatch_password">Password doesn\'t match confirm password</string>
+    <string name="invalid_phone">Not a valid phone number</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="register_failed">"Sign-up failed"</string>
+
+
+    <string name="action_register">Create Account</string>
+    <string name="register_form_error">Please enter valid values for siging up</string>
+    <string name="login_form_error">Please enter valid values for Login</string>
+    <string name="turn_location_setting_on">Please turn on the location setting on the phone</string>
+
+
     <string name="anchovy">Anchovy</string>
     <string name="bombay_duck">Bombay Duck</string>
     <string name="giant_sea_perch">Giant Sea Perch</string>
@@ -147,9 +173,14 @@
     <string name="mahi_mahi_scientific_name">Coryphena hippures</string>
     <string name="coconut_para_scientific_name">Scombroides commersonias</string>
 
-    <string name="anchovy_description">Indian anchovy</string>
-    <string name="bombay_duck_description">Bombay Duck</string>
-    <string name="giant_sea_perch_description">Bhekti/ Seabass</string>
+    <string name="anchovy_description">The Indian anchovy (Stolephorus indicus), also known as Hardenberg\'s anchovy, is a species of oceanodromous fish in the family Engraulidae. It is known as Handalla (හැදැල්ලා) in Sri Lanka, where it is widely sold at most markets and supermarkets. It is widely used as a live or dead bait in tuna fishery.
+\nIt is called Kapsali in Konkani in Goa.
+\nIt is called Verli in konkani in Goa
+    </string>
+    <string name="bombay_duck_description">The Bombay duck lives in the tropical areas of the Indo-Pacific. The fish is also known as "strange fish"[citation needed] because of its discontinuous distribution along the Indian coast. It has been traditionally caught in the waters off Maharashtra in the Lakshadweep Sea, where it is an important item of the yearly catch. This fish is also caught in the Bay of Bengal and in the South China Sea, although in smaller numbers.
+The fish is sometimes dried before it is consumed. After drying, the odour of the fish is extremely powerful, and it is usually transported in air-tight containers. The Bombay duck is a popular food item in certain areas of India. Fresh fish are usually fried or cooked in curry.[citation needed]
+</string>
+    <string name="giant_sea_perch_description">The barramundi or Asian sea bass, is a species of catadromous fish in the family Latidae of the order Perciformes. The species is widely distributed in the Indo-West Pacific region from South Asia to Papua New Guinea and Northern Australia</string>
     <string name="river_sole_description">Malabar Sole/Soles</string>
     <string name="sea_sole_description">Sea Sole</string>
     <string name="pomfret_description">Silver pomfret</string>
@@ -182,4 +213,28 @@
     <string name="mussels_description">Green mussel</string>
     <string name="mahi_mahi_description">Mahi Mahi</string>
     <string name="coconut_para_description">Talang queenfish</string>
+    <string name="buy">Place Order</string>
+    <string name="cancel">Cancel</string>
+    <string name="sellers">Sellers</string>
+    <string name="availability">Check Availability</string>
+    <string name="conservation_status">Conservation Status</string>
+
+
+    <string name="status_least_concern">Least Concern</string>
+    <string name="status_vulnerable">Vulnerable</string>
+    <string name="status_critical">Critically Endangered</string>
+    <string name="scientific_label">Scientifica Name</string>
+    <string name="common_label">Common Name</string>
+    <string name="catch_location_label">Catch Location</string>
+    <string name="seller_rating_label">Rating</string>
+    <string name="sellers_label">Seller</string>
+    <string name="sell_location_label">Sell Location</string>
+    <string name="price_label">Price per Kg</string>
+    <string name="availability_label">Available</string>
+    <string name="qty_label">Buy</string>
+    <string name="order_fail">An unknown error occured while trying to place the order</string>
+    <string name="order_success">Order Placed Successfully. Please pick up the item ASAP</string>
+    <string name="order_empty">Sorry unfortunately the seller ran out of the fish at this time</string>
+    <string name="order_excess">Please enter an amount that is lesser than the available quantity</string>
+    <string name="order_min">Please enter at least 1Kg</string>
 </resources>
