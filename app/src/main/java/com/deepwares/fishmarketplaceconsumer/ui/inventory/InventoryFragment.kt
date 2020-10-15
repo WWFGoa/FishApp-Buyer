@@ -26,7 +26,6 @@ class InventoryFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(InventoryViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

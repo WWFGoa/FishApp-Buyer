@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.deepwares.fishmarketplace.model.Species
 import com.deepwares.fishmarketplaceconsumer.R
+import com.deepwares.fishmarketplaceconsumer.model.FishRepository
 import com.deepwares.fishmarketplaceconsumer.ui.catalog.CreateViewModel
 import com.deepwares.fishmarketplaceconsumer.ui.recipe.RecipeFragmentArgs
 import kotlinx.android.synthetic.main.fish_fragment.*
@@ -32,7 +33,7 @@ class FishFragment : Fragment() {
     ): View? {
         createViewModel =
             ViewModelProvider(requireActivity()).get(CreateViewModel::class.java)
-        species = createViewModel.species[args.image]
+        species = FishRepository.species[args.image]
         return inflater.inflate(R.layout.fish_fragment, container, false)
     }
 
@@ -42,7 +43,7 @@ class FishFragment : Fragment() {
         image.setImageResource(species.image)
         name.setText(species.name)
         if (species.desc != null) {
-            desc.text = species.desc
+            desc.setText(species.desc)
         } else {
             desc.text =
                 "Grouper is a lean, moist fish with a distinctive yet mild flavor, large flakes and a firm texture. The Red Grouper has a slightly sweeter, milder flavor than the Black Grouper and is considered to be the better of the two. Grouper's flavor profile is like a cross between Bass and Halibut.\n"

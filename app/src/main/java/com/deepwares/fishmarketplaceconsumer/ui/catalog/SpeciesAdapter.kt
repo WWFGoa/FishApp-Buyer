@@ -27,7 +27,7 @@ class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapt
     override fun onBindViewHolder(holder: SpeciesVH, position: Int) {
         val item = species[position]
         holder.image.setImageResource(item.image)
-        holder.name.text = item.name
+        holder.name.setText(item.name)
 
         if (position < itemCount / 3) {
             holder.card.background =
