@@ -37,9 +37,11 @@
     <color name="black_75_pct">#BF000000</color>
     <color name="black_80_pct">#D8000000</color>
 
-    <color name="species_background_green">#A2D396</color>
-    <color name="species_background_yellow">#F0BF69</color>
-    <color name="species_background_red">#E48E8C</color>
+    <color name="species_background_green">#50FF33</color>
+    <color name="species_background_yellow">#FF8C00</color>
+    <color name="species_background_red">#C70039</color>
+    <color name="species_background_grey">#585858</color>
+    <color name="species_background_blue">#1E90FF</color>
 
 
 </resources>

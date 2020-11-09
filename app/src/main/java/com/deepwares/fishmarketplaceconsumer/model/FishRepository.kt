@@ -63,62 +63,92 @@ object FishRepository {
             R.integer.pomfret_min_price,
             R.integer.pomfret_max_price,
             R.string.pomfret_scientific_name,
-            R.string.black_pomfret_common_name,
+            R.string.pomfret_common_name,
             R.string.pomfret_description
         ),
         Species(
             R.string.salmon,
             R.drawable.salmon,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.salmon_status,
+            R.integer.salmon_min_price,
+            R.integer.salmon_max_price,
+            R.string.salmon_scientific_name,
+            R.string.salmon_common_name,
+            R.string.salmon_description
         ),
         Species(
             R.string.kingfish,
             R.drawable.kingfish,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.kingfish_status,
+            R.integer.kingfish_min_price,
+            R.integer.kingfish_max_price,
+            R.string.kingfish_scientific_name,
+            R.string.kingfish_common_name,
+            R.string.kingfish_description
         ),
         Species(
             R.string.red_snapper,
             R.drawable.red_snapper,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.red_snapper_status,
+            R.integer.red_snapper_min_price,
+            R.integer.red_snapper_max_price,
+            R.string.red_snapper_scientific_name,
+            R.string.red_snapper_common_name,
+            R.string.red_snapper_description
         ),
         Species(
             R.string.grouper,
             R.drawable.grouper,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.grouper_status,
+            R.integer.grouper_min_price,
+            R.integer.grouper_max_price,
+            R.string.grouper_scientific_name,
+            R.string.grouper_common_name,
+            R.string.grouper_description
         ),
         Species(
             R.string.tuna,
             R.drawable.tuna,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.tuna_status,
+            R.integer.tuna_min_price,
+            R.integer.tuna_max_price,
+            R.string.tuna_scientific_name,
+            R.string.tuna_common_name,
+            R.string.tuna_description
         ),
         Species(
             R.string.peral_spot,
             R.drawable.pearl_spot,
+            R.integer.peral_spot_status,
+            R.integer.peral_spot_min_price,
+            R.integer.peral_spot_max_price,
+            R.string.peral_spot_scientific_name,
+            R.string.peral_spot_common_name,
+            R.string.peral_spot_description
+        ),
+        Species(
+            R.string.ladyfish,
+            R.drawable.ladyfish,
+            R.integer.ladyfish_status,
+            R.integer.ladyfish_min_price,
+            R.integer.ladyfish_max_price,
+            R.string.ladyfish_scientific_name,
+            R.string.ladyfish_common_name,
+            R.string.ladyfish_description
+        ),
+        Species(
+            R.string.hilsa,
+            R.drawable.hilsa,
+            R.integer.hilsa_status,
+            R.integer.hilsa_min_price,
+            R.integer.hilsa_max_price,
+            R.string.hilsa_scientific_name,
+            R.string.hilsa_common_name,
+            R.string.hilsa_description
+        ),
+        Species(
+            R.string.mackerel,
+            R.drawable.mackerel,
             R.integer.anchovy_status,
             R.integer.anchovy_min_price,
             R.integer.anchovy_max_price,
@@ -126,237 +156,207 @@ object FishRepository {
             R.string.anchovy_common_name,
             R.string.anchovy_description
         ),
-        /* Species(
-             R.string.ladyfish,
-             R.drawable.ladyfish,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),
-         Species(
-             R.string.hilsa,
-             R.drawable.hilsa,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),
-         Species(
-             R.string.mackerel,
-             R.drawable.mackerel,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),*/
         Species(
             R.string.black_pomfret,
-            R.drawable.pomfret,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.drawable.black_pomfret,
+            R.integer.black_pomfret_status,
+            R.integer.black_pomfret_min_price,
+            R.integer.black_pomfret_max_price,
+            R.string.black_pomfret_scientific_name,
+            R.string.black_pomfret_common_name,
+            R.string.black_pomfret_description
         ),
         Species(
             R.string.mullet,
             R.drawable.mullet,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.mullet_status,
+            R.integer.mullet_min_price,
+            R.integer.mullet_max_price,
+            R.string.mullet_scientific_name,
+            R.string.mullet_common_name,
+            R.string.mullet_description
         ),
-        /*Species(
+        Species(
             R.string.sardine,
             R.drawable.sardine,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.sardine_status,
+            R.integer.sardine_min_price,
+            R.integer.sardine_max_price,
+            R.string.sardine_scientific_name,
+            R.string.sardine_common_name,
+            R.string.sardine_description
         ),
         Species(
             R.string.croaker,
             R.drawable.croaker,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.croaker_status,
+            R.integer.croaker_min_price,
+            R.integer.croaker_max_price,
+            R.string.croaker_scientific_name,
+            R.string.croaker_common_name,
+            R.string.croaker_description
         ),
         Species(
             R.string.shark,
             R.drawable.shark,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.shark_status,
+            R.integer.shark_min_price,
+            R.integer.shark_max_price,
+            R.string.shark_scientific_name,
+            R.string.shark_common_name,
+            R.string.shark_description
         ),
         Species(
             R.string.ray,
             R.drawable.ray,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
-        ),*/
+            R.integer.ray_status,
+            R.integer.ray_min_price,
+            R.integer.ray_max_price,
+            R.string.ray_scientific_name,
+            R.string.ray_common_name,
+            R.string.ray_description
+        ),
         Species(
             R.string.ghole,
             R.drawable.ghole,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.ghole_status,
+            R.integer.ghole_min_price,
+            R.integer.ghole_max_price,
+            R.string.ghole_scientific_name,
+            R.string.ghole_common_name,
+            R.string.ghole_description
         ),
-        /* Species(
-             R.string.murrel,
-             R.drawable.murrel,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),*/
+        Species(
+            R.string.murrel,
+            R.drawable.snake_head_murrel,
+            R.integer.murrel_status,
+            R.integer.murrel_min_price,
+            R.integer.murrel_max_price,
+            R.string.murrel_scientific_name,
+            R.string.murrel_common_name,
+            R.string.murrel_description
+        ),
         Species(
             R.string.seerfish,
             R.drawable.seer,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.seerfish_status,
+            R.integer.seerfish_min_price,
+            R.integer.seerfish_max_price,
+            R.string.seerfish_scientific_name,
+            R.string.seerfish_common_name,
+            R.string.seerfish_description
         ),
         Species(
             R.string.sea_veral,
             R.drawable.sea_veral,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.sea_veral_status,
+            R.integer.sea_veral_min_price,
+            R.integer.sea_veral_max_price,
+            R.string.sea_veral_scientific_name,
+            R.string.sea_veral_common_name,
+            R.string.sea_veral_description
         ),
 
-        /* Species(
-             R.string.squid,
-             R.drawable.squid,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),*/
+        Species(
+            R.string.squid,
+            R.drawable.squid,
+            R.integer.squid_status,
+            R.integer.squid_min_price,
+            R.integer.squid_max_price,
+            R.string.squid_scientific_name,
+            R.string.squid_common_name,
+            R.string.squid_description
+        ),
         Species(
             R.string.tiger_prawn,
             R.drawable.tiger_prawn,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.tiger_prawn_status,
+            R.integer.tiger_prawn_min_price,
+            R.integer.tiger_prawn_max_price,
+            R.string.tiger_prawn_scientific_name,
+            R.string.tiger_prawn_common_name,
+            R.string.tiger_prawn_description
         ),
         Species(
             R.string.prawns,
             R.drawable.prawns,
             R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.prawns_min_price,
+            R.integer.prawns_max_price,
+            R.string.prawns_scientific_name,
+            R.string.prawns_common_name,
+            R.string.prawns_description
         ),
         Species(
             R.string.shrimp,
             R.drawable.shrimp,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.shrimp_status,
+            R.integer.shrimp_min_price,
+            R.integer.shrimp_max_price,
+            R.string.shrimp_scientific_name,
+            R.string.shrimp_common_name,
+            R.string.shrimp_description
         ),
-        /* Species(
-             R.string.lobster,
-             R.drawable.lobster,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),
-         Species(
-             R.string.crab,
-             R.drawable.crab,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),
-         Species(
-             R.string.short_necked_clams,
-             R.drawable.short_necked_clams,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),*/
-        /* Species(
-             R.string.mussels,
-             R.drawable.mussels,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),*/
+        Species(
+            R.string.lobster,
+            R.drawable.lobster,
+            R.integer.lobster_status,
+            R.integer.lobster_min_price,
+            R.integer.lobster_max_price,
+            R.string.lobster_scientific_name,
+            R.string.lobster_common_name,
+            R.string.lobster_description
+        ),
+        Species(
+            R.string.crab,
+            R.drawable.crab,
+            R.integer.crab_status,
+            R.integer.crab_min_price,
+            R.integer.crab_max_price,
+            R.string.crab_scientific_name,
+            R.string.crab_common_name,
+            R.string.crab_description
+        ),
+        Species(
+            R.string.short_necked_clams,
+            R.drawable.short_necked_clam,
+            R.integer.short_necked_clams_status,
+            R.integer.short_necked_clams_min_price,
+            R.integer.short_necked_clams_max_price,
+            R.string.short_necked_clams_scientific_name,
+            R.string.short_necked_clams_common_name,
+            R.string.short_necked_clams_description
+        ),
+        Species(
+            R.string.mussels,
+            R.drawable.mussels,
+            R.integer.mussels_status,
+            R.integer.mussels_min_price,
+            R.integer.mussels_max_price,
+            R.string.mussels_scientific_name,
+            R.string.mussels_common_name,
+            R.string.mussels_description
+        ),
         Species(
             R.string.mahi_mahi,
             R.drawable.mahi_mahi,
-            R.integer.anchovy_status,
-            R.integer.anchovy_min_price,
-            R.integer.anchovy_max_price,
-            R.string.anchovy_scientific_name,
-            R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.integer.mahi_mahi_status,
+            R.integer.mahi_mahi_min_price,
+            R.integer.mahi_mahi_max_price,
+            R.string.mahi_mahi_scientific_name,
+            R.string.mahi_mahi_common_name,
+            R.string.mahi_mahi_description
         )
-        /* ,
-         Species(
-             R.string.coconut_para,
-             R.drawable.coconut_para,
-             R.integer.anchovy_status,
-             R.integer.anchovy_min_price,
-             R.integer.anchovy_max_price,
-             R.string.anchovy_scientific_name,
-             R.string.anchovy_common_name,
-             R.string.anchovy_description
-         ),*/
+        ,
+        Species(
+            R.string.coconut_para,
+            R.drawable.coconut_para,
+            R.integer.coconut_para_status,
+            R.integer.coconut_para_min_price,
+            R.integer.coconut_para_max_price,
+            R.string.coconut_para_scientific_name,
+            R.string.coconut_para_common_name,
+            R.string.coconut_para_description
+        )
     )
 }

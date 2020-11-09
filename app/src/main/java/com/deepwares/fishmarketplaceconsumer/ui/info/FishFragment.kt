@@ -48,17 +48,25 @@ class FishFragment : Fragment() {
         scientific.setText(species.scientificName)
         val status = resources.getInteger(species.status)
         when (status) {
-            0 -> {
+            1 -> {
                 conservation_status.setText(R.string.status_least_concern)
                 conservation_status.setTextColor(Color.GREEN)
             }
-            1 -> {
+            2 -> {
                 conservation_status.setText(R.string.status_vulnerable)
                 conservation_status.setTextColor(Color.YELLOW)
             }
-            2 -> {
+            3 -> {
                 conservation_status.setText(R.string.status_critical)
                 conservation_status.setTextColor(Color.RED)
+            }
+            4 -> {
+                conservation_status.setText(R.string.status_banned)
+                conservation_status.setTextColor(Color.GRAY)
+            }
+            else -> {
+                conservation_status.setText(R.string.status_no_threat)
+                conservation_status.setTextColor(Color.BLUE)
             }
         }
     }

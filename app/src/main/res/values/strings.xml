@@ -60,7 +60,7 @@
 
 
     <string name="action_register">Create Account</string>
-    <string name="register_form_error">Please enter valid values for siging up</string>
+    <string name="register_form_error">Please enter valid values for signing up</string>
     <string name="login_form_error">Please enter valid values for Login</string>
     <string name="turn_location_setting_on">Please turn on the location setting on the phone</string>
 
@@ -173,46 +173,44 @@
     <string name="mahi_mahi_scientific_name">Coryphena hippures</string>
     <string name="coconut_para_scientific_name">Scombroides commersonias</string>
 
-    <string name="anchovy_description">The Indian anchovy (Stolephorus indicus), also known as Hardenberg\'s anchovy, is a species of oceanodromous fish in the family Engraulidae. It is known as Handalla (හැදැල්ලා) in Sri Lanka, where it is widely sold at most markets and supermarkets. It is widely used as a live or dead bait in tuna fishery.
-\nIt is called Kapsali in Konkani in Goa.
-\nIt is called Verli in konkani in Goa
+
+    <string name="anchovy_description">These are a small silvery fish that grow to a length of 12-15cm. They found in the Indo- Pacific region. They are a schooling species, occurring in coastal waters and are also known to enter estuaries. They feed mostly on zooplankton.  Nutritionally anchovies are an excellent source of calcium, iron and zinc.
     </string>
-    <string name="bombay_duck_description">The Bombay duck lives in the tropical areas of the Indo-Pacific. The fish is also known as "strange fish"[citation needed] because of its discontinuous distribution along the Indian coast. It has been traditionally caught in the waters off Maharashtra in the Lakshadweep Sea, where it is an important item of the yearly catch. This fish is also caught in the Bay of Bengal and in the South China Sea, although in smaller numbers.
-The fish is sometimes dried before it is consumed. After drying, the odour of the fish is extremely powerful, and it is usually transported in air-tight containers. The Bombay duck is a popular food item in certain areas of India. Fresh fish are usually fried or cooked in curry.[citation needed]
-</string>
-    <string name="giant_sea_perch_description">The barramundi or Asian sea bass, is a species of catadromous fish in the family Latidae of the order Perciformes. The species is widely distributed in the Indo-West Pacific region from South Asia to Papua New Guinea and Northern Australia</string>
-    <string name="river_sole_description">Malabar Sole/Soles</string>
-    <string name="sea_sole_description">Sea Sole</string>
-    <string name="pomfret_description">Silver pomfret</string>
-    <string name="salmon_description">Indian Salmon</string>
-    <string name="kingfish_description">Black kingfish/Cobia</string>
-    <string name="red_snapper_description">Red Snapper</string>
-    <string name="grouper_description">Grouper</string>
+    <string name="bombay_duck_description">Bombay duck despite its name, is not a duck but a lizardfish. Adult fish grow to a length of 25–40cm.  They inhabit the waters of the western Indo- Pacific region. They are mostly found in deep offshore waters but gather near rivers during the monsoons. These fish are marketed fresh, dried or salted. Bombay ducks are a good source of vitamin B6 and B3 (Niacin).  </string>
+    <string name="giant_sea_perch_description">Giant sea Perch or Barramundi is widely distributed in the western Indo– Pacific region. They grow to a length of 150–200cm.These fish inhabit rivers before returning to more saline ocean waters to spawn. Nutritionally this species is packed with omega-3 fatty acids that help promote brain and cardiovascular health. </string>
+    <string name="river_sole_description">Sole fish is a flatfish, and as the name implies, it has an unusual flat body shape which makes the species suited for life on the ocean floor. In India there are numerous species that are sold under the common name sole fish, includingCynoglossus spp. These fish are an excellent source of protein, calcium and selenium.  </string>
+    <string name="sea_sole_description">Sole fish is a flatfish, and as the name implies, it has an unusual flat body shape which makes the species suited for life on the ocean floor. In India there are numerous species that are sold under the common name sole fish, includingCynoglossus spp. These fish are an excellent source of protein, calcium and selenium.  </string>
+    <string name="pomfret_description">Silver or white pomfret is a species of butterfish that is found widely in the Western Indo–Pacific region. They grow to a length of 30–60cm. The species is characterised by its flat body and forked tail. They are usually found in schools over muddy bottoms, and they feed on zooplankton. Nutritionally this fish is rich in vitamins and minerals such as vitamin D and vitamin B12. </string>
+    <string name="salmon_description">Indian Salmon or Rawas as it is commonly called is found in the western Indo– Pacific region. These fish grow to a length of 50–200cm. They form loose schools, although adults are often observed in pairs. They are a carnivorous species feeding on prawns, fish and occasionally on polychaete worms. The flesh of this species is oily and is rich in omega- 3, Vitamin A and Vitamin D. </string>
+    <string name="kingfish_description">King fish are a large fast swimming pelagic fish. They are mostly a solitary species, that hunts in shallow waters, feeding on small fish species like anchovies, carangids, clupeids, squid and shrimp.  In India the common name of kingfish is given to multiple species of fish including Rachycentroncanadum and Scomberomoruscommerson. King fish is an excellent source of vitamin A and vitamin B12.  </string>
+    <string name="red_snapper_description">Red snapper has a rosy pink colour that fades to a pale underbelly. They are found in the western Indo–Pacific region. They can grow to a length of 80–150cm. Juveniles are found in mangroves, while the adults eventually migrate offshore to deep reefs. Red snapper is a good source of vitamin B12. </string>
+    <string name="grouper_description">In India the species of the genus Epinephelus of the family Serranidae together comprise the groupers found. They are mostly associated with coral reefs or rocky shores. Nutritionally these fish are a good source of vitamin B6, vitamin B12, Phosphorus, Potassium and Selenium.  </string>
     <string name="tuna_description">Yellowfin tuna</string>
-    <string name="peral_spot_description">Pearl Spot</string>
-    <string name="ladyfish_description">Kane fish</string>
-    <string name="hilsa_description">Hilsa shad</string>
-    <string name="mackerel_description">Indian Mackerel</string>
-    <string name="black_pomfret_description">Black Pomfret</string>
-    <string name="mullet_description">Mullet</string>
-    <string name="sardine_description">Oil Sardine</string>
-    <string name="croaker_description">Croaker</string>
-    <string name="shark_description">Sharks</string>
-    <string name="ray_description">Rays</string>
+    <string name="peral_spot_description">Pearl spot or Kalundar has an elliptical body shape with tiny spots all over. They are found in the western Indian Ocean: India and Sri Lanka. A fully–grown pearl spot is 20–40cm in length. They are primarily found in brackish waters, but are known to tolerate fresh or marine waters as well. These fish are considered as a delicacy in many parts of India and are a good source of fatty acids which help regulate blood pressure.  </string>
+    <string name="ladyfish_description">Ladyfish or kane fish is a highly sought–after table fish in India.  They are found in the waters of the western Indo–Pacific region. Adult fish can reach a length of 20–31cm. This fish is usually caught in the monsoons when the seas are too rough to venture out. They are a schooling fish that is commonly found along beaches, sandbars and mangroves. Adult fish are known to burry themselves in the sand when disturbed. Ladyfish feed mainly on polychaete worms, shrimp and amphipods.  </string>
+    <string name="hilsa_description">The Hilsa fish is a very important commercial fish in India and Bangladesh. A mature hilsa can grow to a size of 36–60cm. They are a schooling fish that are found to migrate upriver where they breed during the monsoons. They mainly feed on plankton, by filtering. The flesh is an oily and is rich in omega-3 fatty acids. </string>
+    <string name="mackerel_description">Indian mackerel or Bangda as it is more commonly known is highly sought–after fish in the state of Goa. It is distributed throughout the Indo–West Pacific region. Adult Indian mackerel can reach a maximum length of 25–42.1cm. They form schools that feed on phytoplankton and zooplankton. The flesh of this species is a good source of protein and omega-3 fatty acids.  </string>
+    <string name="black_pomfret_description">Black pomfrets are flat bodied with a deep forked tail. They can grow up to a length of 30–75cm. They are distributed throughout the western Indo-Pacific region. Black Pomfrets are mostly found on the ocean floor during the day and at the surface during the night. These fish have the peculiar behaviour of swimming on their side when at the surface. They form large schools and feed mainly on zooplankton. These fish are a very good source of Omega-3 Fatty acids and Selenium, </string>
+    <string name="mullet_description">The Mullet or Shevto as it is called in Konkani is the state fish of Goa. They are found in most parts of the world’s tropical and sub–tropical waters. Mature fish of this species grow to a length of 50–100cm. Adults are found in coastal waters, often seen entering rivers. They form schools over sandy and muddy substrates where they mainly feed on detritus, micro-algae and benthic organisms. Mullet has high oil content, and is a good source of Phosphorus, vitamin B6 as well as omega-3 fatty acid. </string>
+    <string name="sardine_description">The Indian oil sardine is found in the northern and western parts of the Indian Ocean.  Their length is 20–23cm. They live in dense schools that migrate along the coast. They breed off the western coast of India during the monsoons when the temperatures and the salinity is low. They are often pickled grilled or smoked. Sardines are an excellent source of calcium, Omega-3 fatty acids and vitamin B12. </string>
+    <string name="croaker_description">Croakers get their name from the sound it makes from the contraction of the mussels around the air bladder. In some species croaking is used as an aggressive warning while in others it is used to attract mates. In India there are a few species of fish that are commonly called croaker like Johnius borneensis and Otolithes ruber. These fish are a good source of Niacin, vitamin B6, vitamin B12, Selenium, and Phosphorus.  </string>
+    <string name="shark_description">There are approximately 470 shark species, found world-wide. Sharks prefer to inhabit coastal waters and are opportunistic when finding their food. There are many cultures around the world from Asia to Europe that eat shark meat and fins. Approximately 100 million sharks are killed each year for human consumption; this overfishing of sharks has led to numerous species being endangered. Sharks are apex predators without them in our oceans, the entire food chain would be off balance. </string>
+    <string name="ray_description">Rays are a fish that are distinguished by their flattened bodies, wing-like pectoral fins and long slender whiplike tails that have one or more sharp barbs. There are approximately 534 species of rays that are found in all the oceans of the world. Most species of rays are commonly found in coastal waters, partially buried in the sand. Rays mainly feed on bottom dwelling species like snails, crabs, crustaceans and small fish. As with sharks, rays are becoming increasingly vulnerable because of commercial pressures, habitat destruction, coastal development and marine pollution. </string>
     <string name="ghole_description">Ghol</string>
     <string name="murrel_description">Snake head/Murrel</string>
-    <string name="seerfish_description">King seer</string>
-    <string name="sea_veral_description">Greater lizard fish</string>
-    <string name="squid_description">Indian Squid</string>
-    <string name="tiger_prawn_description">Jumbo tiger</string>
+    <string name="seerfish_description">Seerfish is found inhabiting shallow waters of low salinity and high turbidity. They are distributed throughout the Indo- West Pacific. They can reach a maximum length of 240cm, feeding primarily on small fish like anchovies, carangids and also squid and shrimp. Nutritionally seerfish are high in Vitamin B12, B6 and Vitamin D they are also high in Phosphorus and Selenium.  </string>
+    <string name="sea_veral_description">Sea Veral or Greater lizardfish are found throughout the Indo-West Pacific. They grow to a maximum length of 60cm. Sea Verals are found on muddy bottoms, feeding on fish crustaceans and squids. Nutritionally these fish are a good source of Vitamin D, Vitamin B12 and B6 as well as Potassium, Magnesium and Phosphorus.  </string>
+    <string name="squid_description">The Indian Squid is found in the Indo-west Pacific region. They grow to a maximum length of 29cm. These Cephalopods feed on fish, crustaceans and other squids. Nutritionally squid are a good source of Niacin, Zinc, Vitamin B12, Copper, Phosphorus and Selenium. </string>
+    <string name="tiger_prawn_description">These are a tropical to temperate species found in the Indo-Pacific. A mature tiger prawn can grow up to 33.6cm. These species are a predator that feeds on slow moving bottom dwelling sea animals like small crabs and molluscs. This species is a good source of niacin, Iron Zinc, Vitamin B12, Vitamin E and Selenium. </string>
     <string name="prawns_description">Prawns</string>
     <string name="shrimp_description">Shrimp</string>
-    <string name="lobster_description">Rock lobster</string>
-    <string name="crab_description">Mud/swim crab</string>
-    <string name="short_necked_clams_description">Black/shortneck clam</string>
-    <string name="mussels_description">Green mussel</string>
+    <string name="lobster_description">The mud spiny lobster is found distributed throughout the Indo-Pacific region. Adults can grow to a maximum length of 40cm. They are found on muddy or rock bottoms at that are river-influenced, shallow and turbid. They ae considered carnivores and feed on sluggish and easily captured animals such as snails, crabs and urchins. Spiny lobsters are a good source of Niacin, Copper, vitamin B12, Phosphorus, Zinc and Selenium. </string>
+    <string name="crab_description">Mud Crabs are found in Indo-West Pacific region. They can grow to a max length of 28cm. As their name suggests they prefer muddy bottoms, where they dig deep burrows. They forage at night on cockles, clams and mussels as well as small fish. Mature individuals migrate offshore to spawn. Nutritionally they are a good source of Calcium.  </string>
+    <string name="short_necked_clams_description"> Short- Neck clams are found in the western Indian ocean. They are found in fine sand, clay and silt sediments. They are suspension feeding bivalves that depend on phytoplankton for nutrition. They are an excellent source of iron, zinc, Selenium and Vitamin B12. </string>
+    <string name="mussels_description">The Asian brown mussel is found in Indo- Pacific and the western Central Atlantic. They can grow to maximum length to 16.5cm.  They are found commonly attached to various hard objects or substrates in protected bays and estuaries. Nutritionally they are a good source of Vitamin B12, Iron, Manganese, Vitamin C, Thiamine, riboflavin and Zinc.  </string>
     <string name="mahi_mahi_description">Mahi Mahi</string>
     <string name="coconut_para_description">Talang queenfish</string>
+
     <string name="buy">Place Order</string>
     <string name="cancel">Cancel</string>
     <string name="sellers">Sellers</string>
@@ -237,4 +235,7 @@ The fish is sometimes dried before it is consumed. After drying, the odour of th
     <string name="order_empty">Sorry unfortunately the seller ran out of the fish at this time</string>
     <string name="order_excess">Please enter an amount that is lesser than the available quantity</string>
     <string name="order_min">Please enter at least 1Kg</string>
+    <string name="status_no_threat">No Threat</string>
+    <string name="status_banned">Prohibited</string>
+    <string name="total_label">Total</string>
 </resources>

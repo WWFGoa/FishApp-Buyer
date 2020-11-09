@@ -37,8 +37,6 @@ class PurchaseFragment : Fragment() {
     private lateinit var listingsViewModel: ListingsViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
 
     override fun onCreateView(
@@ -64,6 +62,13 @@ class PurchaseFragment : Fragment() {
             order()
         }
         cancel.setOnClickListener { findNavController()?.popBackStack() }
+        quantity.setOnEditorActionListener { v, actionId, event ->
+
+            val qtyAmount = quantity.text.toString().toInt()
+            val price = item!!.price
+            total.text = (qtyAmount * price).toString()
+            return@setOnEditorActionListener true
+        }
     }
 
     fun order() {
