@@ -19,6 +19,7 @@ import com.deepwares.fishmarketplaceconsumer.MainActivity
 import com.deepwares.fishmarketplaceconsumer.R
 
 import com.deepwares.fishmarketplaceconsumer.model.LoginError
+import com.deepwares.fishmarketplaceconsumer.ui.tutorial.TutorialFragment
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -30,12 +31,13 @@ class LoginActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_login)
 
-        val username = findViewById<EditText>(R.id.username)
+        val phone = findViewById<EditText>(R.id.phone)
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
         val loading = findViewById<ProgressBar>(R.id.loading)
 
-        loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
+            .get(LoginViewModel::class.java)
 
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
@@ -45,9 +47,6 @@ class LoginActivity : AppCompatActivity() {
 
             register.isEnabled = loginState.isDataValid
 
-            if (loginState.usernameError != null) {
-                username.error = getString(loginState.usernameError)
-            }
             if (loginState.passwordError != null) {
                 password.error = getString(loginState.passwordError)
             }
@@ -80,10 +79,6 @@ class LoginActivity : AppCompatActivity() {
             updateLoginForm(it)
         })
 
-        username.afterTextChanged {
-            validate()
-        }
-
         confirmPassword.afterTextChanged {
             validate()
         }
@@ -98,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
                     when (actionId) {
                         EditorInfo.IME_ACTION_DONE ->
                             loginViewModel.login(
-                                username.text.toString(),
+                                phone.text.toString(),
                                 password.text.toString()
                             )
                     }
@@ -121,10 +116,9 @@ class LoginActivity : AppCompatActivity() {
                     when (actionId) {
                         EditorInfo.IME_ACTION_DONE ->
                             loginViewModel.register(
-                                username.text.toString(),
+                                phone.text.toString(),
                                 password.text.toString(),
-                                name.text.toString(),
-                                phone = phone.text.toString()
+                                name.text.toString()
                             )
                     }
                 false
@@ -134,7 +128,7 @@ class LoginActivity : AppCompatActivity() {
         login.setOnClickListener {
             if (loginViewModel.loginFormState.value != null && loginViewModel.loginFormState.value!!.isDataValid) {
                 loading.visibility = View.VISIBLE
-                loginViewModel.login(username.text.toString(), password.text.toString())
+                loginViewModel.login("+91" + phone.text.toString(), password.text.toString())
             } else {
                 Toast.makeText(this, R.string.login_form_error, Toast.LENGTH_LONG).show()
             }
@@ -143,10 +137,9 @@ class LoginActivity : AppCompatActivity() {
             if (loginViewModel.loginFormState.value != null && loginViewModel.loginFormState.value!!.isDataValid) {
                 loading.visibility = View.VISIBLE
                 loginViewModel.register(
-                    username.text.toString(),
+                    phone.text.toString(),
                     password.text.toString(),
-                    name.text.toString(),
-                    phone = phone.text.toString()
+                    name.text.toString()
                 )
             } else {
                 Toast.makeText(this, R.string.register_form_error, Toast.LENGTH_LONG).show()
@@ -157,11 +150,10 @@ class LoginActivity : AppCompatActivity() {
 
     fun validate() {
         loginViewModel.loginDataChanged(
-            username.text.toString(),
+            phone.text.toString(),
             password.text.toString(),
             confirmPassword.text.toString(),
-            name.text.toString(),
-            phone.text.toString()
+            name.text.toString()
         )
     }
 
@@ -186,7 +178,6 @@ class LoginActivity : AppCompatActivity() {
         register.visibility = if (loginForm) View.GONE else View.VISIBLE
         login.visibility = if (loginForm) View.VISIBLE else View.GONE
         name.visibility = if (loginForm) View.GONE else View.VISIBLE
-        phone.visibility = if (loginForm) View.GONE else View.VISIBLE
         confirmPassword.visibility = if (loginForm) View.GONE else View.VISIBLE
     }
 
@@ -200,11 +191,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun handleLoginSuccess() {
-        setResult(Activity.RESULT_OK)
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-        //Complete and destroy login activity once successful
-        finish()
+
+
+
+        val tutorialFragment =
+            TutorialFragment()
+        tutorialFragment.show(supportFragmentManager, "")
     }
 
     fun handleRegisterSuccess() {

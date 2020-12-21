@@ -1,10 +1,14 @@
 package com.deepwares.fishmarketplaceconsumer.ui.tutorial
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.deepwares.fishmarketplaceconsumer.MainActivity
 import com.deepwares.fishmarketplaceconsumer.R
 import java.util.*
 
@@ -48,5 +52,17 @@ class TutorialAdapter(
         val item = getItem(position)
         holder.image.setImageResource(item.image)
         holder.desc.setText(item.desc)
+        val showContinue = position == currentList.size - 1
+        holder.continueButton.visibility = if (showContinue) View.VISIBLE else View.GONE
+        holder.continueButton.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, MainActivity::class.java)
+            context.startActivity(intent)
+            if(context is Activity){
+                context.finish()
+            }
+
+
+        }
     }
 }

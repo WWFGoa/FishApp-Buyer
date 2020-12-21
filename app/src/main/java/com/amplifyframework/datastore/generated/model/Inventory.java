@@ -1,5 +1,6 @@
 package com.amplifyframework.datastore.generated.model;
 
+import com.amplifyframework.core.model.temporal.Temporal;
 
 import java.util.List;
 import java.util.UUID;
@@ -7,7 +8,10 @@ import java.util.Objects;
 
 import androidx.core.util.ObjectsCompat;
 
+import com.amplifyframework.core.model.AuthStrategy;
 import com.amplifyframework.core.model.Model;
+import com.amplifyframework.core.model.ModelOperation;
+import com.amplifyframework.core.model.annotations.AuthRule;
 import com.amplifyframework.core.model.annotations.Index;
 import com.amplifyframework.core.model.annotations.ModelConfig;
 import com.amplifyframework.core.model.annotations.ModelField;
@@ -17,7 +21,10 @@ import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 
 /** This is an auto generated class representing the Inventory type in your schema. */
 @SuppressWarnings("all")
-@ModelConfig(pluralName = "Inventories")
+@ModelConfig(pluralName = "Inventories", authRules = {
+  @AuthRule(allow = AuthStrategy.PRIVATE, operations = { ModelOperation.READ, ModelOperation.UPDATE }),
+  @AuthRule(allow = AuthStrategy.OWNER, ownerField = "owner", identityClaim = "cognito:username", operations = { ModelOperation.READ, ModelOperation.CREATE, ModelOperation.UPDATE, ModelOperation.DELETE })
+})
 public final class Inventory implements Model {
   public static final QueryField ID = field("id");
   public static final QueryField SPECIES = field("species");
@@ -29,16 +36,20 @@ public final class Inventory implements Model {
   public static final QueryField CATCH_TIME = field("catchTime");
   public static final QueryField SELL_TIME = field("sellTime");
   public static final QueryField SIZE = field("size");
+  public static final QueryField CREATED_AT = field("createdAt");
+  public static final QueryField UPDATED_AT = field("updatedAt");
   private final @ModelField(targetType="ID", isRequired = true) String id;
-  private final @ModelField(targetType="Int", isRequired = true) Integer species;
-  private final @ModelField(targetType="Int", isRequired = true) Integer quantity;
-  private final @ModelField(targetType="Int", isRequired = true) Integer availableQuantity;
-  private final @ModelField(targetType="Int", isRequired = true) Integer price;
-  private final @ModelField(targetType="String", isRequired = true) String catchLocation;
-  private final @ModelField(targetType="String", isRequired = true) String sellLocation;
-  private final @ModelField(targetType="String", isRequired = true) String catchTime;
-  private final @ModelField(targetType="String", isRequired = true) String sellTime;
-  private final @ModelField(targetType="CatchSize", isRequired = true) CatchSize size;
+  private final @ModelField(targetType="Int") Integer species;
+  private final @ModelField(targetType="Float") Float quantity;
+  private final @ModelField(targetType="Float") Float availableQuantity;
+  private final @ModelField(targetType="Int") Integer price;
+  private final @ModelField(targetType="String") String catchLocation;
+  private final @ModelField(targetType="String") String sellLocation;
+  private final @ModelField(targetType="String") String catchTime;
+  private final @ModelField(targetType="String") String sellTime;
+  private final @ModelField(targetType="CatchSize") CatchSize size;
+  private final @ModelField(targetType="AWSDateTime") Temporal.DateTime createdAt;
+  private final @ModelField(targetType="AWSDateTime") Temporal.DateTime updatedAt;
   public String getId() {
       return id;
   }
@@ -47,11 +58,11 @@ public final class Inventory implements Model {
       return species;
   }
   
-  public Integer getQuantity() {
+  public Float getQuantity() {
       return quantity;
   }
   
-  public Integer getAvailableQuantity() {
+  public Float getAvailableQuantity() {
       return availableQuantity;
   }
   
@@ -79,7 +90,15 @@ public final class Inventory implements Model {
       return size;
   }
   
-  private Inventory(String id, Integer species, Integer quantity, Integer availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size) {
+  public Temporal.DateTime getCreatedAt() {
+      return createdAt;
+  }
+  
+  public Temporal.DateTime getUpdatedAt() {
+      return updatedAt;
+  }
+  
+  private Inventory(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt) {
     this.id = id;
     this.species = species;
     this.quantity = quantity;
@@ -90,6 +109,8 @@ public final class Inventory implements Model {
     this.catchTime = catchTime;
     this.sellTime = sellTime;
     this.size = size;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
   }
   
   @Override
@@ -109,7 +130,9 @@ public final class Inventory implements Model {
               ObjectsCompat.equals(getSellLocation(), inventory.getSellLocation()) &&
               ObjectsCompat.equals(getCatchTime(), inventory.getCatchTime()) &&
               ObjectsCompat.equals(getSellTime(), inventory.getSellTime()) &&
-              ObjectsCompat.equals(getSize(), inventory.getSize());
+              ObjectsCompat.equals(getSize(), inventory.getSize()) &&
+              ObjectsCompat.equals(getCreatedAt(), inventory.getCreatedAt()) &&
+              ObjectsCompat.equals(getUpdatedAt(), inventory.getUpdatedAt());
       }
   }
   
@@ -126,11 +149,33 @@ public final class Inventory implements Model {
       .append(getCatchTime())
       .append(getSellTime())
       .append(getSize())
+      .append(getCreatedAt())
+      .append(getUpdatedAt())
       .toString()
       .hashCode();
   }
   
-  public static SpeciesStep builder() {
+  @Override
+   public String toString() {
+    return new StringBuilder()
+      .append("Inventory {")
+      .append("id=" + String.valueOf(getId()) + ", ")
+      .append("species=" + String.valueOf(getSpecies()) + ", ")
+      .append("quantity=" + String.valueOf(getQuantity()) + ", ")
+      .append("availableQuantity=" + String.valueOf(getAvailableQuantity()) + ", ")
+      .append("price=" + String.valueOf(getPrice()) + ", ")
+      .append("catchLocation=" + String.valueOf(getCatchLocation()) + ", ")
+      .append("sellLocation=" + String.valueOf(getSellLocation()) + ", ")
+      .append("catchTime=" + String.valueOf(getCatchTime()) + ", ")
+      .append("sellTime=" + String.valueOf(getSellTime()) + ", ")
+      .append("size=" + String.valueOf(getSize()) + ", ")
+      .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
+      .append("updatedAt=" + String.valueOf(getUpdatedAt()))
+      .append("}")
+      .toString();
+  }
+  
+  public static BuildStep builder() {
       return new Builder();
   }
   
@@ -142,7 +187,7 @@ public final class Inventory implements Model {
    * @param id the id of the existing item this instance will represent
    * @return an instance of this model with only ID populated
    * @throws IllegalArgumentException Checks that ID is in the proper format
-   **/
+   */
   public static Inventory justId(String id) {
     try {
       UUID.fromString(id); // Check that ID is in the UUID format - if not an exception is thrown
@@ -155,6 +200,8 @@ public final class Inventory implements Model {
     }
     return new Inventory(
       id,
+      null,
+      null,
       null,
       null,
       null,
@@ -177,70 +224,40 @@ public final class Inventory implements Model {
       sellLocation,
       catchTime,
       sellTime,
-      size);
+      size,
+      createdAt,
+      updatedAt);
   }
-  public interface SpeciesStep {
-    QuantityStep species(Integer species);
-  }
-  
-
-  public interface QuantityStep {
-    AvailableQuantityStep quantity(Integer quantity);
-  }
-  
-
-  public interface AvailableQuantityStep {
-    PriceStep availableQuantity(Integer availableQuantity);
-  }
-  
-
-  public interface PriceStep {
-    CatchLocationStep price(Integer price);
-  }
-  
-
-  public interface CatchLocationStep {
-    SellLocationStep catchLocation(String catchLocation);
-  }
-  
-
-  public interface SellLocationStep {
-    CatchTimeStep sellLocation(String sellLocation);
-  }
-  
-
-  public interface CatchTimeStep {
-    SellTimeStep catchTime(String catchTime);
-  }
-  
-
-  public interface SellTimeStep {
-    SizeStep sellTime(String sellTime);
-  }
-  
-
-  public interface SizeStep {
-    BuildStep size(CatchSize size);
-  }
-  
-
   public interface BuildStep {
     Inventory build();
     BuildStep id(String id) throws IllegalArgumentException;
+    BuildStep species(Integer species);
+    BuildStep quantity(Float quantity);
+    BuildStep availableQuantity(Float availableQuantity);
+    BuildStep price(Integer price);
+    BuildStep catchLocation(String catchLocation);
+    BuildStep sellLocation(String sellLocation);
+    BuildStep catchTime(String catchTime);
+    BuildStep sellTime(String sellTime);
+    BuildStep size(CatchSize size);
+    BuildStep createdAt(Temporal.DateTime createdAt);
+    BuildStep updatedAt(Temporal.DateTime updatedAt);
   }
   
 
-  public static class Builder implements SpeciesStep, QuantityStep, AvailableQuantityStep, PriceStep, CatchLocationStep, SellLocationStep, CatchTimeStep, SellTimeStep, SizeStep, BuildStep {
+  public static class Builder implements BuildStep {
     private String id;
     private Integer species;
-    private Integer quantity;
-    private Integer availableQuantity;
+    private Float quantity;
+    private Float availableQuantity;
     private Integer price;
     private String catchLocation;
     private String sellLocation;
     private String catchTime;
     private String sellTime;
     private CatchSize size;
+    private Temporal.DateTime createdAt;
+    private Temporal.DateTime updatedAt;
     @Override
      public Inventory build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
@@ -255,69 +272,74 @@ public final class Inventory implements Model {
           sellLocation,
           catchTime,
           sellTime,
-          size);
+          size,
+          createdAt,
+          updatedAt);
     }
     
     @Override
-     public QuantityStep species(Integer species) {
-        Objects.requireNonNull(species);
+     public BuildStep species(Integer species) {
         this.species = species;
         return this;
     }
     
     @Override
-     public AvailableQuantityStep quantity(Integer quantity) {
-        Objects.requireNonNull(quantity);
+     public BuildStep quantity(Float quantity) {
         this.quantity = quantity;
         return this;
     }
     
     @Override
-     public PriceStep availableQuantity(Integer availableQuantity) {
-        Objects.requireNonNull(availableQuantity);
+     public BuildStep availableQuantity(Float availableQuantity) {
         this.availableQuantity = availableQuantity;
         return this;
     }
     
     @Override
-     public CatchLocationStep price(Integer price) {
-        Objects.requireNonNull(price);
+     public BuildStep price(Integer price) {
         this.price = price;
         return this;
     }
     
     @Override
-     public SellLocationStep catchLocation(String catchLocation) {
-        Objects.requireNonNull(catchLocation);
+     public BuildStep catchLocation(String catchLocation) {
         this.catchLocation = catchLocation;
         return this;
     }
     
     @Override
-     public CatchTimeStep sellLocation(String sellLocation) {
-        Objects.requireNonNull(sellLocation);
+     public BuildStep sellLocation(String sellLocation) {
         this.sellLocation = sellLocation;
         return this;
     }
     
     @Override
-     public SellTimeStep catchTime(String catchTime) {
-        Objects.requireNonNull(catchTime);
+     public BuildStep catchTime(String catchTime) {
         this.catchTime = catchTime;
         return this;
     }
     
     @Override
-     public SizeStep sellTime(String sellTime) {
-        Objects.requireNonNull(sellTime);
+     public BuildStep sellTime(String sellTime) {
         this.sellTime = sellTime;
         return this;
     }
     
     @Override
      public BuildStep size(CatchSize size) {
-        Objects.requireNonNull(size);
         this.size = size;
+        return this;
+    }
+    
+    @Override
+     public BuildStep createdAt(Temporal.DateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+    
+    @Override
+     public BuildStep updatedAt(Temporal.DateTime updatedAt) {
+        this.updatedAt = updatedAt;
         return this;
     }
     
@@ -327,7 +349,7 @@ public final class Inventory implements Model {
      * @param id id
      * @return Current Builder instance, for fluent method chaining
      * @throws IllegalArgumentException Checks that ID is in the proper format
-     **/
+     */
     public BuildStep id(String id) throws IllegalArgumentException {
         this.id = id;
         
@@ -344,7 +366,7 @@ public final class Inventory implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, Integer species, Integer quantity, Integer availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size) {
+    private CopyOfBuilder(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt) {
       super.id(id);
       super.species(species)
         .quantity(quantity)
@@ -354,7 +376,9 @@ public final class Inventory implements Model {
         .sellLocation(sellLocation)
         .catchTime(catchTime)
         .sellTime(sellTime)
-        .size(size);
+        .size(size)
+        .createdAt(createdAt)
+        .updatedAt(updatedAt);
     }
     
     @Override
@@ -363,12 +387,12 @@ public final class Inventory implements Model {
     }
     
     @Override
-     public CopyOfBuilder quantity(Integer quantity) {
+     public CopyOfBuilder quantity(Float quantity) {
       return (CopyOfBuilder) super.quantity(quantity);
     }
     
     @Override
-     public CopyOfBuilder availableQuantity(Integer availableQuantity) {
+     public CopyOfBuilder availableQuantity(Float availableQuantity) {
       return (CopyOfBuilder) super.availableQuantity(availableQuantity);
     }
     
@@ -400,6 +424,16 @@ public final class Inventory implements Model {
     @Override
      public CopyOfBuilder size(CatchSize size) {
       return (CopyOfBuilder) super.size(size);
+    }
+    
+    @Override
+     public CopyOfBuilder createdAt(Temporal.DateTime createdAt) {
+      return (CopyOfBuilder) super.createdAt(createdAt);
+    }
+    
+    @Override
+     public CopyOfBuilder updatedAt(Temporal.DateTime updatedAt) {
+      return (CopyOfBuilder) super.updatedAt(updatedAt);
     }
   }
   

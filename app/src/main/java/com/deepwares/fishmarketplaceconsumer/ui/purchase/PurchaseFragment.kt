@@ -1,5 +1,7 @@
 package com.deepwares.fishmarketplaceconsumer.ui.purchase
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -17,6 +19,7 @@ import com.amplifyframework.api.ApiException
 import com.amplifyframework.api.graphql.model.ModelMutation
 import com.amplifyframework.core.Amplify
 import com.amplifyframework.datastore.generated.model.Inventory
+import com.amplifyframework.datastore.generated.model.Order
 import com.deepwares.fishmarketplace.model.Species
 import com.deepwares.fishmarketplaceconsumer.R
 import com.deepwares.fishmarketplaceconsumer.model.FishRepository
@@ -26,6 +29,7 @@ import kotlinx.android.synthetic.main.fragment_purchase.*
 import kotlinx.android.synthetic.main.fragment_purchase.image
 import kotlinx.android.synthetic.main.fragment_purchase.name
 import kotlinx.android.synthetic.main.inventory_fragment.*
+import java.util.*
 
 class PurchaseFragment : Fragment() {
 
@@ -74,7 +78,7 @@ class PurchaseFragment : Fragment() {
     fun order() {
         val qtyAmount = quantity.text.toString().toInt()
         val max = item!!.availableQuantity
-        if (max == 0) {
+        if (max == 0f) {
             Toast.makeText(context, R.string.order_empty, Toast.LENGTH_LONG).show()
 
         } else if (qtyAmount == 0) {
@@ -87,18 +91,18 @@ class PurchaseFragment : Fragment() {
             val inventory = Inventory.Builder()
             inventory.id(item!!.id)
             inventory.availableQuantity(max - qtyAmount)
+            val createdInv = inventory.build()
             Amplify.API.mutate(
-                ModelMutation.update(inventory.build()),
+                ModelMutation.update(createdInv),
                 { response ->
-                    handler.post {
-                        Toast.makeText(context, R.string.order_success, Toast.LENGTH_LONG).show()
-                        findNavController().navigate(R.id.navigation_dashboard)
-                    }
+
 
                     Log.d(
                         TAG,
                         "Added Inventory with id: " + response?.data?.id
                     )
+
+                    createOrder(inventory = createdInv, quantity = qtyAmount.toFloat())
                 },
                 { error: ApiException? ->
                     handler.post {
@@ -108,11 +112,46 @@ class PurchaseFragment : Fragment() {
                     Log.e(TAG, "Create Inventory failed", error)
                 }
             )
+
+
         }
     }
 
+    fun createOrder(inventory: Inventory, quantity: Float) {
+        val order = Order.Builder()
+        order.id(UUID.randomUUID().toString())
+        order.quantity(quantity)
+        order.inventory(inventory)
+
+        Amplify.API.mutate(
+            ModelMutation.create(order.build()),
+            { response ->
+
+                handler.post {
+                    Toast.makeText(context, R.string.order_success, Toast.LENGTH_LONG).show()
+                    findNavController().navigate(R.id.navigation_notifications)
+                }
+
+                Log.d(
+                    TAG,
+                    "Created Order  with id: " + response?.data?.id
+                )
+            },
+            { error: ApiException? ->
+                handler.post {
+                    Toast.makeText(context, R.string.order_fail, Toast.LENGTH_LONG).show()
+
+                }
+                Log.e(TAG, "Create Inventory failed", error)
+            }
+        )
+    }
+
+
+
+
     private fun update() {
-        seller.text = "Deepak The Sailor man"
+        seller.text = "Deepak"
         seller_rating.text = "4.3"
         sell_location.setText(item!!.sellLocation)
         catch_location.setText(item!!.catchLocation)

@@ -1,5 +1,0 @@
-{
-    "AppSyncApiName": "fishmarketplace",
-    "DynamoDBBillingMode": "PAY_PER_REQUEST",
-    "DynamoDBEnableServerSideEncryption": "false"
-}

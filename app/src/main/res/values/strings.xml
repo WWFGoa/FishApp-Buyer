@@ -173,6 +173,8 @@
     <string name="mahi_mahi_scientific_name">Coryphena hippures</string>
     <string name="coconut_para_scientific_name">Scombroides commersonias</string>
 
+    <string name="user_does_not_exist">New user. Continuing to create account!</string>
+
 
     <string name="anchovy_description">These are a small silvery fish that grow to a length of 12-15cm. They found in the Indo- Pacific region. They are a schooling species, occurring in coastal waters and are also known to enter estuaries. They feed mostly on zooplankton.  Nutritionally anchovies are an excellent source of calcium, iron and zinc.
     </string>
@@ -238,4 +240,5 @@
     <string name="status_no_threat">No Threat</string>
     <string name="status_banned">Prohibited</string>
     <string name="total_label">Total</string>
+    <string name="directions">Directions</string>
 </resources>

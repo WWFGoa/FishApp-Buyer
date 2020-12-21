@@ -111,8 +111,6 @@ class SearchFragment : Fragment(), SpeciesSelector {
 
         })
 
-
-
         sustainable.setOnClickListener {
             val tutorialFragment =
                 TutorialFragment()

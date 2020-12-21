@@ -31,7 +31,7 @@ class ListingsViewModel : ViewModel() {
                 Log.d(TAG, "Got items : " + response.data?.toString())
 
             },
-            { error -> Log.e(TAG, "Get inventory listtt failed", error) }
+            { error -> Log.e(TAG, "Get inventory list failed from AWS", error) }
 
 
         )
