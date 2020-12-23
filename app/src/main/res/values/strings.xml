@@ -229,7 +229,7 @@
     <string name="seller_rating_label">Rating</string>
     <string name="sellers_label">Seller</string>
     <string name="sell_location_label">Sell Location</string>
-    <string name="price_label">Price per Kg</string>
+    <string name="price_label">Price</string>
     <string name="availability_label">Available</string>
     <string name="qty_label">Buy</string>
     <string name="order_fail">An unknown error occured while trying to place the order</string>

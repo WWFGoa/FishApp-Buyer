@@ -38,6 +38,7 @@ public final class Inventory implements Model {
   public static final QueryField SIZE = field("size");
   public static final QueryField CREATED_AT = field("createdAt");
   public static final QueryField UPDATED_AT = field("updatedAt");
+  public static final QueryField CONTACT = field("contact");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="Int") Integer species;
   private final @ModelField(targetType="Float") Float quantity;
@@ -50,6 +51,7 @@ public final class Inventory implements Model {
   private final @ModelField(targetType="CatchSize") CatchSize size;
   private final @ModelField(targetType="AWSDateTime") Temporal.DateTime createdAt;
   private final @ModelField(targetType="AWSDateTime") Temporal.DateTime updatedAt;
+  private final @ModelField(targetType="String") String contact;
   public String getId() {
       return id;
   }
@@ -98,7 +100,11 @@ public final class Inventory implements Model {
       return updatedAt;
   }
   
-  private Inventory(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt) {
+  public String getContact() {
+      return contact;
+  }
+  
+  private Inventory(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact) {
     this.id = id;
     this.species = species;
     this.quantity = quantity;
@@ -111,6 +117,7 @@ public final class Inventory implements Model {
     this.size = size;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
+    this.contact = contact;
   }
   
   @Override
@@ -132,7 +139,8 @@ public final class Inventory implements Model {
               ObjectsCompat.equals(getSellTime(), inventory.getSellTime()) &&
               ObjectsCompat.equals(getSize(), inventory.getSize()) &&
               ObjectsCompat.equals(getCreatedAt(), inventory.getCreatedAt()) &&
-              ObjectsCompat.equals(getUpdatedAt(), inventory.getUpdatedAt());
+              ObjectsCompat.equals(getUpdatedAt(), inventory.getUpdatedAt()) &&
+              ObjectsCompat.equals(getContact(), inventory.getContact());
       }
   }
   
@@ -151,6 +159,7 @@ public final class Inventory implements Model {
       .append(getSize())
       .append(getCreatedAt())
       .append(getUpdatedAt())
+      .append(getContact())
       .toString()
       .hashCode();
   }
@@ -170,7 +179,8 @@ public final class Inventory implements Model {
       .append("sellTime=" + String.valueOf(getSellTime()) + ", ")
       .append("size=" + String.valueOf(getSize()) + ", ")
       .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
-      .append("updatedAt=" + String.valueOf(getUpdatedAt()))
+      .append("updatedAt=" + String.valueOf(getUpdatedAt()) + ", ")
+      .append("contact=" + String.valueOf(getContact()))
       .append("}")
       .toString();
   }
@@ -210,6 +220,7 @@ public final class Inventory implements Model {
       null,
       null,
       null,
+      null,
       null
     );
   }
@@ -226,7 +237,8 @@ public final class Inventory implements Model {
       sellTime,
       size,
       createdAt,
-      updatedAt);
+      updatedAt,
+      contact);
   }
   public interface BuildStep {
     Inventory build();
@@ -242,6 +254,7 @@ public final class Inventory implements Model {
     BuildStep size(CatchSize size);
     BuildStep createdAt(Temporal.DateTime createdAt);
     BuildStep updatedAt(Temporal.DateTime updatedAt);
+    BuildStep contact(String contact);
   }
   
 
@@ -258,6 +271,7 @@ public final class Inventory implements Model {
     private CatchSize size;
     private Temporal.DateTime createdAt;
     private Temporal.DateTime updatedAt;
+    private String contact;
     @Override
      public Inventory build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
@@ -274,7 +288,8 @@ public final class Inventory implements Model {
           sellTime,
           size,
           createdAt,
-          updatedAt);
+          updatedAt,
+          contact);
     }
     
     @Override
@@ -343,6 +358,12 @@ public final class Inventory implements Model {
         return this;
     }
     
+    @Override
+     public BuildStep contact(String contact) {
+        this.contact = contact;
+        return this;
+    }
+    
     /** 
      * WARNING: Do not set ID when creating a new object. Leave this blank and one will be auto generated for you.
      * This should only be set when referring to an already existing object.
@@ -366,7 +387,7 @@ public final class Inventory implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt) {
+    private CopyOfBuilder(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact) {
       super.id(id);
       super.species(species)
         .quantity(quantity)
@@ -378,7 +399,8 @@ public final class Inventory implements Model {
         .sellTime(sellTime)
         .size(size)
         .createdAt(createdAt)
-        .updatedAt(updatedAt);
+        .updatedAt(updatedAt)
+        .contact(contact);
     }
     
     @Override
@@ -434,6 +456,11 @@ public final class Inventory implements Model {
     @Override
      public CopyOfBuilder updatedAt(Temporal.DateTime updatedAt) {
       return (CopyOfBuilder) super.updatedAt(updatedAt);
+    }
+    
+    @Override
+     public CopyOfBuilder contact(String contact) {
+      return (CopyOfBuilder) super.contact(contact);
     }
   }
   

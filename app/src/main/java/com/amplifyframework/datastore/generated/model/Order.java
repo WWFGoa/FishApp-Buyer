@@ -32,11 +32,13 @@ public final class Order implements Model {
   public static final QueryField CREATED_AT = field("createdAt");
   public static final QueryField UPDATED_AT = field("updatedAt");
   public static final QueryField INVENTORY = field("orderInventoryId");
+  public static final QueryField CONTACT = field("contact");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="Float") Float quantity;
   private final @ModelField(targetType="AWSDateTime") Temporal.DateTime createdAt;
   private final @ModelField(targetType="AWSDateTime") Temporal.DateTime updatedAt;
   private final @ModelField(targetType="Inventory") @BelongsTo(targetName = "orderInventoryId", type = Inventory.class) Inventory Inventory;
+  private final @ModelField(targetType="String") String contact;
   public String getId() {
       return id;
   }
@@ -57,12 +59,17 @@ public final class Order implements Model {
       return Inventory;
   }
   
-  private Order(String id, Float quantity, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, Inventory Inventory) {
+  public String getContact() {
+      return contact;
+  }
+  
+  private Order(String id, Float quantity, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, Inventory Inventory, String contact) {
     this.id = id;
     this.quantity = quantity;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
     this.Inventory = Inventory;
+    this.contact = contact;
   }
   
   @Override
@@ -77,7 +84,8 @@ public final class Order implements Model {
               ObjectsCompat.equals(getQuantity(), order.getQuantity()) &&
               ObjectsCompat.equals(getCreatedAt(), order.getCreatedAt()) &&
               ObjectsCompat.equals(getUpdatedAt(), order.getUpdatedAt()) &&
-              ObjectsCompat.equals(getInventory(), order.getInventory());
+              ObjectsCompat.equals(getInventory(), order.getInventory()) &&
+              ObjectsCompat.equals(getContact(), order.getContact());
       }
   }
   
@@ -89,6 +97,7 @@ public final class Order implements Model {
       .append(getCreatedAt())
       .append(getUpdatedAt())
       .append(getInventory())
+      .append(getContact())
       .toString()
       .hashCode();
   }
@@ -101,7 +110,8 @@ public final class Order implements Model {
       .append("quantity=" + String.valueOf(getQuantity()) + ", ")
       .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
       .append("updatedAt=" + String.valueOf(getUpdatedAt()) + ", ")
-      .append("Inventory=" + String.valueOf(getInventory()))
+      .append("Inventory=" + String.valueOf(getInventory()) + ", ")
+      .append("contact=" + String.valueOf(getContact()))
       .append("}")
       .toString();
   }
@@ -134,6 +144,7 @@ public final class Order implements Model {
       null,
       null,
       null,
+      null,
       null
     );
   }
@@ -143,7 +154,8 @@ public final class Order implements Model {
       quantity,
       createdAt,
       updatedAt,
-      Inventory);
+      Inventory,
+      contact);
   }
   public interface BuildStep {
     Order build();
@@ -152,6 +164,7 @@ public final class Order implements Model {
     BuildStep createdAt(Temporal.DateTime createdAt);
     BuildStep updatedAt(Temporal.DateTime updatedAt);
     BuildStep inventory(Inventory inventory);
+    BuildStep contact(String contact);
   }
   
 
@@ -161,6 +174,7 @@ public final class Order implements Model {
     private Temporal.DateTime createdAt;
     private Temporal.DateTime updatedAt;
     private Inventory Inventory;
+    private String contact;
     @Override
      public Order build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
@@ -170,7 +184,8 @@ public final class Order implements Model {
           quantity,
           createdAt,
           updatedAt,
-          Inventory);
+          Inventory,
+          contact);
     }
     
     @Override
@@ -197,6 +212,12 @@ public final class Order implements Model {
         return this;
     }
     
+    @Override
+     public BuildStep contact(String contact) {
+        this.contact = contact;
+        return this;
+    }
+    
     /** 
      * WARNING: Do not set ID when creating a new object. Leave this blank and one will be auto generated for you.
      * This should only be set when referring to an already existing object.
@@ -220,12 +241,13 @@ public final class Order implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, Float quantity, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, Inventory inventory) {
+    private CopyOfBuilder(String id, Float quantity, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, Inventory inventory, String contact) {
       super.id(id);
       super.quantity(quantity)
         .createdAt(createdAt)
         .updatedAt(updatedAt)
-        .inventory(inventory);
+        .inventory(inventory)
+        .contact(contact);
     }
     
     @Override
@@ -246,6 +268,11 @@ public final class Order implements Model {
     @Override
      public CopyOfBuilder inventory(Inventory inventory) {
       return (CopyOfBuilder) super.inventory(inventory);
+    }
+    
+    @Override
+     public CopyOfBuilder contact(String contact) {
+      return (CopyOfBuilder) super.contact(contact);
     }
   }
   

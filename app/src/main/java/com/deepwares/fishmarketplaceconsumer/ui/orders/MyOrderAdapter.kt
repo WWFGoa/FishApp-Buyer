@@ -49,7 +49,7 @@ class MyOrderAdapter(var fragment: OrdersFragment?) : RecyclerView.Adapter<MyOrd
         holder.image.setImageResource(species.image)
         holder.cost.setText(item.price.toString())
         holder.quantity.setText(order.quantity.toString())
-        holder.name.setText(species.name)
+        holder.name.setText(order.contact)
 
     }
 

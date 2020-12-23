@@ -1,7 +1,5 @@
 package com.deepwares.fishmarketplaceconsumer.ui.purchase
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -24,7 +22,7 @@ import com.deepwares.fishmarketplace.model.Species
 import com.deepwares.fishmarketplaceconsumer.R
 import com.deepwares.fishmarketplaceconsumer.model.FishRepository
 import com.deepwares.fishmarketplaceconsumer.ui.listing.ListingsViewModel
-import com.deepwares.fishmarketplaceconsumer.ui.purchase.PurchaseFragmentArgs
+import com.deepwares.fishmarketplaceconsumer.ui.login.afterTextChanged
 import kotlinx.android.synthetic.main.fragment_purchase.*
 import kotlinx.android.synthetic.main.fragment_purchase.image
 import kotlinx.android.synthetic.main.fragment_purchase.name
@@ -65,7 +63,21 @@ class PurchaseFragment : Fragment() {
         order.setOnClickListener {
             order()
         }
+
+
         cancel.setOnClickListener { findNavController()?.popBackStack() }
+        quantity.setListener {
+            val qtyAmount = it
+            val price = item!!.price
+            total.text = (qtyAmount * price).toString()
+        }
+        /*
+        quantity.afterTextChanged {
+            val qty = quantity.text.toString()
+            val qtyAmount = if (qty.isNotBlank() && qty.isNotEmpty()) qty.toInt() else 0
+            val price = item!!.price
+            total.text = (qtyAmount * price).toString()
+        }
         quantity.setOnEditorActionListener { v, actionId, event ->
 
             val qtyAmount = quantity.text.toString().toInt()
@@ -73,25 +85,30 @@ class PurchaseFragment : Fragment() {
             total.text = (qtyAmount * price).toString()
             return@setOnEditorActionListener true
         }
+*/
+
     }
 
     fun order() {
-        val qtyAmount = quantity.text.toString().toInt()
+        val qtyAmount = 0
+        // val qtyAmount = quantity.text.toString().toFloat()
         val max = item!!.availableQuantity
         if (max == 0f) {
             Toast.makeText(context, R.string.order_empty, Toast.LENGTH_LONG).show()
 
-        } else if (qtyAmount == 0) {
+        } else if (qtyAmount <= 0f) {
             Toast.makeText(context, R.string.order_min, Toast.LENGTH_LONG).show()
 
         } else if (qtyAmount > max) {
             Toast.makeText(context, R.string.order_excess, Toast.LENGTH_LONG).show()
 
         } else {
-            val inventory = Inventory.Builder()
-            inventory.id(item!!.id)
-            inventory.availableQuantity(max - qtyAmount)
+            val inventory = item!!.copyOfBuilder()
+            val available = max - qtyAmount
+            inventory.availableQuantity(available)
             val createdInv = inventory.build()
+
+
             Amplify.API.mutate(
                 ModelMutation.update(createdInv),
                 { response ->
@@ -122,6 +139,8 @@ class PurchaseFragment : Fragment() {
         order.id(UUID.randomUUID().toString())
         order.quantity(quantity)
         order.inventory(inventory)
+        val user = Amplify.Auth.currentUser
+        order.contact(user.username + " " + user.userId)
 
         Amplify.API.mutate(
             ModelMutation.create(order.build()),
@@ -129,7 +148,7 @@ class PurchaseFragment : Fragment() {
 
                 handler.post {
                     Toast.makeText(context, R.string.order_success, Toast.LENGTH_LONG).show()
-                    findNavController().navigate(R.id.navigation_notifications)
+                    findNavController().navigate(R.id.navigation_orders)
                 }
 
                 Log.d(
@@ -148,16 +167,20 @@ class PurchaseFragment : Fragment() {
     }
 
 
-
-
     private fun update() {
-        seller.text = "Deepak"
-        seller_rating.text = "4.3"
+        seller.text = item!!.contact
+        // seller_rating.text = "4.3"
         sell_location.setText(item!!.sellLocation)
         catch_location.setText(item!!.catchLocation)
         image.setImageResource(species!!.image)
         price.setText(item!!.price.toString())
+
         availability.setText(item!!.availableQuantity.toString())
+        //findNavController().currentDestination?.label = resources.getString(species!!.name)
         name.setText(species!!.name)
+
+        quantity.minValue = 1
+        quantity.maxValue = item!!.availableQuantity.toInt()
+
     }
 }

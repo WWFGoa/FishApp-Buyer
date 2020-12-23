@@ -62,4 +62,6 @@ dependencies {
 
 
     implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation 'com.michaelmuenzer.android:ScrollableNumberPicker:0.2.2'
+
 }
