@@ -22,8 +22,7 @@ import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 /** This is an auto generated class representing the Inventory type in your schema. */
 @SuppressWarnings("all")
 @ModelConfig(pluralName = "Inventories", authRules = {
-  @AuthRule(allow = AuthStrategy.PRIVATE, operations = { ModelOperation.READ, ModelOperation.UPDATE }),
-  @AuthRule(allow = AuthStrategy.OWNER, ownerField = "owner", identityClaim = "cognito:username", operations = { ModelOperation.READ, ModelOperation.CREATE, ModelOperation.UPDATE, ModelOperation.DELETE })
+  @AuthRule(allow = AuthStrategy.PRIVATE, operations = { ModelOperation.CREATE, ModelOperation.UPDATE, ModelOperation.DELETE, ModelOperation.READ })
 })
 public final class Inventory implements Model {
   public static final QueryField ID = field("id");
@@ -39,6 +38,7 @@ public final class Inventory implements Model {
   public static final QueryField CREATED_AT = field("createdAt");
   public static final QueryField UPDATED_AT = field("updatedAt");
   public static final QueryField CONTACT = field("contact");
+  public static final QueryField NAME = field("name");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="Int") Integer species;
   private final @ModelField(targetType="Float") Float quantity;
@@ -52,6 +52,7 @@ public final class Inventory implements Model {
   private final @ModelField(targetType="AWSDateTime") Temporal.DateTime createdAt;
   private final @ModelField(targetType="AWSDateTime") Temporal.DateTime updatedAt;
   private final @ModelField(targetType="String") String contact;
+  private final @ModelField(targetType="String") String name;
   public String getId() {
       return id;
   }
@@ -104,7 +105,11 @@ public final class Inventory implements Model {
       return contact;
   }
   
-  private Inventory(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact) {
+  public String getName() {
+      return name;
+  }
+  
+  private Inventory(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact, String name) {
     this.id = id;
     this.species = species;
     this.quantity = quantity;
@@ -118,6 +123,7 @@ public final class Inventory implements Model {
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
     this.contact = contact;
+    this.name = name;
   }
   
   @Override
@@ -140,7 +146,8 @@ public final class Inventory implements Model {
               ObjectsCompat.equals(getSize(), inventory.getSize()) &&
               ObjectsCompat.equals(getCreatedAt(), inventory.getCreatedAt()) &&
               ObjectsCompat.equals(getUpdatedAt(), inventory.getUpdatedAt()) &&
-              ObjectsCompat.equals(getContact(), inventory.getContact());
+              ObjectsCompat.equals(getContact(), inventory.getContact()) &&
+              ObjectsCompat.equals(getName(), inventory.getName());
       }
   }
   
@@ -160,6 +167,7 @@ public final class Inventory implements Model {
       .append(getCreatedAt())
       .append(getUpdatedAt())
       .append(getContact())
+      .append(getName())
       .toString()
       .hashCode();
   }
@@ -180,7 +188,8 @@ public final class Inventory implements Model {
       .append("size=" + String.valueOf(getSize()) + ", ")
       .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
       .append("updatedAt=" + String.valueOf(getUpdatedAt()) + ", ")
-      .append("contact=" + String.valueOf(getContact()))
+      .append("contact=" + String.valueOf(getContact()) + ", ")
+      .append("name=" + String.valueOf(getName()))
       .append("}")
       .toString();
   }
@@ -221,6 +230,7 @@ public final class Inventory implements Model {
       null,
       null,
       null,
+      null,
       null
     );
   }
@@ -238,7 +248,8 @@ public final class Inventory implements Model {
       size,
       createdAt,
       updatedAt,
-      contact);
+      contact,
+      name);
   }
   public interface BuildStep {
     Inventory build();
@@ -255,6 +266,7 @@ public final class Inventory implements Model {
     BuildStep createdAt(Temporal.DateTime createdAt);
     BuildStep updatedAt(Temporal.DateTime updatedAt);
     BuildStep contact(String contact);
+    BuildStep name(String name);
   }
   
 
@@ -272,6 +284,7 @@ public final class Inventory implements Model {
     private Temporal.DateTime createdAt;
     private Temporal.DateTime updatedAt;
     private String contact;
+    private String name;
     @Override
      public Inventory build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
@@ -289,7 +302,8 @@ public final class Inventory implements Model {
           size,
           createdAt,
           updatedAt,
-          contact);
+          contact,
+          name);
     }
     
     @Override
@@ -364,6 +378,12 @@ public final class Inventory implements Model {
         return this;
     }
     
+    @Override
+     public BuildStep name(String name) {
+        this.name = name;
+        return this;
+    }
+    
     /** 
      * WARNING: Do not set ID when creating a new object. Leave this blank and one will be auto generated for you.
      * This should only be set when referring to an already existing object.
@@ -387,7 +407,7 @@ public final class Inventory implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact) {
+    private CopyOfBuilder(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact, String name) {
       super.id(id);
       super.species(species)
         .quantity(quantity)
@@ -400,7 +420,8 @@ public final class Inventory implements Model {
         .size(size)
         .createdAt(createdAt)
         .updatedAt(updatedAt)
-        .contact(contact);
+        .contact(contact)
+        .name(name);
     }
     
     @Override
@@ -461,6 +482,11 @@ public final class Inventory implements Model {
     @Override
      public CopyOfBuilder contact(String contact) {
       return (CopyOfBuilder) super.contact(contact);
+    }
+    
+    @Override
+     public CopyOfBuilder name(String name) {
+      return (CopyOfBuilder) super.name(name);
     }
   }
   

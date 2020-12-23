@@ -23,8 +23,7 @@ import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 /** This is an auto generated class representing the Order type in your schema. */
 @SuppressWarnings("all")
 @ModelConfig(pluralName = "Orders", authRules = {
-  @AuthRule(allow = AuthStrategy.OWNER, ownerField = "owner", identityClaim = "cognito:username", operations = { ModelOperation.READ, ModelOperation.CREATE, ModelOperation.UPDATE, ModelOperation.DELETE }),
-  @AuthRule(allow = AuthStrategy.PRIVATE, operations = { ModelOperation.READ, ModelOperation.UPDATE })
+  @AuthRule(allow = AuthStrategy.PRIVATE, operations = { ModelOperation.CREATE, ModelOperation.UPDATE, ModelOperation.DELETE, ModelOperation.READ })
 })
 public final class Order implements Model {
   public static final QueryField ID = field("id");
@@ -33,12 +32,14 @@ public final class Order implements Model {
   public static final QueryField UPDATED_AT = field("updatedAt");
   public static final QueryField INVENTORY = field("orderInventoryId");
   public static final QueryField CONTACT = field("contact");
+  public static final QueryField NAME = field("name");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="Float") Float quantity;
   private final @ModelField(targetType="AWSDateTime") Temporal.DateTime createdAt;
   private final @ModelField(targetType="AWSDateTime") Temporal.DateTime updatedAt;
   private final @ModelField(targetType="Inventory") @BelongsTo(targetName = "orderInventoryId", type = Inventory.class) Inventory Inventory;
   private final @ModelField(targetType="String") String contact;
+  private final @ModelField(targetType="String") String name;
   public String getId() {
       return id;
   }
@@ -63,13 +64,18 @@ public final class Order implements Model {
       return contact;
   }
   
-  private Order(String id, Float quantity, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, Inventory Inventory, String contact) {
+  public String getName() {
+      return name;
+  }
+  
+  private Order(String id, Float quantity, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, Inventory Inventory, String contact, String name) {
     this.id = id;
     this.quantity = quantity;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
     this.Inventory = Inventory;
     this.contact = contact;
+    this.name = name;
   }
   
   @Override
@@ -85,7 +91,8 @@ public final class Order implements Model {
               ObjectsCompat.equals(getCreatedAt(), order.getCreatedAt()) &&
               ObjectsCompat.equals(getUpdatedAt(), order.getUpdatedAt()) &&
               ObjectsCompat.equals(getInventory(), order.getInventory()) &&
-              ObjectsCompat.equals(getContact(), order.getContact());
+              ObjectsCompat.equals(getContact(), order.getContact()) &&
+              ObjectsCompat.equals(getName(), order.getName());
       }
   }
   
@@ -98,6 +105,7 @@ public final class Order implements Model {
       .append(getUpdatedAt())
       .append(getInventory())
       .append(getContact())
+      .append(getName())
       .toString()
       .hashCode();
   }
@@ -111,7 +119,8 @@ public final class Order implements Model {
       .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
       .append("updatedAt=" + String.valueOf(getUpdatedAt()) + ", ")
       .append("Inventory=" + String.valueOf(getInventory()) + ", ")
-      .append("contact=" + String.valueOf(getContact()))
+      .append("contact=" + String.valueOf(getContact()) + ", ")
+      .append("name=" + String.valueOf(getName()))
       .append("}")
       .toString();
   }
@@ -145,6 +154,7 @@ public final class Order implements Model {
       null,
       null,
       null,
+      null,
       null
     );
   }
@@ -155,7 +165,8 @@ public final class Order implements Model {
       createdAt,
       updatedAt,
       Inventory,
-      contact);
+      contact,
+      name);
   }
   public interface BuildStep {
     Order build();
@@ -165,6 +176,7 @@ public final class Order implements Model {
     BuildStep updatedAt(Temporal.DateTime updatedAt);
     BuildStep inventory(Inventory inventory);
     BuildStep contact(String contact);
+    BuildStep name(String name);
   }
   
 
@@ -175,6 +187,7 @@ public final class Order implements Model {
     private Temporal.DateTime updatedAt;
     private Inventory Inventory;
     private String contact;
+    private String name;
     @Override
      public Order build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
@@ -185,7 +198,8 @@ public final class Order implements Model {
           createdAt,
           updatedAt,
           Inventory,
-          contact);
+          contact,
+          name);
     }
     
     @Override
@@ -218,6 +232,12 @@ public final class Order implements Model {
         return this;
     }
     
+    @Override
+     public BuildStep name(String name) {
+        this.name = name;
+        return this;
+    }
+    
     /** 
      * WARNING: Do not set ID when creating a new object. Leave this blank and one will be auto generated for you.
      * This should only be set when referring to an already existing object.
@@ -241,13 +261,14 @@ public final class Order implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, Float quantity, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, Inventory inventory, String contact) {
+    private CopyOfBuilder(String id, Float quantity, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, Inventory inventory, String contact, String name) {
       super.id(id);
       super.quantity(quantity)
         .createdAt(createdAt)
         .updatedAt(updatedAt)
         .inventory(inventory)
-        .contact(contact);
+        .contact(contact)
+        .name(name);
     }
     
     @Override
@@ -273,6 +294,11 @@ public final class Order implements Model {
     @Override
      public CopyOfBuilder contact(String contact) {
       return (CopyOfBuilder) super.contact(contact);
+    }
+    
+    @Override
+     public CopyOfBuilder name(String name) {
+      return (CopyOfBuilder) super.name(name);
     }
   }
   

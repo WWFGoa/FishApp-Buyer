@@ -1,13 +1,14 @@
-type Order @model @auth(rules: [{allow: owner, operations: [read, create, update, delete]}, {allow: private, operations: [read, update]}]) {
+type Order @model @auth(rules: [{allow: private}]) {
   id: ID!
   quantity: Float
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
   Inventory: Inventory @connection
   contact: String
+  name: String
 }
 
-type Inventory @model @auth(rules: [{allow: private, operations: [read, update]}, {allow: owner, operations: [read, create, update, delete]}]) {
+type Inventory @model @auth(rules: [{allow: private}]) {
   id: ID!
   species: Int
   quantity: Float
@@ -21,6 +22,7 @@ type Inventory @model @auth(rules: [{allow: private, operations: [read, update]}
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
   contact: String
+  name: String
 }
 
 enum CatchSize {

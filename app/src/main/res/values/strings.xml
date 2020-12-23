@@ -241,4 +241,9 @@
     <string name="status_banned">Prohibited</string>
     <string name="total_label">Total</string>
     <string name="directions">Directions</string>
+
+    <string name="price_in_kg">\u20B9 %s/Kg</string>
+    <string name="qty_in_kg">%s Kg</string>
+    <string name="price_total">\u20B9 %s</string>
+    <string name="contact">Contact</string>
 </resources>

@@ -61,6 +61,16 @@ class OrdersFragment : Fragment() {
         }
     }
 
+
+    fun contact(contact: String) {
+        val gmmIntentUri = Uri.parse("geo:0,0?q=${contact}")
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+        mapIntent.resolveActivity(requireContext()!!.packageManager)?.let {
+            startActivity(mapIntent)
+        }
+    }
+
     override fun onDestroy() {
         adapter?.fragment = null
         super.onDestroy()

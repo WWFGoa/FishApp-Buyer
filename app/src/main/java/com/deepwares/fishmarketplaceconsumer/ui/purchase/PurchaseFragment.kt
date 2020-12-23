@@ -69,7 +69,7 @@ class PurchaseFragment : Fragment() {
         quantity.setListener {
             val qtyAmount = it
             val price = item!!.price
-            total.text = (qtyAmount * price).toString()
+            total.text = getString(R.string.price_total, (qtyAmount * price).toString())
         }
         /*
         quantity.afterTextChanged {
@@ -140,7 +140,9 @@ class PurchaseFragment : Fragment() {
         order.quantity(quantity)
         order.inventory(inventory)
         val user = Amplify.Auth.currentUser
-        order.contact(user.username + " " + user.userId)
+        //Amplify.Auth.
+        order.contact(user.username )
+        //order.name(user)
 
         Amplify.API.mutate(
             ModelMutation.create(order.build()),
@@ -173,9 +175,8 @@ class PurchaseFragment : Fragment() {
         sell_location.setText(item!!.sellLocation)
         catch_location.setText(item!!.catchLocation)
         image.setImageResource(species!!.image)
-        price.setText(item!!.price.toString())
-
-        availability.setText(item!!.availableQuantity.toString())
+        price.setText(getString(R.string.price_in_kg, item!!.price.toString()))
+        availability.setText(getString(R.string.qty_in_kg, item!!.availableQuantity.toString()))
         //findNavController().currentDestination?.label = resources.getString(species!!.name)
         name.setText(species!!.name)
 
