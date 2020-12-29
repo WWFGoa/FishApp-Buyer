@@ -90,8 +90,9 @@ class PurchaseFragment : Fragment() {
     }
 
     fun order() {
-        val qtyAmount = 0
-        // val qtyAmount = quantity.text.toString().toFloat()
+        //val qtyAmount = 0
+        quantity.value
+         val qtyAmount = quantity.value.toString().toFloat()
         val max = item!!.availableQuantity
         if (max == 0f) {
             Toast.makeText(context, R.string.order_empty, Toast.LENGTH_LONG).show()
@@ -107,8 +108,6 @@ class PurchaseFragment : Fragment() {
             val available = max - qtyAmount
             inventory.availableQuantity(available)
             val createdInv = inventory.build()
-
-
             Amplify.API.mutate(
                 ModelMutation.update(createdInv),
                 { response ->
@@ -141,7 +140,8 @@ class PurchaseFragment : Fragment() {
         order.inventory(inventory)
         val user = Amplify.Auth.currentUser
         //Amplify.Auth.
-        order.contact(user.username )
+        order.contact(user.username)
+        order.userId(user.userId)
         //order.name(user)
 
         Amplify.API.mutate(

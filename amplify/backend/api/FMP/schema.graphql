@@ -6,6 +6,7 @@ type Order @model @auth(rules: [{allow: private}]) {
   Inventory: Inventory @connection
   contact: String
   name: String
+  userId: String
 }
 
 type Inventory @model @auth(rules: [{allow: private}]) {
@@ -23,6 +24,7 @@ type Inventory @model @auth(rules: [{allow: private}]) {
   updatedAt: AWSDateTime
   contact: String
   name: String
+  userId: String
 }
 
 enum CatchSize {
