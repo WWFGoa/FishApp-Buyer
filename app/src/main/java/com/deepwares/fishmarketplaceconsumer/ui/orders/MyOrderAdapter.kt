@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.amplifyframework.datastore.generated.model.Inventory
 import com.amplifyframework.datastore.generated.model.Order
 import com.deepwares.fishmarketplace.model.Species
+import com.deepwares.fishmarketplaceconsumer.App
 import com.deepwares.fishmarketplaceconsumer.R
 import com.deepwares.fishmarketplaceconsumer.model.FishRepository
 import com.deepwares.fishmarketplaceconsumer.ui.orders.OrdersFragment
@@ -54,11 +55,19 @@ class MyOrderAdapter(var fragment: OrdersFragment?) : RecyclerView.Adapter<MyOrd
 
         val item = order.inventory
         val species = species[item.species]
+
         holder.image.setImageResource(species.image)
-        holder.cost.setText(item.price.toString())
-        holder.quantity.setText(order.quantity.toString())
-        holder.name.setText(species.name)
+        holder.cost.setText(
+            App.INSTANCE.getString(R.string.price_in_kg, item.price.toString())
+        )
+        holder.quantity.setText(
+            App.INSTANCE.getString(
+                R.string.qty_in_kg,
+                item.availableQuantity.toString()
+            )
+        )
         holder.seller.text = item.name
+        holder.name.setText(species.name)
     }
 
 }

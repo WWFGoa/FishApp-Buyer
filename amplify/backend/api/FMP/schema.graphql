@@ -1,4 +1,4 @@
-type Order @model @auth(rules: [{allow: private}]) {
+type Order @model @auth(rules: [{allow: private, operations: [read, create, update, delete]}]) {
   id: ID!
   quantity: Float
   createdAt: AWSDateTime
@@ -9,7 +9,7 @@ type Order @model @auth(rules: [{allow: private}]) {
   userId: String
 }
 
-type Inventory @model @auth(rules: [{allow: private}]) {
+type Inventory @model @auth(rules: [{allow: private, operations: [read, create, update, delete]}]) {
   id: ID!
   species: Int
   quantity: Float
