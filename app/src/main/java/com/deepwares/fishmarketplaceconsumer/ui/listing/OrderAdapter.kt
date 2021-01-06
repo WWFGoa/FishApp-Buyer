@@ -1,7 +1,9 @@
 package com.deepwares.fishmarketplace.ui.home
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.amplifyframework.datastore.generated.model.Inventory
@@ -26,9 +28,12 @@ class OrderAdapter : RecyclerView.Adapter<OrderVH>() {
         }
         vh.itemView.setOnClickListener {
             val item = items[vh.adapterPosition]
+            val available = item.availableQuantity > 0f
+            if(available){
+                val bundle = PurchaseFragmentArgs(vh.adapterPosition).toBundle()
+                vh.itemView.findNavController().navigate(R.id.navigation_purchase, bundle)
+            }
 
-            val bundle = PurchaseFragmentArgs(vh.adapterPosition).toBundle()
-            vh.itemView.findNavController().navigate(R.id.navigation_purchase, bundle)
         }
         return vh
 
@@ -51,9 +56,15 @@ class OrderAdapter : RecyclerView.Adapter<OrderVH>() {
                 item.availableQuantity.toString()
             )
         )
-        holder.seller.text = item.name
+        holder.seller.text = item.contact
         holder.name.setText(species.name)
+        val available = item.availableQuantity > 0f
+        holder.order.visibility = if (available) View.VISIBLE else View.GONE
+        holder.soldOut.visibility = if (!available) View.VISIBLE else View.GONE
+        holder.soldOutOverlay.visibility = if (!available) View.VISIBLE else View.GONE
+        ( holder.itemView as CardView).foreground = if (!available) App.getInstance().getDrawable(R.color.black_5_pct)  else App.getInstance().getDrawable(R.color.transparent)
 
+        holder.sizeType.setText("(" + item.size.name + ")")
     }
 
 }

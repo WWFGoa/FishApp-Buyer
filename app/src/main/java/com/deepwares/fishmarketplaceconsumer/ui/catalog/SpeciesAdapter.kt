@@ -7,6 +7,7 @@ import com.deepwares.fishmarketplace.interfaces.SpeciesSelector
 import com.deepwares.fishmarketplace.model.Species
 import com.deepwares.fishmarketplaceconsumer.App
 import com.deepwares.fishmarketplaceconsumer.R
+import com.deepwares.fishmarketplaceconsumer.model.FishRepository
 
 class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapter<SpeciesVH>() {
     val species = ArrayList<Species>()
@@ -15,7 +16,8 @@ class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapt
         val vh = SpeciesVH(view)
         vh.itemView.setOnClickListener {
             val item = species[vh.adapterPosition]
-            speciesSelector?.selectSpecies(item, vh.adapterPosition)
+            val speciesPos = FishRepository.species.indexOf(item)
+            speciesSelector?.selectSpecies(item, speciesPos)
         }
         return vh
 

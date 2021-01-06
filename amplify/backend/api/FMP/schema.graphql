@@ -7,6 +7,7 @@ type Order @model @auth(rules: [{allow: private, operations: [read, create, upda
   contact: String
   name: String
   userId: String
+  expired: Boolean
 }
 
 type Inventory @model @auth(rules: [{allow: private, operations: [read, create, update, delete]}]) {
@@ -25,6 +26,7 @@ type Inventory @model @auth(rules: [{allow: private, operations: [read, create, 
   contact: String
   name: String
   userId: String
+  expired: Boolean
 }
 
 enum CatchSize {

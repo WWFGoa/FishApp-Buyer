@@ -17,5 +17,6 @@ class MyOrderVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val seller = itemView.findViewById<TextView>(R.id.seller)
     val contact:Button = itemView.findViewById(R.id.contact)
     val directions:Button = itemView.findViewById(R.id.directions)
+    val sizeType = itemView.findViewById<TextView>(R.id.size_type)
 
 }

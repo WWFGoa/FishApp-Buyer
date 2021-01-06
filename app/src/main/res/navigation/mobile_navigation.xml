@@ -120,4 +120,17 @@
             app:argType="string" />
     </fragment>
 
+
+    <dialog
+        android:id="@+id/navigation_listings_filtered"
+        android:name="com.deepwares.fishmarketplaceconsumer.ui.listing.FilteredListingFragment">
+        <argument
+            android:name="filter"
+            app:argType="integer" />
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </dialog>
+
 </navigation>

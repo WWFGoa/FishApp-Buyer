@@ -40,6 +40,7 @@ public final class Inventory implements Model {
   public static final QueryField CONTACT = field("contact");
   public static final QueryField NAME = field("name");
   public static final QueryField USER_ID = field("userId");
+  public static final QueryField EXPIRED = field("expired");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="Int") Integer species;
   private final @ModelField(targetType="Float") Float quantity;
@@ -55,6 +56,7 @@ public final class Inventory implements Model {
   private final @ModelField(targetType="String") String contact;
   private final @ModelField(targetType="String") String name;
   private final @ModelField(targetType="String") String userId;
+  private final @ModelField(targetType="Boolean") Boolean expired;
   public String getId() {
       return id;
   }
@@ -115,7 +117,11 @@ public final class Inventory implements Model {
       return userId;
   }
   
-  private Inventory(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact, String name, String userId) {
+  public Boolean getExpired() {
+      return expired;
+  }
+  
+  private Inventory(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact, String name, String userId, Boolean expired) {
     this.id = id;
     this.species = species;
     this.quantity = quantity;
@@ -131,6 +137,7 @@ public final class Inventory implements Model {
     this.contact = contact;
     this.name = name;
     this.userId = userId;
+    this.expired = expired;
   }
   
   @Override
@@ -155,7 +162,8 @@ public final class Inventory implements Model {
               ObjectsCompat.equals(getUpdatedAt(), inventory.getUpdatedAt()) &&
               ObjectsCompat.equals(getContact(), inventory.getContact()) &&
               ObjectsCompat.equals(getName(), inventory.getName()) &&
-              ObjectsCompat.equals(getUserId(), inventory.getUserId());
+              ObjectsCompat.equals(getUserId(), inventory.getUserId()) &&
+              ObjectsCompat.equals(getExpired(), inventory.getExpired());
       }
   }
   
@@ -177,6 +185,7 @@ public final class Inventory implements Model {
       .append(getContact())
       .append(getName())
       .append(getUserId())
+      .append(getExpired())
       .toString()
       .hashCode();
   }
@@ -199,7 +208,8 @@ public final class Inventory implements Model {
       .append("updatedAt=" + String.valueOf(getUpdatedAt()) + ", ")
       .append("contact=" + String.valueOf(getContact()) + ", ")
       .append("name=" + String.valueOf(getName()) + ", ")
-      .append("userId=" + String.valueOf(getUserId()))
+      .append("userId=" + String.valueOf(getUserId()) + ", ")
+      .append("expired=" + String.valueOf(getExpired()))
       .append("}")
       .toString();
   }
@@ -242,6 +252,7 @@ public final class Inventory implements Model {
       null,
       null,
       null,
+      null,
       null
     );
   }
@@ -261,7 +272,8 @@ public final class Inventory implements Model {
       updatedAt,
       contact,
       name,
-      userId);
+      userId,
+      expired);
   }
   public interface BuildStep {
     Inventory build();
@@ -280,6 +292,7 @@ public final class Inventory implements Model {
     BuildStep contact(String contact);
     BuildStep name(String name);
     BuildStep userId(String userId);
+    BuildStep expired(Boolean expired);
   }
   
 
@@ -299,6 +312,7 @@ public final class Inventory implements Model {
     private String contact;
     private String name;
     private String userId;
+    private Boolean expired;
     @Override
      public Inventory build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
@@ -318,7 +332,8 @@ public final class Inventory implements Model {
           updatedAt,
           contact,
           name,
-          userId);
+          userId,
+          expired);
     }
     
     @Override
@@ -405,6 +420,12 @@ public final class Inventory implements Model {
         return this;
     }
     
+    @Override
+     public BuildStep expired(Boolean expired) {
+        this.expired = expired;
+        return this;
+    }
+    
     /** 
      * WARNING: Do not set ID when creating a new object. Leave this blank and one will be auto generated for you.
      * This should only be set when referring to an already existing object.
@@ -428,7 +449,7 @@ public final class Inventory implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact, String name, String userId) {
+    private CopyOfBuilder(String id, Integer species, Float quantity, Float availableQuantity, Integer price, String catchLocation, String sellLocation, String catchTime, String sellTime, CatchSize size, Temporal.DateTime createdAt, Temporal.DateTime updatedAt, String contact, String name, String userId, Boolean expired) {
       super.id(id);
       super.species(species)
         .quantity(quantity)
@@ -443,7 +464,8 @@ public final class Inventory implements Model {
         .updatedAt(updatedAt)
         .contact(contact)
         .name(name)
-        .userId(userId);
+        .userId(userId)
+        .expired(expired);
     }
     
     @Override
@@ -514,6 +536,11 @@ public final class Inventory implements Model {
     @Override
      public CopyOfBuilder userId(String userId) {
       return (CopyOfBuilder) super.userId(userId);
+    }
+    
+    @Override
+     public CopyOfBuilder expired(Boolean expired) {
+      return (CopyOfBuilder) super.expired(expired);
     }
   }
   

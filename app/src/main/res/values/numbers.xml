@@ -4,11 +4,10 @@
     <integer name="anchovy_min_price">200</integer>
     <integer name="bombay_duck_min_price">300</integer>
     <integer name="giant_sea_perch_min_price">500</integer>
-    <integer name="river_sole_min_price">200</integer>
-    <integer name="sea_sole_min_price">200</integer>
+    <integer name="sole_min_price">200</integer>
     <integer name="pomfret_min_price">1000</integer>
     <integer name="salmon_min_price">500</integer>
-    <integer name="kingfish_min_price">1000</integer>
+    <integer name="kingfish_min_price">0</integer>
     <integer name="red_snapper_min_price">300</integer>
     <integer name="grouper_min_price">500</integer>
     <integer name="tuna_min_price">275</integer>
@@ -16,7 +15,7 @@
     <integer name="ladyfish_min_price">200</integer>
     <integer name="hilsa_min_price">600</integer>
     <integer name="mackerel_min_price">100</integer>
-    <integer name="black_pomfret_min_price">500</integer>
+    <integer name="black_pomfret_min_price">0</integer>
     <integer name="mullet_min_price">250</integer>
     <integer name="sardine_min_price">200</integer>
     <integer name="croaker_min_price">200</integer>
@@ -41,11 +40,10 @@
     <integer name="anchovy_max_price">350</integer>
     <integer name="bombay_duck_max_price">350</integer>
     <integer name="giant_sea_perch_max_price">600</integer>
-    <integer name="river_sole_max_price">300</integer>
-    <integer name="sea_sole_max_price">0</integer>
+    <integer name="sole_max_price">300</integer>
     <integer name="pomfret_max_price">1200</integer>
     <integer name="salmon_max_price">700</integer>
-    <integer name="kingfish_max_price">0</integer>
+    <integer name="kingfish_max_price">1000</integer>
     <integer name="red_snapper_max_price">500</integer>
     <integer name="grouper_max_price">800</integer>
     <integer name="tuna_max_price">500</integer>
@@ -53,7 +51,7 @@
     <integer name="ladyfish_max_price">500</integer>
     <integer name="hilsa_max_price">850</integer>
     <integer name="mackerel_max_price">400</integer>
-    <integer name="black_pomfret_max_price">0</integer>
+    <integer name="black_pomfret_max_price">500</integer>
     <integer name="mullet_max_price">300</integer>
     <integer name="sardine_max_price">300</integer>
     <integer name="croaker_max_price">300</integer>
@@ -78,8 +76,7 @@
     <integer name="anchovy_status">2</integer>
     <integer name="bombay_duck_status">2</integer>
     <integer name="giant_sea_perch_status">0</integer>
-    <integer name="river_sole_status">0</integer>
-    <integer name="sea_sole_status">1</integer>
+    <integer name="sole_status">1</integer>
     <integer name="pomfret_status">1</integer>
     <integer name="salmon_status">3</integer>
     <integer name="kingfish_status">2</integer>

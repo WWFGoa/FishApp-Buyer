@@ -160,11 +160,14 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
+        /*
         Toast.makeText(
             applicationContext,
             "$welcome $displayName",
             Toast.LENGTH_LONG
         ).show()
+
+         */
     }
 
     private fun showLoginFailed(@StringRes errorString: Int, errorType: LoginError?) {
@@ -191,7 +194,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun handleLoginSuccess() {
-
 
 
         val tutorialFragment =

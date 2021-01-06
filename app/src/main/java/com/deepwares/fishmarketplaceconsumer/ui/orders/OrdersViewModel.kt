@@ -27,7 +27,11 @@ class OrdersViewModel : ViewModel() {
             { response ->
                 response?.data?.let {
                     val newitems = ArrayList<Order>()
-                    newitems.addAll(it)
+                    val filter = it.filter { it.userId == Amplify.Auth.currentUser.userId }
+                    if (!filter.isNullOrEmpty()) {
+                        newitems.addAll(filter)
+                    }
+                    // newitems.addAll(it)
                     items.postValue(newitems)
                 }
                 Log.d(TAG, "Got items : " + response.data?.toString())

@@ -37,24 +37,14 @@ object FishRepository {
             R.string.giant_sea_perch_description
         ),
         Species(
-            R.string.river_sole,
+            R.string.sole,
             R.drawable.sole,
-            R.integer.river_sole_status,
-            R.integer.river_sole_min_price,
-            R.integer.river_sole_max_price,
-            R.string.river_sole_scientific_name,
-            R.string.river_sole_common_name,
-            R.string.river_sole_description
-        ),
-        Species(
-            R.string.sea_sole,
-            R.drawable.sole,
-            R.integer.sea_sole_status,
-            R.integer.sea_sole_min_price,
-            R.integer.sea_sole_max_price,
-            R.string.sea_sole_scientific_name,
-            R.string.sea_sole_common_name,
-            R.string.sea_sole_description
+            R.integer.sole_status,
+            R.integer.sole_min_price,
+            R.integer.sole_max_price,
+            R.string.sole_scientific_name,
+            R.string.sole_common_name,
+            R.string.sole_description
         ),
         Species(
             R.string.pomfret,

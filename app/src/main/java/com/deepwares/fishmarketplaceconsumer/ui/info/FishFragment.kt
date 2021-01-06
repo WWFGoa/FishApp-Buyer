@@ -13,6 +13,7 @@ import com.deepwares.fishmarketplace.model.Species
 import com.deepwares.fishmarketplaceconsumer.R
 import com.deepwares.fishmarketplaceconsumer.model.FishRepository
 import com.deepwares.fishmarketplaceconsumer.ui.catalog.CreateViewModel
+import com.deepwares.fishmarketplaceconsumer.ui.listing.FilteredListingFragmentArgs
 import com.deepwares.fishmarketplaceconsumer.ui.recipe.RecipeFragmentArgs
 import kotlinx.android.synthetic.main.fish_fragment.*
 
@@ -68,6 +69,25 @@ class FishFragment : Fragment() {
                 conservation_status.setText(R.string.status_no_threat)
                 conservation_status.setTextColor(Color.BLUE)
             }
+        }
+
+        availability.setOnClickListener {
+            checkAvailability()
+        }
+    }
+
+    private fun checkAvailability() {
+        if (true) {
+
+            findNavController().navigate(
+                R.id.navigation_listings_filtered,
+                FilteredListingFragmentArgs(
+                    args.image,
+                    resources.getString(species.name)
+                ).toBundle()
+            )
+        } else {
+
         }
     }
 

@@ -68,8 +68,7 @@
     <string name="anchovy">Anchovy</string>
     <string name="bombay_duck">Bombay Duck</string>
     <string name="giant_sea_perch">Giant Sea Perch</string>
-    <string name="river_sole">River Sole</string>
-    <string name="sea_sole">Sea Sole</string>
+    <string name="sole">Sole</string>
     <string name="pomfret">Pomfret</string>
     <string name="salmon">Indian Salmon</string>
     <string name="kingfish">Kingfish</string>
@@ -104,8 +103,7 @@
     <string name="anchovy_common_name">Indian anchovy</string>
     <string name="bombay_duck_common_name">Bombay Duck</string>
     <string name="giant_sea_perch_common_name">Bhekti/ Seabass</string>
-    <string name="river_sole_common_name">Malabar Sole/Soles</string>
-    <string name="sea_sole_common_name">Sea Sole</string>
+    <string name="sole_common_name">Malabar Sole/Soles</string>
     <string name="pomfret_common_name">Silver pomfret</string>
     <string name="salmon_common_name">Indian Salmon</string>
     <string name="kingfish_common_name">Black kingfish/Cobia</string>
@@ -140,8 +138,7 @@
     <string name="anchovy_scientific_name">Stolephorus indicus</string>
     <string name="bombay_duck_scientific_name">Harpadon nehereus</string>
     <string name="giant_sea_perch_scientific_name">Lates calcarifer</string>
-    <string name="river_sole_scientific_name">Brachiurus panoides</string>
-    <string name="sea_sole_scientific_name">Cynoglossus spp.</string>
+    <string name="sole_scientific_name">Brachiurus panoides</string>
     <string name="pomfret_scientific_name">Pampus argenteus</string>
     <string name="salmon_scientific_name">Eleutheronema tetradactylum</string>
     <string name="kingfish_scientific_name">Rachycentron canadum</string>
@@ -180,8 +177,7 @@
     </string>
     <string name="bombay_duck_description">Bombay duck despite its name, is not a duck but a lizardfish. Adult fish grow to a length of 25–40cm.  They inhabit the waters of the western Indo- Pacific region. They are mostly found in deep offshore waters but gather near rivers during the monsoons. These fish are marketed fresh, dried or salted. Bombay ducks are a good source of vitamin B6 and B3 (Niacin).  </string>
     <string name="giant_sea_perch_description">Giant sea Perch or Barramundi is widely distributed in the western Indo– Pacific region. They grow to a length of 150–200cm.These fish inhabit rivers before returning to more saline ocean waters to spawn. Nutritionally this species is packed with omega-3 fatty acids that help promote brain and cardiovascular health. </string>
-    <string name="river_sole_description">Sole fish is a flatfish, and as the name implies, it has an unusual flat body shape which makes the species suited for life on the ocean floor. In India there are numerous species that are sold under the common name sole fish, includingCynoglossus spp. These fish are an excellent source of protein, calcium and selenium.  </string>
-    <string name="sea_sole_description">Sole fish is a flatfish, and as the name implies, it has an unusual flat body shape which makes the species suited for life on the ocean floor. In India there are numerous species that are sold under the common name sole fish, includingCynoglossus spp. These fish are an excellent source of protein, calcium and selenium.  </string>
+    <string name="sole_description">Sole fish is a flatfish, and as the name implies, it has an unusual flat body shape which makes the species suited for life on the ocean floor. In India there are numerous species that are sold under the common name sole fish, includingCynoglossus spp. These fish are an excellent source of protein, calcium and selenium.  </string>
     <string name="pomfret_description">Silver or white pomfret is a species of butterfish that is found widely in the Western Indo–Pacific region. They grow to a length of 30–60cm. The species is characterised by its flat body and forked tail. They are usually found in schools over muddy bottoms, and they feed on zooplankton. Nutritionally this fish is rich in vitamins and minerals such as vitamin D and vitamin B12. </string>
     <string name="salmon_description">Indian Salmon or Rawas as it is commonly called is found in the western Indo– Pacific region. These fish grow to a length of 50–200cm. They form loose schools, although adults are often observed in pairs. They are a carnivorous species feeding on prawns, fish and occasionally on polychaete worms. The flesh of this species is oily and is rich in omega- 3, Vitamin A and Vitamin D. </string>
     <string name="kingfish_description">King fish are a large fast swimming pelagic fish. They are mostly a solitary species, that hunts in shallow waters, feeding on small fish species like anchovies, carangids, clupeids, squid and shrimp.  In India the common name of kingfish is given to multiple species of fish including Rachycentroncanadum and Scomberomoruscommerson. King fish is an excellent source of vitamin A and vitamin B12.  </string>
@@ -246,4 +242,7 @@
     <string name="qty_in_kg">%s Kg</string>
     <string name="price_total">\u20B9 %s</string>
     <string name="contact">Contact</string>
+    <string name="no_vendors">No current vendors \nfor this fish</string>
+    <string name="no_vendors_all">No Active listings \nat this time</string>
+    <string name="sold_out">SOLD OUT!</string>
 </resources>
