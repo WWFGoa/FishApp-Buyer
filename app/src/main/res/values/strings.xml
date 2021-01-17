@@ -170,6 +170,42 @@
     <string name="mahi_mahi_scientific_name">Coryphena hippures</string>
     <string name="coconut_para_scientific_name">Scombroides commersonias</string>
 
+    <string name="anchovy_konkani">Velli</string>
+    <string name="bombay_duck_konkani">Bombil</string>
+    <string name="giant_sea_perch_konkani">Chonak</string>
+    <string name="sole_konkani">Lepo</string>
+    <string name="pomfret_konkani">Pamplet</string>
+    <string name="salmon_konkani">Raus</string>
+    <string name="kingfish_konkani">Viswon/Surmai</string>
+    <string name="red_snapper_konkani">Tamuso</string>
+    <string name="grouper_konkani">Gobro</string>
+    <string name="tuna_konkani">Rogtado</string>
+    <string name="peral_spot_konkani">Kalundar</string>
+    <string name="ladyfish_konkani">Mudoshi</string>
+    <string name="hilsa_konkani">Pedi</string>
+    <string name="mackerel_konkani">Bangda</string>
+    <string name="black_pomfret_konkani">Pamplet</string>
+    <string name="mullet_konkani">Shevto </string>
+    <string name="sardine_konkani">Tarlo</string>
+    <string name="croaker_konkani">Dodyaro</string>
+    <string name="shark_konkani">Thato</string>
+    <string name="ray_konkani">Wagholen</string>
+    <string name="ghole_konkani">Ghol</string>
+    <string name="murrel_konkani">Snake head/Murrel</string>
+    <string name="seerfish_konkani">Viswon/Surmai</string>
+    <string name="sea_veral_konkani">Greater lizard fish</string>
+    <string name="squid_konkani">Maanke/Bondas</string>
+    <string name="tiger_prawn_konkani">Vagyo</string>
+    <string name="prawns_konkani">Sungta</string>
+    <string name="shrimp_konkani">Sungta</string>
+    <string name="lobster_konkani">Shivodd</string>
+    <string name="crab_konkani">Kurli</string>
+    <string name="short_necked_clams_konkani">Tisreo</string>
+    <string name="mussels_konkani">Xinaneao</string>
+    <string name="mahi_mahi_konkani">Mahi Mahi</string>
+    <string name="coconut_para_konkani">Talang queenfish</string>
+
+
     <string name="user_does_not_exist">New user. Continuing to create account!</string>
 
 
@@ -213,12 +249,15 @@
     <string name="cancel">Cancel</string>
     <string name="sellers">Sellers</string>
     <string name="availability">Check Availability</string>
-    <string name="conservation_status">Conservation Status</string>
+    <string name="conservation_status">Fishery Status</string>
 
 
-    <string name="status_least_concern">Least Concern</string>
-    <string name="status_vulnerable">Vulnerable</string>
-    <string name="status_critical">Critically Endangered</string>
+    <string name="status_adbundant">Abundant</string>
+    <string name="status_declining">Declining</string>
+    <string name="status_depleted">Depleted</string>
+    <string name="status_not_major_fishery">Not a major fishery</string>
+    <string name="status_banned">Prohibited</string>
+
     <string name="scientific_label">Scientifica Name</string>
     <string name="common_label">Common Name</string>
     <string name="catch_location_label">Catch Location</string>
@@ -233,8 +272,7 @@
     <string name="order_empty">Sorry unfortunately the seller ran out of the fish at this time</string>
     <string name="order_excess">Please enter an amount that is lesser than the available quantity</string>
     <string name="order_min">Please enter at least 1Kg</string>
-    <string name="status_no_threat">No Threat</string>
-    <string name="status_banned">Prohibited</string>
+
     <string name="total_label">Total</string>
     <string name="directions">Directions</string>
 
@@ -245,4 +283,6 @@
     <string name="no_vendors">No current vendors \nfor this fish</string>
     <string name="no_vendors_all">No Active listings \nat this time</string>
     <string name="sold_out">SOLD OUT!</string>
+    <string name="unavailable">Unavailable</string>
+    <string name="konkani_label">Konkani</string>
 </resources>

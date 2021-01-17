@@ -94,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
                         EditorInfo.IME_ACTION_DONE ->
                             loginViewModel.login(
                                 phone.text.toString(),
-                                password.text.toString()
+                                password.text.toString(), null
                             )
                     }
                 false
@@ -128,7 +128,7 @@ class LoginActivity : AppCompatActivity() {
         login.setOnClickListener {
             if (loginViewModel.loginFormState.value != null && loginViewModel.loginFormState.value!!.isDataValid) {
                 loading.visibility = View.VISIBLE
-                loginViewModel.login("+91" + phone.text.toString(), password.text.toString())
+                loginViewModel.login("+91" + phone.text.toString(), password.text.toString(), null)
             } else {
                 Toast.makeText(this, R.string.login_form_error, Toast.LENGTH_LONG).show()
             }

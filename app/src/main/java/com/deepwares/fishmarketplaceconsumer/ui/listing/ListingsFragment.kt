@@ -47,6 +47,8 @@ class ListingsFragment : Fragment() {
 
         root.postDelayed({ list?.visibility = View.VISIBLE }, 3000)
         listingsViewModel.items.observe(viewLifecycleOwner, Observer {
+            swipe_refresh.isRefreshing = false
+
             adapter.items.clear()
             if (filter == -1) {
                 adapter.items.addAll(it)
@@ -96,6 +98,8 @@ class ListingsFragment : Fragment() {
 
 
         })
+
+        swipe_refresh.setOnRefreshListener { listingsViewModel.fetch() }
     }
 
     fun updateEmptyState() {

@@ -8,6 +8,7 @@ data class Species(
     val maxPrice: Int,
     val scientificName: Int,
     val commonName: Int,
-    var desc: Int
+    var desc: Int,
+    var konkaniName:Int
 ) {
 }

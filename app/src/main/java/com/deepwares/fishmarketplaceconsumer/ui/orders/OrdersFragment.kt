@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.deepwares.fishmarketplace.ui.home.MyOrderAdapter
 import com.deepwares.fishmarketplace.ui.home.OrderAdapter
 import com.deepwares.fishmarketplaceconsumer.R
-import kotlinx.android.synthetic.main.fragment_listings.*
+import kotlinx.android.synthetic.main.fragment_orders.*
 
 class OrdersFragment : Fragment() {
 
@@ -32,6 +32,7 @@ class OrdersFragment : Fragment() {
         })
         adapter = MyOrderAdapter(this)
         ordersViewModel.items.observe(viewLifecycleOwner, Observer {
+            swipe_refresh.isRefreshing = false
             adapter.items.clear()
             adapter.items.addAll(it)
             adapter.notifyDataSetChanged()
@@ -44,6 +45,9 @@ class OrdersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         list.layoutManager = LinearLayoutManager(context)
         list.adapter = adapter
+        swipe_refresh.setOnRefreshListener {
+            ordersViewModel.fetch()
+        }
     }
 
     override fun onResume() {

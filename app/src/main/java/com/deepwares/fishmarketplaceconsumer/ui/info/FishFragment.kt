@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.deepwares.fishmarketplace.model.Species
@@ -47,32 +48,45 @@ class FishFragment : Fragment() {
         desc.setText(species.desc)
         common.setText(species.commonName)
         scientific.setText(species.scientificName)
+        konkani.setText(species.konkaniName)
         val status = resources.getInteger(species.status)
+        var allowed = true
         when (status) {
             1 -> {
-                conservation_status.setText(R.string.status_least_concern)
-                conservation_status.setTextColor(Color.GREEN)
+                conservation_status.setText(R.string.status_adbundant)
+                conservation_status.setTextColor(resources.getColor(R.color.species_background_green))
             }
             2 -> {
-                conservation_status.setText(R.string.status_vulnerable)
-                conservation_status.setTextColor(Color.YELLOW)
+                conservation_status.setText(R.string.status_declining)
+                conservation_status.setTextColor(resources.getColor(R.color.species_background_yellow))
             }
             3 -> {
-                conservation_status.setText(R.string.status_critical)
-                conservation_status.setTextColor(Color.RED)
+                conservation_status.setText(R.string.status_depleted)
+                conservation_status.setTextColor(resources.getColor(R.color.species_background_red))
             }
             4 -> {
+                allowed = false
                 conservation_status.setText(R.string.status_banned)
-                conservation_status.setTextColor(Color.GRAY)
+                availability.setText(R.string.unavailable)
+                conservation_status.setTextColor(resources.getColor(R.color.species_background_grey))
             }
             else -> {
-                conservation_status.setText(R.string.status_no_threat)
-                conservation_status.setTextColor(Color.BLUE)
+                conservation_status.setText(R.string.status_not_major_fishery)
+                conservation_status.setTextColor(resources.getColor(R.color.species_background_blue))
             }
         }
 
         availability.setOnClickListener {
-            checkAvailability()
+            if (allowed) {
+                checkAvailability()
+            } else {
+                Toast.makeText(
+                    context,
+                    "Sorry this species is prohibited from consumption",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
         }
     }
 

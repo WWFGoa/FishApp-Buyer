@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.amplifyframework.api.ApiException
 import com.amplifyframework.api.graphql.model.ModelMutation
+import com.amplifyframework.auth.AuthUserAttributeKey
 import com.amplifyframework.core.Amplify
 import com.amplifyframework.datastore.generated.model.Inventory
 import com.amplifyframework.datastore.generated.model.Order
@@ -71,28 +72,30 @@ class PurchaseFragment : Fragment() {
             val price = item!!.price
             total.text = getString(R.string.price_total, (qtyAmount * price).toString())
         }
-        /*
-        quantity.afterTextChanged {
-            val qty = quantity.text.toString()
-            val qtyAmount = if (qty.isNotBlank() && qty.isNotEmpty()) qty.toInt() else 0
-            val price = item!!.price
-            total.text = (qtyAmount * price).toString()
-        }
-        quantity.setOnEditorActionListener { v, actionId, event ->
-
-            val qtyAmount = quantity.text.toString().toInt()
-            val price = item!!.price
-            total.text = (qtyAmount * price).toString()
-            return@setOnEditorActionListener true
-        }
-*/
 
     }
 
+    var userName: String? = null
     fun order() {
+        if (userName == null) {
+            Amplify.Auth.fetchUserAttributes({ list ->
+                val name = list.find { it.key == AuthUserAttributeKey.name() }
+                userName = name?.value
+                if (name == null) {
+                    userName = "Seller"
+
+                }
+                orderInternal()
+            }, {})
+        } else {
+            orderInternal()
+        }
+    }
+
+    fun orderInternal() {
         //val qtyAmount = 0
         quantity.value
-         val qtyAmount = quantity.value.toString().toFloat()
+        val qtyAmount = quantity.value.toString().toFloat()
         val max = item!!.availableQuantity
         if (max == 0f) {
             Toast.makeText(context, R.string.order_empty, Toast.LENGTH_LONG).show()
@@ -142,7 +145,7 @@ class PurchaseFragment : Fragment() {
         //Amplify.Auth.
         order.contact(user.username)
         order.userId(user.userId)
-        //order.name(user)
+        order.name(userName)
 
         Amplify.API.mutate(
             ModelMutation.create(order.build()),
@@ -170,7 +173,7 @@ class PurchaseFragment : Fragment() {
 
 
     private fun update() {
-        seller.text = item!!.contact
+        seller.text = item!!.name
         // seller_rating.text = "4.3"
         sell_location.setText(item!!.sellLocation)
         catch_location.setText(item!!.catchLocation)

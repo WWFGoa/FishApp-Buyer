@@ -14,7 +14,8 @@ object FishRepository {
             R.integer.anchovy_max_price,
             R.string.anchovy_scientific_name,
             R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.string.anchovy_description,
+            R.string.anchovy_konkani
         ),
         Species(
             R.string.bombay_duck,
@@ -24,17 +25,19 @@ object FishRepository {
             R.integer.bombay_duck_max_price,
             R.string.bombay_duck_scientific_name,
             R.string.bombay_duck_common_name,
-            R.string.bombay_duck_description
+            R.string.bombay_duck_description,
+            R.string.bombay_duck_konkani
         ),
         Species(
             R.string.giant_sea_perch,
-            R.drawable.baramundi,
+            R.drawable.giant_sea_perch,
             R.integer.giant_sea_perch_status,
             R.integer.giant_sea_perch_min_price,
             R.integer.giant_sea_perch_max_price,
             R.string.giant_sea_perch_scientific_name,
             R.string.giant_sea_perch_common_name,
-            R.string.giant_sea_perch_description
+            R.string.giant_sea_perch_description,
+            R.string.giant_sea_perch_konkani
         ),
         Species(
             R.string.sole,
@@ -44,7 +47,8 @@ object FishRepository {
             R.integer.sole_max_price,
             R.string.sole_scientific_name,
             R.string.sole_common_name,
-            R.string.sole_description
+            R.string.sole_description,
+            R.string.sole_konkani
         ),
         Species(
             R.string.pomfret,
@@ -54,7 +58,8 @@ object FishRepository {
             R.integer.pomfret_max_price,
             R.string.pomfret_scientific_name,
             R.string.pomfret_common_name,
-            R.string.pomfret_description
+            R.string.pomfret_description,
+            R.string.pomfret_konkani
         ),
         Species(
             R.string.salmon,
@@ -64,7 +69,8 @@ object FishRepository {
             R.integer.salmon_max_price,
             R.string.salmon_scientific_name,
             R.string.salmon_common_name,
-            R.string.salmon_description
+            R.string.salmon_description,
+            R.string.salmon_konkani
         ),
         Species(
             R.string.kingfish,
@@ -74,7 +80,8 @@ object FishRepository {
             R.integer.kingfish_max_price,
             R.string.kingfish_scientific_name,
             R.string.kingfish_common_name,
-            R.string.kingfish_description
+            R.string.kingfish_description,
+            R.string.kingfish_konkani
         ),
         Species(
             R.string.red_snapper,
@@ -84,7 +91,8 @@ object FishRepository {
             R.integer.red_snapper_max_price,
             R.string.red_snapper_scientific_name,
             R.string.red_snapper_common_name,
-            R.string.red_snapper_description
+            R.string.red_snapper_description,
+            R.string.red_snapper_konkani
         ),
         Species(
             R.string.grouper,
@@ -94,7 +102,8 @@ object FishRepository {
             R.integer.grouper_max_price,
             R.string.grouper_scientific_name,
             R.string.grouper_common_name,
-            R.string.grouper_description
+            R.string.grouper_description,
+            R.string.grouper_konkani
         ),
         Species(
             R.string.tuna,
@@ -104,7 +113,8 @@ object FishRepository {
             R.integer.tuna_max_price,
             R.string.tuna_scientific_name,
             R.string.tuna_common_name,
-            R.string.tuna_description
+            R.string.tuna_description,
+            R.string.tuna_konkani
         ),
         Species(
             R.string.peral_spot,
@@ -114,7 +124,8 @@ object FishRepository {
             R.integer.peral_spot_max_price,
             R.string.peral_spot_scientific_name,
             R.string.peral_spot_common_name,
-            R.string.peral_spot_description
+            R.string.peral_spot_description,
+            R.string.peral_spot_konkani
         ),
         Species(
             R.string.ladyfish,
@@ -124,7 +135,8 @@ object FishRepository {
             R.integer.ladyfish_max_price,
             R.string.ladyfish_scientific_name,
             R.string.ladyfish_common_name,
-            R.string.ladyfish_description
+            R.string.ladyfish_description,
+            R.string.ladyfish_konkani
         ),
         Species(
             R.string.hilsa,
@@ -134,7 +146,8 @@ object FishRepository {
             R.integer.hilsa_max_price,
             R.string.hilsa_scientific_name,
             R.string.hilsa_common_name,
-            R.string.hilsa_description
+            R.string.hilsa_description,
+            R.string.hilsa_konkani
         ),
         Species(
             R.string.mackerel,
@@ -144,7 +157,8 @@ object FishRepository {
             R.integer.anchovy_max_price,
             R.string.anchovy_scientific_name,
             R.string.anchovy_common_name,
-            R.string.anchovy_description
+            R.string.anchovy_description,
+            R.string.mackerel_konkani
         ),
         Species(
             R.string.black_pomfret,
@@ -154,7 +168,8 @@ object FishRepository {
             R.integer.black_pomfret_max_price,
             R.string.black_pomfret_scientific_name,
             R.string.black_pomfret_common_name,
-            R.string.black_pomfret_description
+            R.string.black_pomfret_description,
+            R.string.black_pomfret_konkani
         ),
         Species(
             R.string.mullet,
@@ -164,7 +179,8 @@ object FishRepository {
             R.integer.mullet_max_price,
             R.string.mullet_scientific_name,
             R.string.mullet_common_name,
-            R.string.mullet_description
+            R.string.mullet_description,
+            R.string.mullet_konkani
         ),
         Species(
             R.string.sardine,
@@ -174,7 +190,8 @@ object FishRepository {
             R.integer.sardine_max_price,
             R.string.sardine_scientific_name,
             R.string.sardine_common_name,
-            R.string.sardine_description
+            R.string.sardine_description,
+            R.string.sardine_konkani
         ),
         Species(
             R.string.croaker,
@@ -184,7 +201,8 @@ object FishRepository {
             R.integer.croaker_max_price,
             R.string.croaker_scientific_name,
             R.string.croaker_common_name,
-            R.string.croaker_description
+            R.string.croaker_description,
+            R.string.croaker_konkani
         ),
         Species(
             R.string.shark,
@@ -194,7 +212,8 @@ object FishRepository {
             R.integer.shark_max_price,
             R.string.shark_scientific_name,
             R.string.shark_common_name,
-            R.string.shark_description
+            R.string.shark_description,
+            R.string.shark_konkani
         ),
         Species(
             R.string.ray,
@@ -204,7 +223,8 @@ object FishRepository {
             R.integer.ray_max_price,
             R.string.ray_scientific_name,
             R.string.ray_common_name,
-            R.string.ray_description
+            R.string.ray_description,
+            R.string.ray_konkani
         ),
         Species(
             R.string.ghole,
@@ -214,7 +234,8 @@ object FishRepository {
             R.integer.ghole_max_price,
             R.string.ghole_scientific_name,
             R.string.ghole_common_name,
-            R.string.ghole_description
+            R.string.ghole_description,
+            R.string.ghole_konkani
         ),
         Species(
             R.string.murrel,
@@ -224,7 +245,8 @@ object FishRepository {
             R.integer.murrel_max_price,
             R.string.murrel_scientific_name,
             R.string.murrel_common_name,
-            R.string.murrel_description
+            R.string.murrel_description,
+            R.string.murrel_konkani
         ),
         Species(
             R.string.seerfish,
@@ -234,7 +256,8 @@ object FishRepository {
             R.integer.seerfish_max_price,
             R.string.seerfish_scientific_name,
             R.string.seerfish_common_name,
-            R.string.seerfish_description
+            R.string.seerfish_description,
+            R.string.seerfish_konkani
         ),
         Species(
             R.string.sea_veral,
@@ -244,7 +267,8 @@ object FishRepository {
             R.integer.sea_veral_max_price,
             R.string.sea_veral_scientific_name,
             R.string.sea_veral_common_name,
-            R.string.sea_veral_description
+            R.string.sea_veral_description,
+            R.string.sea_veral_konkani
         ),
 
         Species(
@@ -255,7 +279,8 @@ object FishRepository {
             R.integer.squid_max_price,
             R.string.squid_scientific_name,
             R.string.squid_common_name,
-            R.string.squid_description
+            R.string.squid_description,
+            R.string.squid_konkani
         ),
         Species(
             R.string.tiger_prawn,
@@ -265,7 +290,8 @@ object FishRepository {
             R.integer.tiger_prawn_max_price,
             R.string.tiger_prawn_scientific_name,
             R.string.tiger_prawn_common_name,
-            R.string.tiger_prawn_description
+            R.string.tiger_prawn_description,
+            R.string.tiger_prawn_konkani
         ),
         Species(
             R.string.prawns,
@@ -275,7 +301,8 @@ object FishRepository {
             R.integer.prawns_max_price,
             R.string.prawns_scientific_name,
             R.string.prawns_common_name,
-            R.string.prawns_description
+            R.string.prawns_description,
+            R.string.prawns_konkani
         ),
         Species(
             R.string.shrimp,
@@ -285,7 +312,8 @@ object FishRepository {
             R.integer.shrimp_max_price,
             R.string.shrimp_scientific_name,
             R.string.shrimp_common_name,
-            R.string.shrimp_description
+            R.string.shrimp_description,
+            R.string.shrimp_konkani
         ),
         Species(
             R.string.lobster,
@@ -295,7 +323,8 @@ object FishRepository {
             R.integer.lobster_max_price,
             R.string.lobster_scientific_name,
             R.string.lobster_common_name,
-            R.string.lobster_description
+            R.string.lobster_description,
+            R.string.lobster_konkani
         ),
         Species(
             R.string.crab,
@@ -305,7 +334,8 @@ object FishRepository {
             R.integer.crab_max_price,
             R.string.crab_scientific_name,
             R.string.crab_common_name,
-            R.string.crab_description
+            R.string.crab_description,
+            R.string.crab_konkani
         ),
         Species(
             R.string.short_necked_clams,
@@ -315,7 +345,8 @@ object FishRepository {
             R.integer.short_necked_clams_max_price,
             R.string.short_necked_clams_scientific_name,
             R.string.short_necked_clams_common_name,
-            R.string.short_necked_clams_description
+            R.string.short_necked_clams_description,
+            R.string.short_necked_clams_konkani
         ),
         Species(
             R.string.mussels,
@@ -325,7 +356,8 @@ object FishRepository {
             R.integer.mussels_max_price,
             R.string.mussels_scientific_name,
             R.string.mussels_common_name,
-            R.string.mussels_description
+            R.string.mussels_description,
+            R.string.mussels_konkani
         ),
         Species(
             R.string.mahi_mahi,
@@ -335,9 +367,9 @@ object FishRepository {
             R.integer.mahi_mahi_max_price,
             R.string.mahi_mahi_scientific_name,
             R.string.mahi_mahi_common_name,
-            R.string.mahi_mahi_description
-        )
-        ,
+            R.string.mahi_mahi_description,
+            R.string.mahi_mahi_konkani
+        ),
         Species(
             R.string.coconut_para,
             R.drawable.coconut_para,
@@ -346,7 +378,8 @@ object FishRepository {
             R.integer.coconut_para_max_price,
             R.string.coconut_para_scientific_name,
             R.string.coconut_para_common_name,
-            R.string.coconut_para_description
+            R.string.coconut_para_description,
+            R.string.coconut_para_konkani
         )
     )
 }

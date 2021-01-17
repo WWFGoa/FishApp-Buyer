@@ -125,14 +125,6 @@ class SearchFragment : Fragment(), SpeciesSelector {
     }
 
     override fun selectSpecies(species: Species, position: Int) {
-        if (App.INSTANCE.resources.getInteger(species.status) == 4) {
-            Toast.makeText(
-                context,
-                "Sorry this species is prohibited from consumption",
-                Toast.LENGTH_LONG
-            ).show()
-            return
-        }
         val bundle = FishFragmentArgs(position, species.name).toBundle()
         findNavController().navigate(R.id.navigation_fish_info, bundle)
     }

@@ -25,7 +25,7 @@ import androidx.fragment.app.DialogFragment;
  */
 public class BaseDialogFragment extends DialogFragment {
 
-    protected final String TAG =" Util.getLogTag(getClass());";
+    protected final String TAG = getClass().getName();
     private boolean mSaveInstanceCalled;
     protected final Handler mHandler = new Handler(Looper.getMainLooper());
     protected boolean mIsLandscape;
@@ -43,9 +43,12 @@ public class BaseDialogFragment extends DialogFragment {
 
     public static class SimpleShowHideListener implements ShowHideListener {
         @Override
-        public void onDialogFragmentShown() {}
+        public void onDialogFragmentShown() {
+        }
+
         @Override
-        public void onDialogFragmentCancelled() {}
+        public void onDialogFragmentCancelled() {
+        }
     }
 
     protected ShowHideListener mShowHideListener;
@@ -81,8 +84,6 @@ public class BaseDialogFragment extends DialogFragment {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         return dialog;
     }
-
-
 
 
     /**

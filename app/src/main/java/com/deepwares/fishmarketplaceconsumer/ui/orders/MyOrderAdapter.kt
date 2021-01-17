@@ -32,15 +32,9 @@ class MyOrderAdapter(var fragment: OrdersFragment?) : RecyclerView.Adapter<MyOrd
         vh.contact.setOnClickListener {
             val item = items[vh.adapterPosition]
 
-            val location = item.inventory.sellLocation
+            val location = item.inventory.contact
             fragment?.contact(location)
 
-        }
-        vh.itemView.setOnClickListener {
-            val item = items[vh.adapterPosition]
-
-            val location = item.inventory.sellLocation
-            fragment?.launchMaps(location)
         }
         return vh
 
@@ -66,7 +60,7 @@ class MyOrderAdapter(var fragment: OrdersFragment?) : RecyclerView.Adapter<MyOrd
                 item.quantity.toString()
             )
         )
-        holder.seller.text = item.contact
+        holder.seller.text = item.name
         holder.name.setText(species.name)
         holder.sizeType.setText("(" + item.size.name + ")")
     }
