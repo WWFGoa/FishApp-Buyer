@@ -157,7 +157,7 @@ object FishRepository {
             R.integer.anchovy_max_price,
             R.string.anchovy_scientific_name,
             R.string.anchovy_common_name,
-            R.string.anchovy_description,
+            R.string.mackerel_description,
             R.string.mackerel_konkani
         ),
         Species(

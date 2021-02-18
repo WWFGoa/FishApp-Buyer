@@ -1,0 +1,21 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "auth": {
+      "FMP": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "api": {
+      "FMP": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}

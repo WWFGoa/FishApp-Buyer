@@ -1,37 +1,47 @@
 type Order @model @auth(rules: [{allow: private, operations: [read, create, update, delete]}]) {
-  id: ID!
-  quantity: Float
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-  Inventory: Inventory @connection
-  contact: String
-  name: String
-  userId: String
-  expired: Boolean
+    id: ID!
+    quantity: Float
+    createdAt: AWSDateTime
+    updatedAt: AWSDateTime
+    Inventory: Inventory @connection
+    contact: String
+    name: String
+    userId: String
+    expired: Boolean
 }
 
 type Inventory @model @auth(rules: [{allow: private, operations: [read, create, update, delete]}]) {
-  id: ID!
-  species: Int
-  quantity: Float
-  availableQuantity: Float
-  price: Int
-  catchLocation: String
-  sellLocation: String
-  catchTime: String
-  sellTime: String
-  size: CatchSize
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-  contact: String
-  name: String
-  userId: String
-  expired: Boolean
+    id: ID!
+    species: Int
+    quantity: Float
+    availableQuantity: Float
+    price: Int
+    catchLocation: String
+    sellLocation: String
+    catchTime: String
+    sellTime: String
+    size: CatchSize
+    createdAt: AWSDateTime
+    updatedAt: AWSDateTime
+    contact: String
+    name: String
+    userId: String
+    expired: Boolean
 }
 
 enum CatchSize {
-  SMALL
-  MEDIUM
-  LARGE
+    SMALL
+    MEDIUM
+    LARGE
 }
- 
+type BuyerPushToken @model @auth(rules: [{allow: private, operations: [read, create, update, delete]}]) {
+    id: ID!
+    userId: String!
+    token: String!
+}
+
+type SellerPushToken @model @auth(rules: [{allow: private, operations: [read, create, update, delete]}]) {
+    id: ID!
+    userId: String!
+    token: String!
+}

@@ -23,6 +23,21 @@
             android:textColor="@color/black"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/kname"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/image"
+            tools:text="sss" />
+
+        <TextView
+            android:id="@+id/kname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/large_text_size"
+            android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@id/image"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/image"
@@ -43,7 +58,7 @@
             android:textSize="@dimen/medium_text_size"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="@id/image"
-            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/kname"
 
             tools:text="sss" />
 
@@ -56,6 +71,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/size_type" />
+
 
         <TextView
             android:id="@+id/label_seller"
@@ -83,6 +99,62 @@
             app:layout_constraintTop_toTopOf="@id/label_seller"
             tools:text="sss" />
 
+
+        <TextView
+            android:id="@+id/label_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_double"
+            android:text="Catch Location"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text_size"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/label_seller" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_double"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="2"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/label_location"
+            app:layout_constraintLeft_toRightOf="@id/label_location"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/label_location"
+            tools:text="sss" />
+
+        <TextView
+            android:id="@+id/label_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_double"
+            android:text="Catch time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text_size"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/label_location" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_double"
+            android:gravity="right"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/label_time"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/label_time"
+            tools:text="sss" />
+
         <TextView
             android:id="@+id/label_quantity"
             android:layout_width="wrap_content"
@@ -93,7 +165,7 @@
             android:textSize="@dimen/medium_text_size"
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/image"
-            app:layout_constraintTop_toBottomOf="@id/label_seller" />
+            app:layout_constraintTop_toBottomOf="@id/label_time" />
 
         <TextView
             android:id="@+id/quantity"

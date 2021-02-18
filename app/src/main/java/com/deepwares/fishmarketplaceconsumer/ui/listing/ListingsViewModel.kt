@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 import com.amplifyframework.api.graphql.model.ModelQuery
 import com.amplifyframework.core.Amplify
 import com.amplifyframework.datastore.generated.model.Inventory
+import org.joda.time.DateTime
+import kotlin.collections.ArrayList
 
 class ListingsViewModel : ViewModel() {
 
@@ -24,7 +26,14 @@ class ListingsViewModel : ViewModel() {
             { response ->
                 response?.data?.let {
                     val newitems = ArrayList<Inventory>()
-                    newitems.addAll(it)
+                    it?.forEach {
+                        val createdAt = it.createdAt.toDate()
+                        val expired = createdAt.before(DateTime.now().minusHours(6).toDate())
+                        if (!expired) {
+                            newitems.add(it)
+                        }
+                    }
+                    //newitems.addAll(it)
                     items.postValue(newitems)
 
                 }

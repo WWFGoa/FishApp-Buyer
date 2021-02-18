@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import com.amplifyframework.auth.cognito.AWSCognitoAuthSession
 import com.amplifyframework.core.Amplify
 import com.deepwares.fishmarketplaceconsumer.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splash.*
@@ -39,7 +40,13 @@ class SplashActivity : AppCompatActivity() {
         Amplify.Auth.fetchAuthSession(
             { result ->
                 Log.i("AmplifyQuickstart", result.toString())
-
+                if (result is AWSCognitoAuthSession) {
+                    if (!result.isSignedIn || result.awsCredentials.error != null) {
+                        Log.i(TAG, "ApiQuickstart | User not signed in. Go to login")
+                        showLogin()
+                        return@fetchAuthSession
+                    }
+                }
                 if (!result.isSignedIn) {
                     Log.i(TAG, "ApiQuickstart | User not signed in. Go to login")
                     showLogin()

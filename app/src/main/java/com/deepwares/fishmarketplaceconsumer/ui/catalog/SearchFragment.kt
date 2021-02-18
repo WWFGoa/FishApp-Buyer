@@ -126,6 +126,7 @@ class SearchFragment : Fragment(), SpeciesSelector {
 
     override fun selectSpecies(species: Species, position: Int) {
         val bundle = FishFragmentArgs(position, species.name).toBundle()
-        findNavController().navigate(R.id.navigation_fish_info, bundle)
+        findNavController().navigate(R.id.action_search_to_fish_info, bundle)
+        //findNavController().navigate(R.id.navigation_fish_info, bundle)
     }
 }

@@ -3,13 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_listings">
+    app:startDestination="@+id/navigation_search">
 
     <fragment
         android:id="@+id/navigation_search"
         android:name="com.deepwares.fishmarketplaceconsumer.ui.catalog.SearchFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+
+        <action
+            app:popUpTo="@id/navigation_search"
+            android:id="@+id/action_search_to_fish_info"
+            app:destination="@id/navigation_fish_info">
+
+            <argument
+                android:name="image"
+                app:argType="integer" />
+            <argument
+                android:name="name"
+                app:argType="integer" />
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_listings"
@@ -18,6 +32,7 @@
         tools:layout="@layout/fragment_listings">
 
         <action
+
             android:id="@+id/offer_to_fish_info"
             app:destination="@id/navigation_fish_info">
 
@@ -29,17 +44,6 @@
                 app:argType="integer" />
         </action>
 
-        <action
-            android:id="@+id/listing_to_inventory"
-            app:destination="@id/navigation_fish_inventory">
-
-            <argument
-                android:name="image"
-                app:argType="integer" />
-            <argument
-                android:name="name"
-                app:argType="integer" />
-        </action>
     </fragment>
 
     <fragment

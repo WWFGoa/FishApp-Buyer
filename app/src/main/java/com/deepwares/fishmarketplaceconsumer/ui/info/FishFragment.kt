@@ -17,6 +17,7 @@ import com.deepwares.fishmarketplaceconsumer.ui.catalog.CreateViewModel
 import com.deepwares.fishmarketplaceconsumer.ui.listing.FilteredListingFragmentArgs
 import com.deepwares.fishmarketplaceconsumer.ui.recipe.RecipeFragmentArgs
 import kotlinx.android.synthetic.main.fish_fragment.*
+import me.everything.android.ui.overscroll.OverScrollDecoratorHelper
 
 class FishFragment : Fragment() {
 
@@ -43,6 +44,7 @@ class FishFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(FishViewModel::class.java)
+       // OverScrollDecoratorHelper.setUpStaticOverScroll(scrollView, OverScrollDecoratorHelper.ORIENTATION_VERTICAL);
         image.setImageResource(species.image)
         name.setText(species.name)
         desc.setText(species.desc)
@@ -61,8 +63,10 @@ class FishFragment : Fragment() {
                 conservation_status.setTextColor(resources.getColor(R.color.species_background_yellow))
             }
             3 -> {
+                allowed = false
                 conservation_status.setText(R.string.status_depleted)
                 conservation_status.setTextColor(resources.getColor(R.color.species_background_red))
+                availability.setText(R.string.unavailable)
             }
             4 -> {
                 allowed = false

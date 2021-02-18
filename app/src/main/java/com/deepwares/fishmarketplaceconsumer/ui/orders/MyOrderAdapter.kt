@@ -57,11 +57,12 @@ class MyOrderAdapter(var fragment: OrdersFragment?) : RecyclerView.Adapter<MyOrd
         holder.quantity.setText(
             App.INSTANCE.getString(
                 R.string.qty_in_kg,
-                item.quantity.toString()
+                order.quantity.toString()
             )
         )
         holder.seller.text = item.name
         holder.name.setText(species.name)
+        holder.kname.setText(species.konkaniName)
         holder.sizeType.setText("(" + item.size.name + ")")
     }
 

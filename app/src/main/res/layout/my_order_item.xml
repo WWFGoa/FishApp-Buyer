@@ -17,16 +17,32 @@
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_double"
+            android:layout_margin="@dimen/padding_half"
             android:ellipsize="end"
             android:gravity="center"
             android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="@dimen/large_text_size"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/kname"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/labels_left"
+            tools:text="sss" />
+
+        <TextView
+            android:id="@+id/kname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_double"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/large_text_size"
+            android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@id/image"
-            app:layout_constraintLeft_toLeftOf="@id/image"
-            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/labels_left"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="sss" />
 
@@ -34,26 +50,23 @@
             android:id="@+id/size_type"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/padding_double"
             android:layout_marginTop="@dimen/padding_standard"
-            android:layout_marginRight="@dimen/padding_double"
             android:ellipsize="end"
             android:gravity="center"
             android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="@id/image"
-            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintRight_toRightOf="@id/labels_left"
+            app:layout_constraintTop_toBottomOf="@id/kname"
 
             tools:text="sss" />
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="128dp"
-            android:layout_height="64dp"
+            android:layout_width="@dimen/order_image_width"
+            android:layout_height="@dimen/order_image_height"
             android:layout_margin="@dimen/padding_double"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/size_type" />
@@ -72,7 +85,7 @@
 
         <TextView
             android:id="@+id/seller"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_double"
             android:gravity="right"
@@ -80,6 +93,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
             app:layout_constraintBottom_toBottomOf="@id/label_seller"
+            app:layout_constraintLeft_toRightOf="@id/labels"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/label_seller"
             tools:text="sss" />
@@ -98,7 +112,7 @@
 
         <TextView
             android:id="@+id/quantity"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_double"
             android:gravity="right"
@@ -106,6 +120,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
             app:layout_constraintBottom_toBottomOf="@id/label_quantity"
+            app:layout_constraintLeft_toRightOf="@id/labels"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/label_quantity"
             tools:text="sss" />
@@ -124,7 +139,7 @@
 
         <TextView
             android:id="@+id/cost"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_double"
             android:gravity="right"
@@ -132,9 +147,24 @@
             android:textColor="@color/black"
             android:textSize="@dimen/medium_text_size"
             app:layout_constraintBottom_toBottomOf="@id/label_cost"
+            app:layout_constraintLeft_toRightOf="@id/labels"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/label_cost"
             tools:text="sss" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="label_cost,label_quantity,label_seller" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/labels_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left"
+            app:constraint_referenced_ids="label_cost,label_quantity,label_seller" />
 
         <Button
             android:id="@+id/contact"

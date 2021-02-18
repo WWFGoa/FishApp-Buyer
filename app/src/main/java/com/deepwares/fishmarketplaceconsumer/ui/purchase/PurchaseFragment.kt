@@ -1,5 +1,6 @@
 package com.deepwares.fishmarketplaceconsumer.ui.purchase
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -62,7 +64,29 @@ class PurchaseFragment : Fragment() {
             update()
         })
         order.setOnClickListener {
-            order()
+            AlertDialog.Builder(requireContext())
+                .setTitle(R.string.confirm_purchase)
+                .setMessage(
+                    resources.getString(
+                        R.string.confirm_order_message,
+                        quantity.value.toString(),
+                        name.text,
+                        total.text
+                    )
+                )
+                .setPositiveButton(
+                    R.string.confirm
+                ) { dialog, which -> order() }
+                .setNegativeButton(
+                    R.string.cancel
+                ) { dialog, _ ->
+                    dialog.dismiss()
+                    Toast.makeText(context, R.string.no_order_message, Toast.LENGTH_SHORT)
+                        .show()
+                }
+                .show()
+
+
         }
 
 

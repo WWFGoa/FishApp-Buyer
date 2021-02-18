@@ -258,7 +258,7 @@
     <string name="status_not_major_fishery">Not a major fishery</string>
     <string name="status_banned">Prohibited</string>
 
-    <string name="scientific_label">Scientifica Name</string>
+    <string name="scientific_label">Scientific Name</string>
     <string name="common_label">Common Name</string>
     <string name="catch_location_label">Catch Location</string>
     <string name="seller_rating_label">Rating</string>
@@ -283,6 +283,12 @@
     <string name="no_vendors">No current vendors \nfor this fish</string>
     <string name="no_vendors_all">No Active listings \nat this time</string>
     <string name="sold_out">SOLD OUT!</string>
-    <string name="unavailable">Unavailable</string>
+    <string name="unavailable">Unavailable for Sale</string>
     <string name="konkani_label">Konkani</string>
+    <string name="confirm_purchase">Order confirmation</string>
+    <string name="confirm_order_message">I\'d like to confirm my order for %s Kg of %s for a total of %s
+    \n\nOnce you place your order please pick up your order in less than 2 hours.</string>
+    <string name="confirm">Confirm</string>
+    <string name="no_order_message">No order was placed!</string>
+
 </resources>

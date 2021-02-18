@@ -27,5 +27,36 @@
         }
       }
     }
+  },
+  "function": {
+    "inventoryCreateTest": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "FMP",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ]
+        }
+      ]
+    },
+    "inventoryCreate": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "FMP",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ]
+    }
   }
 }

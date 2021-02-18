@@ -31,6 +31,7 @@ class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapt
         val item = species[position]
         holder.image.setImageResource(item.image)
         holder.name.setText(item.name)
+        holder.localname.setText(item.konkaniName)
         val stat = App.INSTANCE.resources.getInteger(item.status)
         if (stat == 1) {
             holder.card.background =
@@ -48,6 +49,7 @@ class SpeciesAdapter(var speciesSelector: SpeciesSelector?) : RecyclerView.Adapt
             holder.card.background =
                 holder.image.resources.getDrawable(R.drawable.species_background_blue_border)
         }
+
         /*
         if (position < itemCount / 3) {
             holder.conservation.setBackgroundDrawable(holder.image.resources.getDrawable(R.drawable.species_background_green_border))
