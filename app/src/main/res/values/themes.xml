@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.FishMarketPlaceConsumer" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.FishMarketPlaceConsumer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
@@ -10,6 +10,8 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/white</item>
         <item name="materialButtonStyle">@style/Button</item>
+
+        <item name="buttonStyle">@style/Button</item>
         <!-- Status bar color. -->
         <!--item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item-->
         <!-- Customize your theme here. -->
@@ -39,11 +41,14 @@
     <style name="Button" parent="Widget.AppCompat.Button.Colored">
 
         <item name="cardCornerRadius">100dp</item>
-
-        <item name="android:paddingLeft">@dimen/padding_double</item>
-        <item name="android:paddingRight">@dimen/padding_double</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:paddingLeft">@dimen/button_padding_left</item>
+        <item name="android:paddingRight">@dimen/button_padding_right</item>
+        <item name="android:paddingTop">@dimen/button_padding_top</item>
+        <item name="android:paddingBottom">@dimen/button_padding_bottom</item>
         <item name="android:background">@drawable/button_background</item>
         <item name="android:textColor">@color/white</item>
     </style>
+
 
 </resources>

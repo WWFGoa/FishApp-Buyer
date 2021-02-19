@@ -60,7 +60,8 @@ class MyOrderAdapter(var fragment: OrdersFragment?) : RecyclerView.Adapter<MyOrd
                 order.quantity.toString()
             )
         )
-        holder.seller.text = item.name
+        val seller = item.name?.trim()
+        holder.seller.text = seller
         holder.name.setText(species.name)
         holder.kname.setText(species.konkaniName)
         holder.sizeType.setText("(" + item.size.name + ")")

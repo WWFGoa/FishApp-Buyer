@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/padding_standard"
-    android:layout_marginTop="@dimen/padding_double"
+    android:layout_marginTop="@dimen/padding_half"
+    android:layout_marginBottom="@dimen/padding_medium"
     android:layout_marginRight="@dimen/padding_standard"
     app:cardElevation="@dimen/padding_standard">
 
@@ -64,7 +65,8 @@
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="@dimen/order_image_width"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.3"
             android:layout_height="@dimen/order_image_height"
             android:layout_margin="@dimen/padding_double"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -170,19 +172,25 @@
             android:id="@+id/contact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_double"
             android:text="@string/contact"
+            android:layout_marginTop="@dimen/padding_double"
+            android:layout_marginBottom="@dimen/padding_double"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="@id/labels_left"
             app:layout_constraintRight_toLeftOf="@id/directions"
             app:layout_constraintTop_toBottomOf="@id/label_cost" />
 
         <Button
+            android:layout_marginLeft="@dimen/padding_half"
             android:id="@+id/directions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/padding_double"
+            android:layout_marginTop="@dimen/padding_double"
+            android:layout_marginBottom="@dimen/padding_double"
+            android:layout_marginRight="@dimen/padding_standard"
+            app:layout_constraintHorizontal_chainStyle="spread"
             android:text="@string/directions"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/contact"

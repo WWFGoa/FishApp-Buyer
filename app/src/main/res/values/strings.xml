@@ -136,39 +136,70 @@
     <string name="coconut_para_common_name">Talang queenfish</string>
 
     <string name="anchovy_scientific_name">Stolephorus indicus</string>
+
     <string name="bombay_duck_scientific_name">Harpadon nehereus</string>
+
     <string name="giant_sea_perch_scientific_name">Lates calcarifer</string>
-    <string name="sole_scientific_name">Brachiurus panoides</string>
+
+    <string name="sole_scientific_name">Brachirus panoides</string>
+
     <string name="pomfret_scientific_name">Pampus argenteus</string>
+
     <string name="salmon_scientific_name">Eleutheronema tetradactylum</string>
-    <string name="kingfish_scientific_name">Rachycentron canadum</string>
+
+    <string name="kingfish_scientific_name">Scomberomorus guttatus </string>
+
     <string name="red_snapper_scientific_name">Lutjanus spp.</string>
+
     <string name="grouper_scientific_name">Epinephelus spp.</string>
+
     <string name="tuna_scientific_name">Tunas - Thunnus albacares</string>
+
     <string name="peral_spot_scientific_name">Etroplus suratensis</string>
+
     <string name="ladyfish_scientific_name">Sillago sihama</string>
+
     <string name="hilsa_scientific_name">Tenualosa ilisha</string>
+
     <string name="mackerel_scientific_name">Rastrelliger kanagurta</string>
+
     <string name="black_pomfret_scientific_name">Parastromateus niger</string>
+
     <string name="mullet_scientific_name">Mugil cephalus</string>
+
     <string name="sardine_scientific_name">Sardinella longiceps</string>
+
     <string name="croaker_scientific_name">Otolithes/Johnius/Johniops</string>
-    <string name="shark_scientific_name">Sharks</string>
-    <string name="ray_scientific_name">Rays</string>
+
+    <string name="shark_scientific_name">Selachimorpha</string>
+
+    <string name="ray_scientific_name">Batoidea</string>
+
     <string name="ghole_scientific_name">Protonibea diacanthus</string>
-    <string name="murrel_scientific_name">Chamna striata</string>
+
+    <string name="murrel_scientific_name">Channa striata</string>
+
     <string name="seerfish_scientific_name">Scomberomorus commerson</string>
+
     <string name="sea_veral_scientific_name">Saurida tumbil</string>
+
     <string name="squid_scientific_name">Uroteuthis duvauceli</string>
-    <string name="tiger_prawn_scientific_name">P. monodon</string>
+
+    <string name="tiger_prawn_scientific_name">Penaeus monodon</string>
+
     <string name="prawns_scientific_name">Penaeus Spp</string>
+
     <string name="shrimp_scientific_name">Non penaeid</string>
+
     <string name="lobster_scientific_name">Panulirus polyphagus/ P homarus</string>
+
     <string name="crab_scientific_name">Scylla/Portunus Spp</string>
+
     <string name="short_necked_clams_scientific_name">Villorita/Paphia</string>
+
     <string name="mussels_scientific_name">Perna virids</string>
     <string name="mahi_mahi_scientific_name">Coryphena hippures</string>
-    <string name="coconut_para_scientific_name">Scombroides commersonias</string>
+    <string name="coconut_para_scientific_name">Scomberoides commersonii</string>
 
     <string name="anchovy_konkani">Velli</string>
     <string name="bombay_duck_konkani">Bombil</string>

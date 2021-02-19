@@ -18,7 +18,11 @@ class App : Application() {
     }
 
     override fun onCreate() {
-
+        Log.d(
+            TAG, "DPI : " + resources.configuration.densityDpi
+                    + " | screenWidthDp : " + resources.configuration.screenWidthDp
+                    + " | smallestScreenWidthDp : " + resources.configuration.smallestScreenWidthDp
+        )
         INSTANCE = this
         try {
             Amplify.addPlugin(AWSApiPlugin())

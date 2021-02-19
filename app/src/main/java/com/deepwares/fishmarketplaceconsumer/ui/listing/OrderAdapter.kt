@@ -58,7 +58,7 @@ class OrderAdapter : RecyclerView.Adapter<OrderVH>() {
         )
         holder.seller.text = item.name
         holder.name.setText(species.name)
-        holder.name.setText(species.konkaniName)
+        holder.kname.setText(species.konkaniName)
         holder.catchLocation.setText(if (!item.catchLocation.isNullOrEmpty()) item.catchLocation else "N/A")
         holder.catchTime.setText(if (!item.catchTime.isNullOrEmpty()) item.catchTime else "N/A")
         val available = item.availableQuantity > 0f
