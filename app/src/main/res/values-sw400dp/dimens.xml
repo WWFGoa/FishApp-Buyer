@@ -34,7 +34,7 @@
     <dimen name="rounded_button_text_size_profile">17sp</dimen>
     <dimen name="order_image_width">128dp</dimen>
     <dimen name="order_image_height">64dp</dimen>
-    <dimen name="species_height">80dp</dimen>
+    <dimen name="species_height">64dp</dimen>
     <dimen name="button_padding_left">16dp</dimen>
     <dimen name="button_padding_right">16dp</dimen>
     <dimen name="button_padding_top">16dp</dimen>

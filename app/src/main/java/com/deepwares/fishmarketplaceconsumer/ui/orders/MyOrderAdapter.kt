@@ -12,10 +12,14 @@ import com.deepwares.fishmarketplaceconsumer.R
 import com.deepwares.fishmarketplaceconsumer.model.FishRepository
 import com.deepwares.fishmarketplaceconsumer.ui.orders.OrdersFragment
 import com.deepwares.fishmarketplaceconsumer.ui.purchase.PurchaseFragmentArgs
+import org.joda.time.DateTime
+import org.joda.time.format.DateTimeFormat
+import org.joda.time.format.DateTimeFormatter
 
 class MyOrderAdapter(var fragment: OrdersFragment?) : RecyclerView.Adapter<MyOrderVH>() {
     val species = ArrayList<Species>().apply { addAll(FishRepository.species) }
     val items = ArrayList<Order>()
+    val dateTimeFormatter = DateTimeFormat.shortDateTime()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyOrderVH {
         val vh =
             MyOrderVH(
@@ -65,6 +69,9 @@ class MyOrderAdapter(var fragment: OrdersFragment?) : RecyclerView.Adapter<MyOrd
         holder.name.setText(species.name)
         holder.kname.setText(species.konkaniName)
         holder.sizeType.setText("(" + item.size.name + ")")
+        val time = item.createdAt.format()
+        val dateTime = DateTime.parse(time)
+        holder.time.setText(dateTimeFormatter.print(dateTime))
     }
 
 }

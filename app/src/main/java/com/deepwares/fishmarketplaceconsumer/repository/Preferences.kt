@@ -25,12 +25,30 @@ class Preferences {
         }
 
         @JvmStatic
+        fun getName(context: Context): String? {
+            val preferences = context.getSharedPreferences(
+                context.getString(R.string.app_name),
+                Context.MODE_PRIVATE
+            )
+            return preferences.getString("name", null)
+        }
+
+        @JvmStatic
         fun setUserId(context: Context, userId: String?) {
             val preferences = context.getSharedPreferences(
                 context.getString(R.string.app_name),
                 Context.MODE_PRIVATE
             )
             preferences.edit().putString("userId", userId).apply()
+        }
+
+        @JvmStatic
+        fun setName(context: Context, name: String?) {
+            val preferences = context.getSharedPreferences(
+                context.getString(R.string.app_name),
+                Context.MODE_PRIVATE
+            )
+            preferences.edit().putString("name", name).apply()
         }
 
         @JvmStatic

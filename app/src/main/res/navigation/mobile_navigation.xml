@@ -106,7 +106,7 @@
     <fragment
         android:id="@+id/navigation_purchase"
         android:name="com.deepwares.fishmarketplaceconsumer.ui.purchase.PurchaseFragment"
-        android:label="Fish Details"
+        android:label="Place an order"
         tools:layout="@layout/fragment_purchase">
         <argument
             android:name="order"

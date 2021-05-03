@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.amplifyframework.datastore.generated.model.Inventory
@@ -13,7 +14,7 @@ import com.deepwares.fishmarketplaceconsumer.R
 import com.deepwares.fishmarketplaceconsumer.model.FishRepository
 import com.deepwares.fishmarketplaceconsumer.ui.purchase.PurchaseFragmentArgs
 
-class OrderAdapter : RecyclerView.Adapter<OrderVH>() {
+class OrderAdapter(var navController: NavController?=null) : RecyclerView.Adapter<OrderVH>() {
     val species = ArrayList<Species>().apply { addAll(FishRepository.species) }
     val items = ArrayList<Inventory>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderVH {
@@ -23,7 +24,7 @@ class OrderAdapter : RecyclerView.Adapter<OrderVH>() {
             val item = items[vh.adapterPosition]
 
             val bundle = PurchaseFragmentArgs(vh.adapterPosition).toBundle()
-            vh.itemView.findNavController().navigate(R.id.navigation_purchase, bundle)
+            navController?.navigate(R.id.navigation_purchase, bundle)
 
         }
         vh.itemView.setOnClickListener {

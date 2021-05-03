@@ -177,6 +177,7 @@ class PurchaseFragment : Fragment() {
 
                 handler.post {
                     Toast.makeText(context, R.string.order_success, Toast.LENGTH_LONG).show()
+                    findNavController().popBackStack(R.id.navigation_listings,true)
                     findNavController().navigate(R.id.navigation_orders)
                 }
 
@@ -199,8 +200,12 @@ class PurchaseFragment : Fragment() {
     private fun update() {
         seller.text = item!!.name
         // seller_rating.text = "4.3"
-        sell_location.setText(item!!.sellLocation)
-        catch_location.setText(item!!.catchLocation)
+        sell_location.setText(
+            if (item!!.sellLocation.isNullOrBlank().not()) item!!.sellLocation else "N/A"
+        )
+        catch_location.setText(
+            if (item!!.catchLocation.isNullOrBlank().not()) item!!.sellLocation else "N/A"
+        )
         image.setImageResource(species!!.image)
         price.setText(getString(R.string.price_in_kg, item!!.price.toString()))
         availability.setText(getString(R.string.qty_in_kg, item!!.availableQuantity.toString()))

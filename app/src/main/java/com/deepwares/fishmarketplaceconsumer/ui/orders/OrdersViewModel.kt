@@ -9,6 +9,7 @@ import com.amplifyframework.core.Amplify
 import com.amplifyframework.datastore.generated.model.Inventory
 import com.amplifyframework.datastore.generated.model.Order
 import com.deepwares.fishmarketplaceconsumer.ui.listing.ListingsViewModel
+import org.joda.time.DateTime
 
 class OrdersViewModel : ViewModel() {
 
@@ -21,17 +22,21 @@ class OrdersViewModel : ViewModel() {
     val items = MutableLiveData<List<Order>>()
     val TAG = ListingsViewModel::class.java.name
     fun fetch() {
-
         Amplify.API.query(
-            ModelQuery.list(Order::class.java),
+            ModelQuery.list(
+                Order::class.java,
+                Order.USER_ID.eq(Amplify.Auth.currentUser.userId)
+                    .and(Order.CREATED_AT.gt(DateTime.now().minusDays(1).toDate()))
+                //, Order.CREATED_AT.gt(DateTime.now().minusDays(7).toDate())
+            ),
             { response ->
                 response?.data?.let {
                     val newitems = ArrayList<Order>()
                     val filter = it.filter { it.userId == Amplify.Auth.currentUser.userId }
                     if (!filter.isNullOrEmpty()) {
-                        newitems.addAll(filter)
+                        // newitems.addAll(filter)
                     }
-                    // newitems.addAll(it)
+                    newitems.addAll(it.sortedByDescending { it.createdAt })
                     items.postValue(newitems)
                 }
                 Log.d(TAG, "Got items : " + response.data?.toString())

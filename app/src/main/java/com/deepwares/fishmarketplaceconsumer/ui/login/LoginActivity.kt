@@ -172,7 +172,6 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showLoginFailed(@StringRes errorString: Int, errorType: LoginError?) {
 
-
         Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
 
     }

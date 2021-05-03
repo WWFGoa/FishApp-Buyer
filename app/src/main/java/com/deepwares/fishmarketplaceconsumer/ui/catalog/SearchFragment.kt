@@ -28,13 +28,17 @@ class SearchFragment : Fragment(), SpeciesSelector {
     private lateinit var createViewModel: CreateViewModel
     private var speciesSelector: SpeciesSelector? = null
     private lateinit var speciesAdapter: SpeciesAdapter
+    private lateinit var speciesSearchAdapter: SpeciesAdapter
     private lateinit var speciesFilteredAdapter: SpeciesAdapter
+    private var isSearching = false
+    private var isFiltered = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         speciesSelector = this as SpeciesSelector
         speciesAdapter = SpeciesAdapter(speciesSelector)
         speciesFilteredAdapter = SpeciesAdapter(speciesSelector)
+        speciesSearchAdapter = SpeciesAdapter(speciesSelector)
     }
 
     override fun onCreateView(
@@ -85,6 +89,15 @@ class SearchFragment : Fragment(), SpeciesSelector {
             }
         })
 
+        createViewModel.speciesSearchLiveData.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                speciesSearchAdapter.species.clear()
+                speciesSearchAdapter.species.addAll(it)
+                speciesSearchAdapter.notifyDataSetChanged()
+
+            }
+        })
+
         createViewModel.speciesFilteredLiveData.observe(viewLifecycleOwner, Observer {
             it?.let {
                 speciesFilteredAdapter.species.clear()
@@ -98,14 +111,18 @@ class SearchFragment : Fragment(), SpeciesSelector {
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 createViewModel.filter(query)
-                list.adapter = speciesFilteredAdapter
+                isSearching = query.isNullOrBlank().not()
+                isFiltered = -1
+                updateAdapter()
 
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 createViewModel.filter(newText)
-                list.adapter = speciesFilteredAdapter
+                isSearching = newText.isNullOrBlank().not()
+                isFiltered = -1
+                updateAdapter()
                 return true
             }
 
@@ -116,11 +133,60 @@ class SearchFragment : Fragment(), SpeciesSelector {
                 TutorialFragment()
             tutorialFragment.show(childFragmentManager, "")
         }
+
+
+        legend_1.setOnClickListener {
+            if (isFiltered == 3) {
+                isFiltered = -1
+            } else {
+                isFiltered = 3
+            }
+            createViewModel.filter(isFiltered)
+            updateAdapter()
+        }
+        legend_2.setOnClickListener {
+            if (isFiltered == 2) {
+                isFiltered = -1
+            } else {
+                isFiltered = 2
+            }
+            createViewModel.filter(isFiltered)
+            updateAdapter()
+        }
+        legend_3.setOnClickListener {
+            if (isFiltered == 1) {
+                isFiltered = -1
+            } else {
+                isFiltered = 1
+            }
+            createViewModel.filter(isFiltered)
+            updateAdapter()
+        }
+        legend_4.setOnClickListener {
+            if (isFiltered == 4) {
+                isFiltered = -1
+            } else {
+                isFiltered = 4
+            }
+            createViewModel.filter(isFiltered)
+            updateAdapter()
+        }
+        legend_5.setOnClickListener {
+            if (isFiltered == 0) {
+                isFiltered = -1
+            } else {
+                isFiltered = 0
+            }
+            createViewModel.filter(isFiltered)
+            updateAdapter()
+        }
     }
 
     override fun onDestroy() {
         speciesSelector = null
         speciesAdapter.speciesSelector = null
+        speciesSearchAdapter.speciesSelector = null
+        speciesFilteredAdapter.speciesSelector = null
         super.onDestroy()
     }
 
@@ -128,5 +194,25 @@ class SearchFragment : Fragment(), SpeciesSelector {
         val bundle = FishFragmentArgs(position, species.name).toBundle()
         findNavController().navigate(R.id.action_search_to_fish_info, bundle)
         //findNavController().navigate(R.id.navigation_fish_info, bundle)
+    }
+
+    fun updateAdapter() {
+        if (!isSearching && isFiltered == -1) {
+            list.adapter = speciesAdapter
+        } else if (isSearching) {
+            list.adapter = speciesSearchAdapter
+        } else if (isFiltered != -1) {
+            list.adapter = speciesFilteredAdapter
+        }
+        legend_1.background =
+            if (isFiltered == 3) resources.getDrawable(R.drawable.species_selector) else null
+        legend_2.background =
+            if (isFiltered == 2) resources.getDrawable(R.drawable.species_selector) else null
+        legend_3.background =
+            if (isFiltered == 1) resources.getDrawable(R.drawable.species_selector) else null
+        legend_4.background =
+            if (isFiltered == 4) resources.getDrawable(R.drawable.species_selector) else null
+        legend_5.background =
+            if (isFiltered == 0) resources.getDrawable(R.drawable.species_selector) else null
     }
 }

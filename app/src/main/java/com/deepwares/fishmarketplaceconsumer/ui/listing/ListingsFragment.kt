@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.deepwares.fishmarketplace.ui.home.OrderAdapter
@@ -46,6 +48,10 @@ class ListingsFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_listings, container, false)
 
         root.postDelayed({ list?.visibility = View.VISIBLE }, 3000)
+
+        val navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+        adapter = OrderAdapter(navController)
+
         listingsViewModel.items.observe(viewLifecycleOwner, Observer {
             swipe_refresh.isRefreshing = false
 
@@ -62,7 +68,6 @@ class ListingsFragment : Fragment() {
 
             adapter.notifyDataSetChanged()
         })
-        adapter = OrderAdapter()
         return root
     }
 
@@ -114,5 +119,9 @@ class ListingsFragment : Fragment() {
         listingsViewModel.fetch()
     }
 
+    override fun onDestroyView() {
+        adapter.navController = null
+        super.onDestroyView()
+    }
 
 }

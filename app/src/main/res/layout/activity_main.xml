@@ -43,9 +43,22 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/drawer_view"
+        android:id="@+id/nav_view_drawer"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="left"
-        android:fitsSystemWindows="true" />
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_main_nav"
+        app:menu="@menu/activity_main_nav_drawer">
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/padding_half"
+            android:gravity="center"
+            android:padding="@dimen/padding_standard"
+            android:text="sdfsdf"
+            android:textColor="@color/primary_dark" />
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

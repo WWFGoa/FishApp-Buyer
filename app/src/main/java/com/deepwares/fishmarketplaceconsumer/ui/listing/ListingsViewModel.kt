@@ -20,9 +20,12 @@ class ListingsViewModel : ViewModel() {
     val items = MutableLiveData<List<Inventory>>()
     val TAG = ListingsViewModel::class.java.name
     fun fetch() {
-
+        val query = ModelQuery.list(
+            Inventory::class.java,
+            Inventory.CREATED_AT.gt(DateTime.now().minusHours(6).toDate())
+        )
         Amplify.API.query(
-            ModelQuery.list(Inventory::class.java),
+            query,
             { response ->
                 response?.data?.let {
                     val newitems = ArrayList<Inventory>()
@@ -30,10 +33,10 @@ class ListingsViewModel : ViewModel() {
                         val createdAt = it.createdAt.toDate()
                         val expired = createdAt.before(DateTime.now().minusHours(6).toDate())
                         if (!expired) {
-                            newitems.add(it)
+                            // newitems.add(it)
                         }
                     }
-                    //newitems.addAll(it)
+                    newitems.addAll(it.sortedByDescending { it.createdAt })
                     items.postValue(newitems)
 
                 }

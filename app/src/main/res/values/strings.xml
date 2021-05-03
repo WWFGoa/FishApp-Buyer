@@ -322,4 +322,9 @@
     <string name="confirm">Confirm</string>
     <string name="no_order_message">No order was placed!</string>
 
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Feedback</string>
+    <string name="logout">Logout</string>
+    <string name="email_feedback" translatable="false">cdlima@wwf.net</string>
+    <string name="menu_learn">Learn</string>
 </resources>

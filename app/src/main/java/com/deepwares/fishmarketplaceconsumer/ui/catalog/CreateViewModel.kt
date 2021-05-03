@@ -19,14 +19,17 @@ class CreateViewModel : ViewModel() {
     }
     val speciesLiveData: MutableLiveData<List<Species>> = _species
 
-
-    val speciesFiltered = ArrayList<Species>().apply { addAll(FishRepository.species) }
-
+    private val speciesSearch = ArrayList<Species>().apply { addAll(FishRepository.species) }
+    private val speciesFiltered = ArrayList<Species>().apply { addAll(FishRepository.species) }
+    private val _speciesSearch = MutableLiveData<List<Species>>().apply {
+        value = speciesSearch
+    }
     private val _speciesFiltered = MutableLiveData<List<Species>>().apply {
         value = speciesFiltered
     }
-
+    val speciesSearchLiveData: MutableLiveData<List<Species>> = _speciesSearch
     val speciesFilteredLiveData: MutableLiveData<List<Species>> = _speciesFiltered
+
 
     fun filter(name: String?) {
 
@@ -58,6 +61,17 @@ class CreateViewModel : ViewModel() {
                     list.add(it)
                 }
             }
+        }
+        speciesSearchLiveData.postValue(list)
+    }
+
+    fun filter(category: Int?) {
+
+        var list = ArrayList<Species>()
+        if (category == null) {
+            list.addAll(FishRepository.species)
+        } else {
+            list.addAll(FishRepository.species.filter { App.INSTANCE.resources.getInteger(it.status) == category })
         }
         speciesFilteredLiveData.postValue(list)
     }
