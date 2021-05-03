@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "auth": {
+      "FMP": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "api": {
+      "FMP": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "Order:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "Inventory:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "BuyerPushToken:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "SellerPushToken:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

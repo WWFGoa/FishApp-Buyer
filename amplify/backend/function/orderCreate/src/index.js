@@ -1,10 +1,4 @@
-/* Amplify Params - DO NOT EDIT
-	API_FMP_GRAPHQLAPIENDPOINTOUTPUT
-	API_FMP_GRAPHQLAPIIDOUTPUT
-	AUTH_FMP_USERPOOLID
-	ENV
-	REGION
-Amplify Params - DO NOT EDIT */exports.handler = event => {
+exports.handler = event => {
   //eslint-disable-line
   console.log(JSON.stringify(event, null, 2));
   event.Records.forEach(record => {

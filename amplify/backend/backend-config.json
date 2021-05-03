@@ -44,11 +44,19 @@
         }
       ]
     },
-    "inventoryCreate": {
+    "orderCreate": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "FMP",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ]
+        },
         {
           "category": "auth",
           "resourceName": "FMP",
